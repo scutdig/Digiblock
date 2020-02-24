@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+To add a new language, you can add the language to this file.
+Use the name of the language in that language.
+Then run the test case "de.neemann.digiblock.lang.TestLang.testAdditionalLanguages".
+
+In the target directory you can now find a diff file for the
+new language. This diff file contains a list of English text
+fragments and a empty xml tag for the translated text fragment.
+Fill all the empty language tags.
+
+To import the translated text, start the class
+"de.neemann.digiblock.lang.LanguageUpdater" and select
+your diff file.
+
+In the future, each time the software is built, a new
+diff file will be created that contains all the new or
+modified keys.
+
+-->
+<languages>
+    <lang name="en">English</lang>
+    <lang name="de">Deutsch</lang>
+    <lang name="es">Español</lang>
+    <lang name="pt">Português</lang>
+</languages>

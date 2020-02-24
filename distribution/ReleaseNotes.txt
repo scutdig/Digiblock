@@ -1,0 +1,360 @@
+Release Notes
+
+HEAD, planned as v0.24
+- Added support for INOUT ports in HDL generation.
+- Improved SVG export
+- Allows to disable inputs and outputs in the measurement graph.
+- Model analyzer is able to use switches as inputs.
+- Editor is able to store views ([CRTL]+[[n]] to store and [[n]] ro recall a view.
+  So [CTRL]+[1] stores a view in slot one and [1] recalls it.
+- The octal number format was added.
+- A mirroring option was added to some components.
+- Custom Java implemented components can now also implement HDL code to represent
+  the component in an HDL export.
+- Added a undo function to the table editor.
+- Adds a command line interface for testing circuits.
+- Allows to disable "snap to grid" in text and rectangle components.
+- A push button combined with a LED was added.
+- A VGA monitor was added.
+- Unnamed Tunnels are ignored silently.
+- Overlapping pins are now connected.
+- Fixed an issue with Chinese text rendering.
+
+v0.23, released on 23. Aug. 2019
+- Added generic circuits. Now it is possible to parameterize a sub circuit.
+  Allows e.g. the creation of a barrel-shifter with selectable bit width.
+- Circuit analyser is now able to analyse the built-in counters.
+- Simplified the integration of FPGA boards.
+  Board integration is now possible without creating Java code or
+  even recompiling. See the BASYS3.config in examples/hdl as an example.
+- Improved the label creation in the model analyzer.
+- Improved performance of the boolean equation minimizer.
+- Hex reader/writer supports RLE encoding like Logisim does.
+- Added Spanish translation. Special thanks to Ángel Millán who provided
+  the translation.
+- Added a simple interactive beginners tutorial.
+- Added a statistics dialog which shows the number of used components.
+- Added scrollbars.
+- Multiple break components are allowed.
+- The fsm dialog loads the correct fsm if a circuit is open which
+  is based on that fsm.
+- If a VHDL defined component is used, ghdl now uses VHDL-2008.
+- Added "Warren’s Crazy Small CPU" designed by Warren Toomey as a
+  74xx circuit example.
+- Fixed an issue in the "RAM, Chip select" component which was not fully
+  asynchronous.
+- Fixed swapped IC numbers 7447 and 7448.
+
+v0.22, released on 01. Apr 2019
+- Improved the RAM/ROM data loader. Now binary files and Intel HEX files are
+  supported.
+- Added a RAM that can be synthesized on an FPGA using block RAM.
+- Now its possible to create circuits using lookup tables.
+- More consistent handling of the initial state in the FSM editor.
+- Added a rectangle to visually group elements.
+- Added a MIDI component.
+- The line number and the context from the test case description is shown
+  in test result table.
+- Added Portuguese translation. Special thanks to Theldo Cruz Franqueira who
+  provided the translation.
+- Breaking changes:
+  - The timing of the EEPROM with a single data port has changed. See help text for details.
+  - The timing of the RAM with Chip Select has changed. See help text for details.
+
+v0.21, released on 10. Dec 2018
+- Added a simple SVG importer to define custom shapes.
+- Added an FSM editor, which allows to input a FSM, creating a associated
+  truth table and finally allows to create a circuit which implements the FSM.
+- Added a divider component.
+- Added signed multiplications.
+- Wider shapes were added, to better match the IEEE shapes to the standard.
+- Added a RGB-LED.
+- Added IC 74189 and IC 74382 to the Library.
+- Small improvements at the test case parser.
+
+v0.20, released on 03. Sep 2018
+- Improved zooming and navigating in the measurement graph.
+- Added multi pole double-throw relays.
+- Added EEPROM with separate ports for reading and writing.
+- Added a hi-color mode (5 bits per color channel) to the graphic RAM.
+- The external assembly IDE is able to preload also RAMs with executable code.
+  The register representing the program counter must be marked as such.
+- Allows the pre-loading of program memory if a RAM is used as such, via the
+  circuit settings.
+- Added a new more flexible shape for embedded circuits.
+- Breaking changes:
+  - If you have build a processor and are using the simulators tcp interface,
+    you have to flag the register which represents the program counter as such.
+  - If you have used the 74xx library components with the schematic shape, you
+    have to reselect the shape.
+  - In your own DIL circuits you have to reselect the DIL shape in the
+    circuit settings. If you have build a custom shape, you also have to
+    reselect it.
+
+v0.19, released on 14. June 2018
+- Added a tabbed pane to the attributes dialog to make it more beginner friendly.
+- Added support for asynchronous sequential circuits such as the Muller-pipeline.
+  Take a look at the new asynchronous examples for illustration.
+- Added export to Verilog. Special thanks to Ivan de Jesus Deras Tabora, who has
+  implemented the Verilog code generator and all the necessary Verilog templates!
+- All examples are translated to english.
+- A "test all" function has been added to start all tests in all circuits in
+  the current folder.
+- Very basic support for custom shapes added.
+  You must manually edit the *.dig file to add a custom shape to a circuit, so
+  this is only an option for advanced users.
+- It is possible to use the 74xx chips with a more schematic shape, making it
+  easier to build a circuit.
+- Breaking changes:
+  - Added an enable input to the terminal component.
+  - Added a clock input to the keyboard component.
+  - In your own DIL chips, you must correct the width attribute.
+    The new value can be calculated as follows: new = (old*2)-1
+- Bug fixes
+  - Fixed a bug in the VHDL export concerning an invalid optimization of a
+    std_logic_vector access.
+
+v0.18, released on 02. Apr 2018
+- Significant improvement in the quality of the generated vhdl code.
+- Its possible to define the behaviour of a component using vhdl.
+  The vhdl simulator ghdl needs to be installed to use a vhdl defined component.
+- Removed the high-z restrictions from the splitter.
+  Now a bus can have different high z states for the different lines on the bus.
+- Added new text formatting engine which supports overline, super- and subscript.
+  Try "~Q_{n+1}^1" as an output label.
+- When a circuit containing a ROM/EEPROM is embedded multiple times, it is now
+  possible to define different ROM/EEPROM contents in each embedded instance.
+- It's possible to test circuits with a high-z input which can act as an output.
+- An embedded circuit that is used in the library and whose name ends with
+  '-inc.dig' is shown neither in the component menu nor in the tree view.
+- Added a improved counter with preset.
+- Added a monoflop. Needs a clock in the circuit in order to work.
+- Added a 16 segment display.
+- Added a polarity aware LED.
+- Added a DIP switch.
+- Added a simple bidirectional splitter.
+- Added ICs 74181, 74779, 7440 and 7428
+
+v0.17, released on 19. Feb 2018
+- Added 64 bit support for Add and Sub components.
+- Added support of some more ATF150x chips.
+- Added a register file component.
+- Added IC 74273
+- Added an "export to zip" function.
+- If an input or output has several bits, all pin numbers can be specified by a comma-separated list.
+- Now it's possible to choose the polarity of the reset component.
+- The model analyzer now creates an error message if a cycle is detected in the circuit.
+  This prevents the generation of incorrect truth tables if, for example, a self-built
+  flip-flop is analyzed.
+- Added a chapter "First Steps" to the documentation.
+- Bug fixes
+  - Splitter, BarrelShifter and Comparator now are working with 64 bit.
+  - fixed a bug in library IC 74198
+- Added automated GUI tests. The overall test coverage is now above 70%.
+  There is still much to do.
+
+v0.16, released on 02. Jan 2018
+- RAM components and EEPROM now allow an input invert configuration.
+- Measurement values dialog is also able to modify the values. This allows to modify
+  the content of registers and flip-flops in a running simulation.
+- Now you can open the measurement value table and graph in a running simulation.
+- Added a bit extender component to extend signed values.
+- Added a simple unclocked RS flip-flop.
+- Added a bit selector component.
+- Added a dual ported RAM component.
+- Added a priority encoder component.
+- Added tooltips showing the actual value of wires.
+- Added a shortcut S to split a single wire into two wires.
+- Added selectable number format to inputs and outputs.
+- Now you can click in the k-map to modify the truth table.
+- Improved performance through more efficient decoupling of the GUI thread and the simulation thread.
+- Bug fixes
+  - Fixed a bug in the RAMSinglePortSel component: Write was not edge-triggered on WE. Now it is.
+  - Fixed a bug in the barrel shifter and adder if 32 bits or more where used.
+  - It was not possible to use constants with 32 bits or more. Now it is.
+  - Fixed a bug that caused the exported VHDL code not to work if a signal was connected
+    to multiple outputs.
+  - Fixed "concurrent modification exception" if input value dialog is opened.
+- Breaking changes:
+  - Counter modified from a asynchronous clear to a synchronous clear.
+
+v0.15, released on 30. Oct 2017
+- Added the possibility to use custom, java implemented components in Digital.
+- Added an EEPROM which behaves like a memory that can be written and whose content
+  is non-volatile.
+- Added the possibility to map keyboard keys to model buttons.
+- Some small usability improvements:
+  - Added a grid to the main panel.
+  - Replaced shortcut 'B' with a more general attribute editing dialog (select multiple
+    components and click right).
+  - Added some new shortcuts (CTRL-N, CTRL-O, CTRL-A, CTRL-D).
+  - Added a spinner to the input value edit dialog.
+- Bug fixes
+  - fixed bugs in some 74xx circuits (74160, 74161, 74162 and 74238)
+  - fixed a bug in the remote interface "run to break" method.
+  - fixed an error in VHDL export if comparator is used in "signed mode"
+  - fixed a Windows specific bug in the speed test GUI
+  - fixed a bug which causes a freezing when a file is stored in folder which contains
+    a large number of sub folders and files.
+- Breaking changes:
+  - Removed the address bits settings from the graphic RAM. The width is now
+    determined by the width and the height of the screen.
+
+v0.14, released on 31. Aug 2017
+- Added visualization of K-maps (thanks to roy77)
+- Added VHDL export
+  (Not yet complete, but the example processor is running on a FPGA.)
+- Type of pin numbers changed from int to string to allow FPGA pin names like "U16".
+- Added support for BASYS3-Board (*.xdc constraints file is written and the mixed mode
+  clock manager (MMCM) is used if clock frequency exceeds 37kHz)
+- Added shortcut 'B' which sets the number of data bits in all selected components.
+- Breaking changes:
+  - To generalize the VHDL export, an XML entity in the *.dig files had to be renamed.
+    As a consequence of that the address bits settings in RAMs and ROMs
+    are lost. To fix that, reset the number of address bits.
+  - Added an enable input to the counter component. If you had used the counter in the
+    past you have to set the en input to 1. The function of the overflow output also
+    has changed (see tooltip) and now allows the cascading of counters.
+  - XOR now can have more than two inputs. If you had used the XOR gate with inverted
+    inputs, you have to reselect the inputs to invert.
+- Some minor bug fixes.
+
+v0.13, released on 25. Jul 2017
+- Introduced a library of sub circuits which are available in every circuit.
+  So far, the library contains only the 74xx circuits.
+- Added a barrel shifter (thanks to roy77)
+- some improvements concerning error messages:
+  - In case of oscillations almost all affected components are shown.
+  - If an error occurs, the name of the affected circuit file is shown.
+  - If an error occurs, the causing sub circuit is highlighted.
+  - A warning message shows up if a circuit with unnamed inputs is analysed.
+  - A warning message shows up if a circuit with missing pin numbers is exported to a
+    hardware-related file.
+- Unidirectional FETs are added to overcome certain CMOS issues.
+- Added zooming to measurement graphs.
+- Test results can be displayed as measurement graphs.
+- The Text component is able to show multiple lines.
+- Comments are allowed in hex files.
+- Some minor bug fixes
+- Breaking changes:
+  - An input can have "high z" value as its default value.
+    All inputs have lost their default values! If you have build a circuit that
+    contains test cases that depend on a non-null default value, this tests
+    will fail. To resolve this issue, reset the default value.
+  - Added an enable input to the T flip-flop
+    By default this input is activated now. In circuits which used the T flip-flop
+    in the past, the new input needs to be disabled.
+
+v0.12.1, released on 05. Jun 2017
+- added a fuse to simulate a PROM or PAL.
+- added some more CMOS examples
+- Improved flexibility of the splitter.
+
+v0.12, released on 02. Jun 2017
+- Added undo/redo functions.
+- New wire drawing mode: If a wire is added it is rectangular by default.
+  In rectangular mode "F" flips the wire and pressing "D" switches to diagonal mode.
+- Added inverted inputs for basic gates and flip-flops.
+- Added a locked mode, which avoids the unwanted modification of the circuit.
+- Better support for high dpi screens.
+- Added DIL packages to allow more "physical" circuits. See examples/74xx.
+  Up to now only a view 74xx circuits are available.
+- Added a pin number attribute to inputs and outputs.
+- Add some functions to make it easier to create 74xx circuits.
+- Lots of small usability improvements.
+- Added a list of keyboard shortcuts to the documentation.
+
+v0.11.1, released on 02. May 2017
+- Added the possibility to open a circuit from the command line.
+- The backspace key works like the delete key.
+- Avoid extreme long lines in the error message dialog.
+- Some minor bug fixes.
+
+v0.11, released on 20. Apr 2017
+- Added floating gate FETs.
+- Better detecting of missing signals in test cases.
+- Better plausibility checks if diodes are used.
+- Added a loop command to the test data parser.
+  See "cmos/sram.dig" as an example usage of the new loop statement.
+
+v0.10, released on 09. Apr 2017
+- User can select the expressions representation format in the settings dialog.
+- Better formatting of minimized expressions.
+- Easier editing of truth tables
+- Mouse actions can be canceled by the ESC key.
+- With CTRL + mouse button you can now select and move/delete wires.
+- Added a real bidirectional switch and a relay.
+- Added N and P channel FETs and some CMOS examples, including a 16 bit SRAM
+- Added a rotary encoder
+- Added a LED matrix display
+- Improved and documented the file import strategy.
+- Added a tree view to insert components.
+- Added support for the ATF1502 and ATF1504 CPLDs.
+- some minor bug fixes
+
+v0.9, released on 03. Feb 2017
+- improved documentation
+- moved "show listing" functions to the assembly IDE.
+- rearrangement of the components in the components menu
+- made "don't care" as test case input values functional
+- added a better test data parser which supports a "repeat([n])" statement.
+  See the "combinatorial/FullAdderCLA.dig" as an example usage of the new "repeat([n])" statement.
+- cleanup of splitter behaviour in respect of high z inputs
+- fixed an error that caused an exception if a circuit which directly connects an input to an output
+  is used as embedded circuit.
+- some minor bug fixes
+
+v0.8, released on 20. Nov 2016
+- added pull up & pull down resistors and programmable diodes
+- added some PLD examples like a simple PLA and GAL
+- added GND, VDD and a switch
+- added a help dialog for components
+- added a simple documentation viewable via the help menu
+- fixed "sometimes unwanted start of drawing a wire" problem (hopefully)
+- some minor bug fixes
+
+v0.7, released on 22. Aug 2016
+- fixed a bug which causes two HighZ values to be not equal during test execution.
+- added double buffer to CircuitComponent to make it more responsive
+- improved debugging of processors
+- some minor bug fixes
+
+v0.6.2, released on 16. Aug 2016
+- fixed scrolling bug in input/output orderer
+- fixed redraw bug at element rotation
+- fixed auto scale bug if element is deleted
+
+v0.6.1, released on 10. Aug 2016
+- fixed auto scaling bug which can occur if a new circuit is created
+- added missing check for unsaved modifications
+- fixed unexpected behaviour of 'C' character in test cases
+- some minor bug fixes
+
+v0.6, released on 09. Aug 2016
+- fixed sync problems while drawing the circuit
+- added Conway's Game of Life example
+- some minor bug fixes
+
+v0.5, released on 16. Jul 2016
+- creation of state machines with JK-flip-flops
+- added creation of JEDEC and CUPL files for GAL16v8 and GAL22v10
+- some minor bug fixes
+
+v0.4, released on 12. Jul 2016
+- added a graphics card
+- some minor bug fixes
+
+v0.3.1, released on 07. Jul 2016
+- some minor bug fixes
+
+v0.3, released on 07. Jul 2016
+- added testing functions
+- some minor bug fixes
+
+v0.2, released on 02. Jul 2016
+- added expression parser
+- creation of circuits from expressions
+- some bug fixes
+
+v0.1, released on 28. Jun 2016
+- initial release

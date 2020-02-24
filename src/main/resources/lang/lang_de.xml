@@ -1,0 +1,2165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="addr">Adresse</string>
+    <string name="tableOfContent">Inhaltsverzeichnis</string>
+    <string name="general">Allgemein</string>
+    <string name="revision">Version</string>
+    <string name="date">Datum</string>
+    <string name="settings">Im Folgenden werden die vorhandenen Einstellungen des Simulators beschrieben.</string>
+    <string name="maxValue">Maximalwert</string>
+    <string name="attr_dialogTitle">Eigenschaften</string>
+    <string name="attr_openCircuit">Anzeigen</string>
+    <string name="attr_openCircuitLabel">Enthaltene Schaltung:</string>
+    <string name="attr_openCircuit_tt">Öffnet die Schaltung in einem neuen Fenster.</string>
+    <string name="attr_help">Hilfe</string>
+    <string name="attr_help_tt">Zeigt eine Beschreibung dieses Elements.</string>
+    <string name="attr_dialogHex">Hex</string>
+    <string name="attr_dialogDecimal">Dezimal</string>
+    <string name="attr_dialogAscii">Ascii</string>
+    <string name="attr_dialogHighz">HighZ</string>
+    <string name="attr_dialogOctal">Oktal</string>
+    <string name="attr_dialogBinary">Binär</string>
+    <string name="attr_primary">Standard</string>
+    <string name="attr_secondary">Erweitert</string>
+    <string name="btn_discard">Verwerfen</string>
+    <string name="btn_edit">Bearbeiten</string>
+    <string name="btn_editFurther">Weiter bearbeiten</string>
+    <string name="btn_load">Laden</string>
+    <string name="btn_reload">Neu Laden</string>
+    <string name="btn_reload_tt">Letzte Datei noch einmal laden</string>
+    <string name="btn_save">Speichern</string>
+    <string name="btn_saveAsHex_tt">Als HEX-Datei speichern.</string>
+    <string name="btn_create">Erzeugen</string>
+    <string name="btn_create_tt">Erzeugt eine Schaltung in einem eigenen Fenster.</string>
+    <string name="btn_editDetached">Permanent Bearbeiten</string>
+    <string name="btn_editDetached_tt">Öffnet den Bearbeitendialog nicht modal.</string>
+    <string name="btn_openInBrowser">Browser</string>
+    <string name="btn_openInBrowser_tt">Hilfetext im Browser öffnen, um dann z.B. zu drucken.</string>
+    <string name="btn_clearData">Löschen</string>
+    <string name="btn_clearData_tt">Setzt alle Werte auf 0 zurück!</string>
+    <string name="btn_addTransitions">Übergänge</string>
+    <string name="btn_addTransitions_tt">Alle möglichen Übergänge werden als Testfälle ergänzt. Dient zur Erzeugung von Testfällen für den Simulator selbst.</string>
+    <string name="btn_newName">Neuer Name</string>
+    <string name="btn_saveAnyway">Trotzdem speichern</string>
+    <string name="btn_overwrite">Überschreiben</string>
+    <string name="btn_apply">Setzen</string>
+    <string name="btn_editRom_tt">Bearbeitet den Inhalt des ausgewählten ROM/EEPROM.</string>
+    <string name="btn_clearRom_tt">Entfernt die hier gespeicherten Daten des ausgewählten ROM. Es wird stattdessen der direkt im ROM gespeicherte Inhalt verwendet.</string>
+    <string name="btn_saveTemplate">Template</string>
+    <string name="btn_saveTemplate_tt">Ein SVG Template erzeugen, welches dann mit z.B. Inkscape bearbeitet werden kann.</string>
+    <string name="btn_loadSvg">Import</string>
+    <string name="btn_loadSvg_tt">Importieren einer SVG-Datei. Um eine geeignete SVG Datei zu erstellen, ist es
+        am einfachsten zunächst ein Template zu erzeugen und dieses dann zu bearbeiten.</string>
+    <string name="msg_warning">Warnung</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="digital">Digital</string>
+    <string name="expression">Ausdruck</string>
+    <string name="elem_Help_inputs">Eingänge</string>
+    <string name="elem_Help_outputs">Ausgänge</string>
+    <string name="elem_Help_attributes">Veränderbare Attribute</string>
+
+
+    <!-- logik -->
+
+    <string name="elem_Basic_In">Der {0}. Eingangswert für die Verknüpfung.</string>
+    <string name="elem_Basic_Out">Gibt das Ergebnis der Verknüpfung zurück.</string>
+
+    <string name="elem_And">Und</string>
+    <string name="elem_And_tt">Binäres Und-Gatter. Gibt eine 1 aus, wenn alle Eingänge 1 sind.
+        Es können auch Busse mit mehreren Bits pro Eingang verknüpft werden. In diesem Fall wird ein bitweises Und
+        ausgeführt. Das heißt, dass das jeweils unterste Bit aller Eingänge mit Und verknüpft wird, und als unterstes
+        Bit am Ausgang ausgegeben wird. Das gleiche passiert mit Bit 1, Bit 2 u.s.w.
+    </string>
+    <string name="elem_NAnd">Nicht Und</string>
+    <string name="elem_NAnd_tt">Eine Kombination aus Und- und Nicht-Verknüpfung.
+        Alle Eingangssignale werden mit Und verknüpft, und das Ergebnis wird vor der Ausgabe invertiert.
+        Es können auch Busse mit mehreren Bits pro Eingang verknüpft werden. In diesem Fall wird die Verknüpfung auf
+        jedes Bit der Eingänge angewendet.
+    </string>
+    <string name="elem_Or">Oder</string>
+    <string name="elem_Or_tt">Binäres Oder-Gatter. Gibt eine 1 aus, wenn mindestens einer der Eingänge 1 ist.
+        Es können auch Busse mit mehreren Bits pro Eingang verknüpft werden. In diesem Fall wird ein bitweises Oder
+        ausgeführt. Das heißt, dass das jeweils unterste Bit aller Eingänge mit Oder verknüpft wird, und als unterstes
+        Bit am Ausgang ausgegeben wird. Das gleiche passiert mit Bit 1, Bit 2 u.s.w.
+    </string>
+    <string name="elem_NOr">Nicht Oder</string>
+    <string name="elem_NOr_tt">Eine Kombination aus Oder und Nicht-Verknüpfung.
+        Alle Eingangssignale werden mit Oder verknüpft, und das Ergebnis wird vor der Ausgabe invertiert.
+        Es können auch Busse mit mehreren Bits pro Eingang verknüpft werden. In diesem Fall wird die Verknüpfung auf
+        jedes Bit der Eingänge angewendet.
+    </string>
+    <string name="elem_XOr">Exklusiv Oder</string>
+    <string name="elem_XOr_tt">Bei zwei Eingängen wird eine 1 ausgegeben, wenn genau einer der Eingänge auf 1 gesetzt ist.
+        Werden mehr als zwei Eingänge verwendet, werden die XOR-Gater kaskadiert ( A XOR B XOR C = (A XOR B) XOR C ).
+        Es können auch Busse mit mehreren Bits pro Eingang verknüpft werden. In diesem Fall wird die Verknüpfung auf
+        jedes Bit der Eingänge angewendet.
+    </string>
+    <string name="elem_XNOr">Nicht Exklusiv Oder</string>
+    <string name="elem_XNOr_tt">Eine Kombination aus XOR und NOT.
+        Die Eingänge werden per XOR verknüpft und das Ergebnis wird vor der Ausgabe invertiert.
+        Es können auch Busse mit mehreren Bits pro Eingang verknüpft werden. In diesem Fall wird die Verknüpfung auf
+        jedes Bit der Eingänge angewendet.
+    </string>
+    <string name="elem_Not">Nicht</string>
+    <string name="elem_Not_tt">Invertiert den Eingang und gibt diesen Wert aus.
+        Es können auch Busse mit mehreren Bits pro Eingang verwendet werden. In diesem Fall wird jedes einzelne Bit des
+        Eingangs invertiert.
+    </string>
+    <string name="elem_Not_pin_in">Der Eingangswert des Inverters.</string>
+    <string name="elem_Not_pin_out">Gibt den negierten Eingangswert aus.</string>
+    <string name="elem_LookUpTable">LookUpTable</string>
+    <string name="elem_LookUpTable_short">LUT</string>
+    <string name="elem_LookUpTable_tt">Erzeugt einen Ausgabewert aus einer Tabelle, indem aus den Eingangsbits ein
+        Tabellenindex gebildet wird. Der Wert an dieser Position wird ausgegeben.
+        Auf diese Weise kann jedes kombinatorische Gatter erzeugt werden.
+    </string>
+    <string name="elem_LookUpTable_pin_in">Eingang {0}. Der Eingang legt, in Kombination mit den anderen Eingängen,
+        die Adresse des gewünschten Ausgabewertes fest.</string>
+    <string name="elem_LookUpTable_pin_out">Gibt den Wert an der ausgewählten Adresse aus.</string>
+    <string name="elem_Delay">Verzögerung</string>
+    <string name="elem_Delay_tt">Verzögert ein Signal für eine einstellbare Anzahl an Gatterlaufzeiten.
+        Alle übrigen Bauteile in Digital haben genau eine Gatterlaufzeit Verzögerung.
+        Mit diesem Bauteil lassen sich damit beliebige Laufzeiten realisieren.
+    </string>
+    <string name="elem_Delay_pin_in">Eingang für das zu verzögernde Signal.</string>
+    <string name="elem_Delay_pin_out">Das um eine Gatterlaufzeit verzögerte Eingangssignal.</string>
+
+
+    <!-- IO -->
+    <string name="elem_Out">Ausgang</string>
+    <string name="elem_Out_tt">Kann genutzt werden, um ein Ausgangssignal in einer Schaltung anzuzeigen.
+        Dieses Element wird auch genutzt, um eine Verbindung zu einer einbettenden Schaltung
+        herzustellen. In diesem Fall ist der Anschluss bidirektional.
+        Wird zudem verwendet, um einen Hardware Pin zuzuordnen, wenn Code für ein CPLD oder FPGA erzeugt wird.</string>
+    <string name="elem_Out_pin_in">Der hier angelegte Wert wird als Ausgangswert bereit gestellt.</string>
+    <string name="elem_LED">LED</string>
+    <string name="elem_LED_tt">Eine Leuchtdiode, welche beispielsweise zur Visualisierung eines Ausgangswertes verwendet
+        werden kann. Nimmt ein Bit entgegen. Leuchtet, wenn der Eingang auf 1 gesetzt ist.</string>
+    <string name="elem_LED_pin_in">LED Eingang. LED leuchtet, wenn Eingang auf 1 gesetzt ist.</string>
+    <string name="elem_RGBLED">RGB-LED</string>
+    <string name="elem_RGBLED_tt">Eine RGB-Leuchtdiode dessen Farbe über drei Eingänge kontrolliert werden kann.
+        An jedem der drei Eingängen wird ein Farbkanal angeschlossen.</string>
+    <string name="elem_RGBLED_pin_R">Der rote Farbkanal.</string>
+    <string name="elem_RGBLED_pin_G">Der grüne Farbkanal.</string>
+    <string name="elem_RGBLED_pin_B">Der blaue Farbkanal.</string>
+    <string name="elem_In">Eingang</string>
+    <string name="elem_In_tt">Kann genutzt werden, um ein Eingangssignal in einer Schaltung interaktiv per Maus zu
+        verändern. Dieses Element wird auch genutzt, um eine Verbindung zu einer einbettenden Schaltung
+        herzustellen. In diesem Fall ist der Anschluss bidirektional.
+        Wird zudem verwendet, um einen Hardware Pin zuzuordnen, wenn Code für ein CPLD oder FPGA erzeugt wird.</string>
+    <string name="elem_In_pin_out">An diesem Ausgang wird der anliegende Wert ausgegeben.</string>
+
+    <string name="elem_DipSwitch">DIP-Schalter</string>
+    <string name="elem_DipSwitch_tt">Einfacher Schiebeschalter, der High oder Low ausgeben kann.</string>
+    <string name="elem_DipSwitch_pin_out">Der Ausgabewert des Schalters.</string>
+
+    <string name="elem_Clock">Takteingang</string>
+    <string name="elem_Clock_tt">Ein Taktsignal. Dieses Taktsignal kann über die Echtzeituhr gesteuert werden.
+        Abhängig von der Komplexität der Schaltung kann die erreichte Taktfrequenz geringer sein als der vorgegebene
+        Wert. Ist die Frequenz größer als 50Hz, wird nicht mehr bei jedem Taktsignal die grafische Darstellung der
+        Schaltung aktualisiert, sodass die Leitungsfarben nicht mehr aktualisiert werden.
+        Ist die Echtzeituhr nicht aktiviert, kann der Takt durch Mausklicks weiter geschaltet werden.
+        Wird auch verwendet, um einen Hardware Pin zuzuordnen, wenn Code für ein CPLD oder FPGA erzeugt wird.
+    </string>
+    <string name="elem_Clock_pin_C">Wechselt im vorgegebenen Takt zwischen 0 und 1.</string>
+    <string name="elem_Button">Taster</string>
+    <string name="elem_Button_tt">Ein einfacher Taster, welcher in seinen Ausgangszustand zurückkehrt, wenn er nicht gehalten wird.</string>
+    <string name="elem_Button_pin_out">Das Ausgangssignal des Tasters.</string>
+    <string name="elem_ButtonLED">Taster mit LED</string>
+    <string name="elem_ButtonLED_tt">Ein einfacher Taster, welcher in seinen Ausgangszustand zurückkehrt, wenn er nicht gehalten wird.
+        Der Taster verfügt über eine LED, die über ein Eingangssignal geschaltet werden kann.</string>
+    <string name="elem_ButtonLED_pin_out">Das Ausgangssignal des Tasters.</string>
+    <string name="elem_ButtonLED_pin_in">Eingang zur Steuerung der LED.</string>
+    <string name="elem_Text">Text</string>
+    <string name="elem_Text_tt">Zeigt einen einfachen Text in der Schaltung an.
+        Hat keine weitere Funktion für die Simulation.
+        Der Text kann im Attribute-Dialog geändert werden.
+    </string>
+    <string name="elem_Rectangle">Rechteck</string>
+    <string name="elem_Rectangle_tt">Zeigt ein einfaches Rechteck in der Schaltung an.
+        Hat keine weitere Funktion für die Simulation. Wird als Überschrift ein Minuszeichen eingegeben, entfällt
+        die Überschrift.
+    </string>
+    <string name="elem_Probe">Messwert</string>
+    <string name="elem_Probe_tt">Ein Messwert, welcher im Messwertgraphen bzw. in der Messwertetabelle dargestellt wird.
+        Dieses Element kann verwendet werden, um auf einfache Weise Werte aus eingebetteten Schaltungen zu beobachten.
+        Hat keine weitere Funktion für die Simulation.
+    </string>
+    <string name="elem_Probe_pin_in">Hier wird der Messwert angeschlossen.</string>
+
+
+    <!-- IO more -->
+    <string name="elem_LightBulb">Glühlämpchen</string>
+    <string name="elem_LightBulb_tt">Glühlämpchen mit zwei Anschlüssen: Wenn ein Strom fließt, leuchtet das Lämpchen.
+        Die Stromrichtung spielt keine Rolle. Das Lämpchen leuchtet also, wenn die Eingänge unterschiedliche Werte haben.
+        Das Lämpchen verhält sich damit ähnlich wie ein XOr Gatter.
+    </string>
+    <string name="elem_LightBulb_pin_A">Anschluss</string>
+    <string name="elem_LightBulb_pin_B">Anschluss</string>
+
+    <string name="elem_PolarityAwareLED">LED mit zwei Anschlüssen</string>
+    <string name="elem_PolarityAwareLED_tt">LED mit zwei Anschlüssen für die Kathode und die Anode. Die LED leuchtet
+        nur, wenn die Anode auf High und die Kathode auf Low gelegt wird.</string>
+    <string name="elem_PolarityAwareLED_pin_A">Die Anode der LED.</string>
+    <string name="elem_PolarityAwareLED_pin_C">Die Kathode der LED.</string>
+
+    <string name="elem_Seven-Seg">Siebensegmentanzeige</string>
+    <string name="elem_Seven-Seg_tt">Siebensegmentanzeige, bei der jedes Segment über einen eigenen Eingang gesteuert
+        werden kann.</string>
+    <string name="elem_Seven-Seg_pin_a">Dieser Eingang steuert die obere horizontale Linie.</string>
+    <string name="elem_Seven-Seg_pin_b">Dieser Eingang steuert die obere rechte vertikale Linie.</string>
+    <string name="elem_Seven-Seg_pin_c">Dieser Eingang steuert die untere rechte vertikale Linie.</string>
+    <string name="elem_Seven-Seg_pin_d">Dieser Eingang steuert die untere horizontale Linie.</string>
+    <string name="elem_Seven-Seg_pin_e">Dieser Eingang steuert die untere linke vertikale Linie.</string>
+    <string name="elem_Seven-Seg_pin_f">Dieser Eingang steuert die obere linke vertikale Linie.</string>
+    <string name="elem_Seven-Seg_pin_g">Dieser Eingang steuert die mittlere horizontale Linie.</string>
+    <string name="elem_Seven-Seg_pin_dp">Dieser Eingang steuert den Dezimalpunkt.</string>
+    <string name="elem_Seven-Seg_pin_cc">Gemeinsame Kathode. Nur wenn hier eine Null anliegt, können die LEDs leuchten.</string>
+    <string name="elem_Seven-Seg_pin_ca">Gemeinsame Anode. Nur wenn hier eine Eins anliegt, können die LEDs leuchten.</string>
+    <string name="elem_Seven-Seg-Hex">Siebensegmentanzeige Hex</string>
+    <string name="elem_Seven-Seg-Hex_tt">Siebensegmentanzeige mit einem 4 Bit hexadezimalen Eingang.</string>
+    <string name="elem_Seven-Seg-Hex_pin_d">Der 4-Bit-Wert dieses Eingangs wird als Hex-Ziffer dargestellt.</string>
+    <string name="elem_Seven-Seg-Hex_pin_dp">Dieser Eingang steuert den Dezimalpunkt.</string>
+
+    <string name="elem_SixteenSeg">16-Segement Anzeige</string>
+    <string name="elem_SixteenSeg_tt">Der LED Eingang verfügt über 16 Bits welche die Segmente steuern. Der zweite Eingang steuert den Dezimalpunkt.</string>
+    <string name="elem_SixteenSeg_pin_led">Bus mit 16-Bits zur Ansteuerung der LEDs.</string>
+    <string name="elem_SixteenSeg_pin_dp">Dieser Eingang steuert den Dezimalpunkt.</string>
+
+    <string name="elem_LedMatrix">LED-Matrix</string>
+    <string name="elem_LedMatrix_tt">Eine Matrix aus LEDs. Die LEDs werden in einem eigenen Fenster dargestellt.
+        Die LEDs einer Spalte der Anzeige werden durch ein Datenwort gesteuert.
+        An einem weiteren Eingang wird die aktuelle Spalte ausgewählt. Es Wird damit eine gemultiplexte Anzeige realisiert.
+        Die LEDs können in der Simulation unendlich lange nachleuchten, um ein Flimmern der Anzeige zu verhindern.
+    </string>
+    <string name="elem_LedMatrix_pin_r-data">Der Zeilen-Zustand der LEDs einer Spalte.
+        Jedes Bit in diesem Datenwort repräsentiert den Zustand einer Zeile der aktuellen Spalte.
+    </string>
+    <string name="elem_LedMatrix_pin_c-addr">Die Nummer der aktuellen Spalte, dessen Zustand gerade am anderen Eingang anliegt.</string>
+    <string name="elem_Data">Messwertgraph</string>
+    <string name="elem_Data_tt">Zeigt einen Messwertgraphen innerhalb des Schaltkreisbereichs.
+        Es können sowohl komplette Taktschritte als auch einzelne Gatter-Veränderungen angezeigt werden.
+        Hat keine weitere Funktion für die Simulation.
+    </string>
+    <string name="elem_RotEncoder">Drehencoder</string>
+    <string name="elem_RotEncoder_tt">Drehknopf mit Drehencoder zur Erfassung einer Drehbewegung.</string>
+    <string name="elem_RotEncoder_pin_A">Encodersignal A</string>
+    <string name="elem_RotEncoder_pin_B">Encodersignal B</string>
+    <string name="elem_Keyboard">Tastatur</string>
+    <string name="elem_Keyboard_tt">Eine Tastatur, welche zur Eingabe von Text verwendet werden kann.
+        Dieses Element puffert die Eingaben, welche dann ausgelesen werden können.
+        Es wird ein eigenes Fenster für die Eingabe geöffnet.
+    </string>
+    <string name="elem_Keyboard_pin_C">Takt. Eine steigende Flanke entfernt das älteste Zeichen aus dem Buffer.</string>
+    <string name="elem_Keyboard_pin_en">Wenn gesetzt, ist der Ausgang D aktiv und ein Tastendruck wird ausgegeben.
+        Ist gleichzeitig die Freigabe für den Takt.
+    </string>
+    <string name="elem_Keyboard_pin_D">Die letzte Taste oder 0, wenn keine Taste gedrückt.
+        Ausgegeben wird der 16 Bit Java char-Wert.
+    </string>
+    <string name="elem_Keyboard_pin_av">Dieser Ausgang zeigt an, dass Zeichen vorhanden sind.
+        Er kann genutzt werden, um einen Interrupt auszulösen.
+    </string>
+
+    <string name="elem_Terminal">Terminal</string>
+    <string name="elem_Terminal_tt">Ein Terminal, auf dem ASCII-Zeichen ausgegeben werden können.
+        Öffnet ein eigenes Fenster, um die Ausgabe anzuzeigen.
+    </string>
+    <string name="elem_Terminal_pin_C">Takteingang. Eine steigende Flanke gibt das anliegende Datenwort auf dem Terminal
+        aus.
+    </string>
+    <string name="elem_Terminal_pin_D">Über diesen Eingang werden die anzuzeigenden Daten an das Terminal
+        weitergegeben.
+    </string>
+    <string name="elem_Terminal_pin_en">Ein High an diesem Eingang aktiviert den Takteingang.</string>
+
+    <string name="elem_VGA">VGA Bildschirm</string>
+    <string name="elem_VGA_tt">Analysiert die eingehenden Video-Signale und zeigt die entsprechende Grafik an.
+        Da die Simulation nicht in Echtzeit laufen kann, wird zusätzlich zu den Videosignalen der Pixeltakt benötigt.</string>
+    <string name="elem_VGA_pin_R">Der rote Farbanteil</string>
+    <string name="elem_VGA_pin_G">Der grüne Farbanteil</string>
+    <string name="elem_VGA_pin_B">Der blaue Farbanteil</string>
+    <string name="elem_VGA_pin_H">Das horizontale Synchronisationssignal</string>
+    <string name="elem_VGA_pin_V">Das vertikale Synchronisationssignal</string>
+    <string name="elem_VGA_pin_C">Der Pixeltakt</string>
+
+    <string name="elem_MIDI">MIDI</string>
+    <string name="elem_MIDI_tt">Nutzt das MIDI-System, um Noten abzuspielen.</string>
+    <string name="elem_MIDI_pin_N">Note</string>
+    <string name="elem_MIDI_pin_V">Lautstärke</string>
+    <string name="elem_MIDI_pin_OnOff">Wenn gesetzt, enspricht das dem Drücken einer Keyboard-Taste (key down).
+        Wenn nicht gesetzt, entspricht das einem Loslassen der Taste (key up).</string>
+    <string name="elem_MIDI_pin_en">Wenn dieser eingang high ist, kann der Baustein angesprochen werden.</string>
+    <string name="elem_MIDI_pin_PC">Wenn gesetzt, wird mit dem Wert an Eingang N das Programm (Instrument) gewechselt.</string>
+    <string name="elem_MIDI_pin_C">Takteingang</string>
+
+    <!-- Leitungen -->
+
+    <string name="elem_Ground">Masse</string>
+    <string name="elem_Ground_tt">Eine Masseverbindung. Gibt immer Null aus.</string>
+    <string name="elem_Ground_pin_out">Dieser Ausgang gibt immer 0 aus.</string>
+    <string name="elem_VDD">Betriebsspannung</string>
+    <string name="elem_VDD_tt">Anschluss zur Betriebsspannung. Gibt immer Eins aus.</string>
+    <string name="elem_VDD_pin_out">Dieser Ausgang gibt immer 1 aus.</string>
+    <string name="elem_Const">Konstante</string>
+    <string name="elem_Const_tt">Ein Element, welches einen konstanten Wert ausgibt. Die Konstante kann über den Attribute-Dialog festgelegt werden.</string>
+    <string name="elem_Const_pin_out">Gibt den gesetzten Wert als Konstante aus.</string>
+    <string name="elem_Tunnel">Tunnel</string>
+    <string name="elem_Tunnel_tt">Verbindet Elemente, ohne eine Leitung zu ziehen. Alle Tunnelelemente, welche denselben
+        Netznamen tragen, sind miteinander verbunden. Der Tunnel ist immer lokal, es können keine Verbindungen über
+        Schaltungsgrenzen hinaus erzeugt werden. Unbenannte Tunnel haben keine Funktion.</string>
+    <string name="elem_Tunnel_pin_in">Anschluss des Tunnels.</string>
+    <string name="elem_Splitter">Splitter/Merger</string>
+    <string name="elem_Splitter_tt">Führt mehrere Leitungen zu einem gemeinsamen Bus zusammen, bzw. splittet diesen wieder auf.
+        Mit Bussen wird es möglich z.B. 16 Bit Verbindungen zu erzeugen, ohne 16 einzelne Leitungen verlegen zu müssen.
+        Alle 16 Verbindungen können zu einer Leitung zusammengefasst werden. Der Splitter hat eine Richtung, er kann Signale
+        also nur in eine Richtung weitergeben.
+    </string>
+    <string name="elem_Splitter_pin_in">Die Eingangsbits {0} des Splitters.</string>
+    <string name="elem_Splitter_pin_in_one">Das Eingangsbit {0} des Splitters.</string>
+    <string name="elem_Splitter_pin_out">Die Ausgangsbits {0} des Splitters.</string>
+    <string name="elem_Splitter_pin_out_one">Das Ausgangsbit {0} des Splitters.</string>
+
+    <string name="elem_BusSplitter">Bidirektionaler Splitter</string>
+    <string name="elem_BusSplitter_tt">Kann für Datenbusse verwendet werden und erleichtert vor allem den Aufbau
+        von Speicherbausteinen im DIL-Gehäuse, da die Implementierung des Datenbusses erleichtert wird.</string>
+    <string name="elem_BusSplitter_pin_OE">Wenn gesetzt, wird der gemeinsame Datenanschluss D an den Bitausgängen D[i]
+        ausgegeben, wenn nicht, werden die Einzelbits D[i] am gemeinamen Ausgang D ausgegeben.</string>
+    <string name="elem_BusSplitter_pin_D">Der gemeinsame Datenanschluss.</string>
+    <string name="elem_BusSplitter_pin_D_N">Das Datenbit {0} des Bus-Splitters.</string>
+
+    <string name="elem_PullUp">Pull-Up Widerstand</string>
+    <string name="elem_PullUp_pin_out">Ein "Weak High".</string>
+    <string name="elem_PullUp_tt">Ist eine Leitung hochohmig, zieht sie ein Pull-Up Widerstand zu High.
+        Ist eine Leitung nicht hochohmig, hat das Element keine Wirkung.</string>
+    <string name="elem_PullDown">Pull-Down Widerstand</string>
+    <string name="elem_PullDown_pin_out">Ein "Weak Low".</string>
+    <string name="elem_PullDown_tt">Ist eine Leitung hochohmig, zieht sie ein Pull-Down Widerstand zu Low.
+        Ist eine Leitung nicht hochohmig, hat das Element keine Wirkung.</string>
+    <string name="elem_Driver">Treiber</string>
+    <string name="elem_Driver_tt">Ein Treiber kann dazu verwendet werden, ein Datenwort nur unter speziellen Voraussetzungen auf eine andere Leitung weiterzureichen.
+        Gesteuert wird der Treiber durch den sel Eingang.
+        Ist der sel Eingang auf 1 gesetzt, wird der am Eingang anliegende Wert zum Ausgang gereicht.
+        Ist der Eingang 0, ist der Ausgang hochohmig.
+    </string>
+    <string name="elem_Driver_pin_in">Das Eingangssignal des Treibers.</string>
+    <string name="elem_Driver_pin_out">Gibt den am Eingang anliegenden Wert aus, wenn sel auf 1 gesetzt ist. Ist sel auf Null gesetzt, ist der Ausgang hochohmig.</string>
+    <string name="elem_Driver_pin_sel">Eingang zum Steuern des Treibers.
+        Ist dieser Eingang auf 1 gesetzt, wird der am Eingang anliegende Wert zum Ausgang gereicht. Ist der Eingang 0, ist der Ausgang hochohmig.</string>
+    <string name="elem_DriverInvSel">Treiber, invertierte Auswahl</string>
+    <string name="elem_DriverInvSel_tt">Ein Treiber kann dazu verwendet werden, ein Datenwort nur unter speziellen
+        Voraussetzungen auf eine andere Leitung weiterzureichen.
+        Gesteuert wird der Treiber durch den sel Eingang.
+        Ist der sel Eingang auf 0 gesetzt, wird der am Eingang anliegende Wert zum Ausgang gereicht.
+        Ist der Eingang 1, ist der Ausgang hochohmig.
+    </string>
+    <string name="elem_DriverInvSel_pin_in">Das Eingangssignal des Treibers.</string>
+    <string name="elem_DriverInvSel_pin_sel">Eingang zum Steuern des Treibers.
+        Ist dieser Eingang auf 0 gesetzt, wird der am Eingang anliegende Wert zum Ausgang gereicht. Ist der Eingang 1,
+        ist der Ausgang hochohmig.
+    </string>
+    <string name="elem_DriverInvSel_pin_out">Gibt den am Eingang anliegenden Wert aus, wenn der Selection Eingang auf 0
+        gesetzt ist.
+    </string>
+
+    <string name="elem_PinControl">Pinsteuerung</string>
+    <string name="elem_PinControl_tt">Steuerlogik für einen bidirektionalen Pin.
+        Diese ist nur im Rahmen der VHDL- oder Verilog-Generierung erforderlich, um einen bidirektionalen HDL-Port zu
+        erstellen!
+        Wenn Sie keinen bidirektionalen IO-Port auf einem FPGA verwenden wollen, verwenden Sie diese Komponente nicht!
+        Die Pinsteuerung kann nicht in einer eingebetteten Schaltung verwendet werden! Sie ist nur auf der obersten
+        Schaltungsebene erlaubt!
+    </string>
+    <string name="elem_PinControl_pin_wr">Die auszugebenden Daten</string>
+    <string name="elem_PinControl_pin_oe">Aktiviert die Ausgabe</string>
+    <string name="elem_PinControl_pin_rd">Die zu lesenden Daten.</string>
+    <string name="elem_PinControl_pin_pin">Der Anschluss für den eigentlichen Pin. Hier sollte nur noch ein einzelner
+        Ausgang angeschlossen werden.
+    </string>
+
+    <!-- Plexers  -->
+
+    <string name="elem_Multiplexer">Multiplexer</string>
+    <string name="elem_Multiplexer_tt">Ein Baustein, welcher den Wert eines der Eingänge am Ausgang ausgibt.
+        Über den sel-Eingang wird ausgewählt, welcher der Eingänge ausgegeben werden soll.
+    </string>
+    <string name="elem_Multiplexer_input">Der {0}. Dateneingang des Multiplexers.</string>
+    <string name="elem_Multiplexer_output">Ausgeben wird der Wert, der am gewählten Dateneingang anliegt.</string>
+    <string name="elem_Multiplexer_pin_sel">Mit dieser Leitung wird der Dateneingang ausgewählt, welcher am Ausgang
+        ausgegeben werden soll.
+    </string>
+    <string name="elem_Demultiplexer">Demultiplexer</string>
+    <string name="elem_Demultiplexer_tt">Ein Baustein, welcher einen Eingangswert auf verschiedene Ausgänge ausgeben kann.
+        Gibt das Eingangssignal auf einem wählbaren Ausgang aus. Die anderen Ausgänge werden auf den Vorgabewert gesetzt.</string>
+    <string name="elem_Demultiplexer_pin_sel">Mit dieser Leitung wird der Datenausgang ausgewählt, auf welchem der Eingangswert ausgegeben werden soll.</string>
+    <string name="elem_Demultiplexer_pin_in">Der Wert dieses Eingangs wird auf einen der Datenausgänge geschaltet.</string>
+    <string name="elem_Demultiplexer_output">Datenausgang {0}.</string>
+    <string name="elem_Decoder">Dekoder</string>
+    <string name="elem_Decoder_tt">Eine wählbare Ausgangsleitung geht auf Eins, alle anderen sind Null.</string>
+    <string name="elem_Decoder_output">Ausgang {0}. Wenn über sel ausgewählt, ist dieser Ausgang 1, sonst 0.</string>
+    <string name="elem_Decoder_pin_sel">Mit dieser Leitung wird der zu aktivierende Ausgang ausgewählt.
+        Sein Wert gibt den auf 1 zu schaltenden Ausgang an.</string>
+    <string name="elem_BitSelector">Bitwähler</string>
+    <string name="elem_BitSelector_tt">Wählt aus einem Datenbus ein einzelnes Bit aus.</string>
+    <string name="elem_BitSelector_pin_in">Der Eingangsbus</string>
+    <string name="elem_BitSelector_pin_sel">Dieser Eingang wählt das Bit aus.</string>
+    <string name="elem_BitSelector_pin_out">Das ausgewählte Bit.</string>
+
+    <string name="elem_PriorityEncoder">Prioritätsencoder</string>
+    <string name="elem_PriorityEncoder_short">Priority</string>
+    <string name="elem_PriorityEncoder_tt">Ist einer der Eingänge gesetzt, wird dessen Nummer ausgegeben.
+        Sind mehrere Eingänge gleichzeitig gesetzt, wird die höchsten Nummer ausgegeben.
+    </string>
+    <string name="elem_PriorityEncoder_pin_num">Nummer des gesetzten Eingangs.</string>
+    <string name="elem_PriorityEncoder_pin_any">Wenn dieser Ausgang gesetzt ist, ist mindestens einer der Eingänge
+        gesetzt. Dieser Ausgang ist die Oder-Verknüpfung aller Eingänge.</string>
+    <string name="elem_PriorityEncoder_input">Der {0}. Eingang des PriorityEncoder</string>
+
+    <!-- flip flops-->
+
+    <string name="elem_RS_FF_AS">RS-FlipFlop</string>
+    <string name="elem_RS_FF_AS_short">RS</string>
+    <string name="elem_RS_FF_AS_tt">Ein Baustein, welcher ein einzelnes Bit speichern kann.
+        Bietet die Funktionen "Setzen" und "Rücksetzen".
+        Werden beide Eingänge auf Eins geschaltet, geben auch beide Ausgänge eine Eins aus.
+        Wenn beide Eingänge gleichzeitig zurück auf Null wechseln, ist der Endzustand unbestimmt.
+    </string>
+    <string name="elem_RS_FF_AS_pin_S">Der Setzen-Eingang. Mit diesem Eingang wird das gespeicherte Bit gesetzt.</string>
+    <string name="elem_RS_FF_AS_pin_R">Der Rücksetzen-Eingang. Mit diesem Eingang wird das gespeicherte Bit zurückgesetzt.</string>
+    <string name="elem_RS_FF_AS_pin_Q">Gibt den gespeicherten Wert aus.</string>
+    <string name="elem_RS_FF_AS_pin_~Q">Gibt den gespeicherten Wert negiert zurück.</string>
+
+    <string name="elem_RS_FF">RS-FlipFlop, getaktet</string>
+    <string name="elem_RS_FF_short">RS</string>
+    <string name="elem_RS_FF_tt">Ein Baustein, welcher ein einzelnes Bit speichern kann.
+        Bietet die Funktionen "Setzen" und "Rücksetzen".
+        Sind bei der steigenden Flanke des Taktes beide Eingänge (S,R) gesetzt, nimmt das Flipflop einen
+        zufälligen Zustand ein.
+    </string>
+    <string name="elem_RS_FF_pin_S">Der Setzen-Eingang. Mit diesem Eingang wird das gespeicherte Bit gesetzt.</string>
+    <string name="elem_RS_FF_pin_C">Der Takteingang. Eine steigende Flanke veranlasst die Zustandsänderung.</string>
+    <string name="elem_RS_FF_pin_R">Der Rücksetzen-Eingang. Mit diesem Eingang wird das gespeicherte Bit zurückgesetzt.</string>
+    <string name="elem_RS_FF_pin_Q">Gibt den gespeicherten Wert aus.</string>
+    <string name="elem_RS_FF_pin_~Q">Gibt den gespeicherten Wert negiert zurück.</string>
+    <string name="elem_JK_FF">JK-FlipFlop</string>
+    <string name="elem_JK_FF_short">JK</string>
+    <string name="elem_JK_FF_tt">Bietet die Funktionen zum
+        Speichern (J=K=0), Setzen (J=1, K=0), Rücksetzen (J=0, K=1) und Wechseln (J=K=1).
+        Ein Zustandswechsel findet nur bei einer steigenden Flanke am Eingang C statt.</string>
+    <string name="elem_JK_FF_pin_J">Der Setzen-Eingang des Flipflops.</string>
+    <string name="elem_JK_FF_pin_C">Takteingang. Eine steigende Flanke initiiert den Zustandswechsel.</string>
+    <string name="elem_JK_FF_pin_K">Der Rücksetzen-Eingang des Flipflops.</string>
+    <string name="elem_JK_FF_pin_Q">Gibt den gespeicherten Wert aus.</string>
+    <string name="elem_JK_FF_pin_~Q">Gibt den gespeicherten Wert negiert aus.</string>
+    <string name="elem_D_FF">D-FlipFlop</string>
+    <string name="elem_D_FF_short">D</string>
+    <string name="elem_D_FF_tt">Ein Baustein zum Speichern eines Bits.
+        Der an Eingang D anliegende Wert wird bei einer steigenden Flanke an Eingang C gespeichert.
+        Die Bitbreite kann gewählt werden, so dass mehrere Bits gespeichert werden können.
+    </string>
+    <string name="elem_D_FF_pin_D">Das zu speichernde Bit.</string>
+    <string name="elem_D_FF_pin_C">Takt des Flipflops. Wechselt dieser Wert auf 1, wird der an D anliegende Wert abgespeichert.</string>
+    <string name="elem_D_FF_pin_Q">Gibt den gespeicherten Wert zurück.</string>
+    <string name="elem_D_FF_pin_~Q">Gibt den gespeicherten Wert negiert zurück.</string>
+    <string name="elem_T_FF">T-FlipFlop</string>
+    <string name="elem_T_FF_short">T</string>
+    <string name="elem_T_FF_tt">Speichert ein Bit, welches sich mit einem Eingang umschalten lässt.</string>
+    <string name="elem_T_FF_pin_T">Aktiviert die Umschaltfunktion.</string>
+    <string name="elem_T_FF_pin_C">Dieser Eingang schaltet das Flipflop um.
+        Wenn ein T-Eingang vorhanden ist, passiert das nur, wenn T auf 1 gesetzt ist.</string>
+    <string name="elem_T_FF_pin_Q">Gibt den gespeicherten Wert aus.</string>
+    <string name="elem_T_FF_pin_~Q">Gibt den gespeicherten Wert negiert aus.</string>
+    <string name="elem_JK_FF_AS">JK-FlipFlop, asynchron</string>
+    <string name="elem_JK_FF_AS_short">JK-AS</string>
+    <string name="elem_JK_FF_AS_tt">Bietet die Funktionen zum
+        Speichern (J=K=0), Setzen (J=1, K=0), Rücksetzen (J=0, K=1) und Wechseln (J=K=1).
+        Ein Zustandswechsel findet nur bei einer steigenden Flanke am Eingang C statt.
+        Es gibt zwei Eingänge, welche ein sofortiges Setzen bzw. Rücksetzen ohne Taktsignal erlauben.
+    </string>
+    <string name="elem_JK_FF_AS_pin_J">Der Setzen-Eingang des Flipflops.</string>
+    <string name="elem_JK_FF_AS_pin_C">Takteingang. Eine steigende Flanke initiiert den Zustandswechsel.</string>
+    <string name="elem_JK_FF_AS_pin_K">Der Rücksetzen-Eingang des Flipflops.</string>
+    <string name="elem_JK_FF_AS_pin_Q">Gibt den gespeicherten Wert aus.</string>
+    <string name="elem_JK_FF_AS_pin_~Q">Gibt den gespeicherten Wert negiert aus.</string>
+    <string name="elem_JK_FF_AS_pin_Set">asynchrones Setzen. Eine Eins an diesem Eingang setzt das Flipflop auf Eins.</string>
+    <string name="elem_JK_FF_AS_pin_Clr">asynchrones Löschen. Eine Eins an diesem Eingang setzt das Flipflop auf Null.</string>
+    <string name="elem_D_FF_AS">D-FlipFlop, asynchron</string>
+    <string name="elem_D_FF_AS_short">D-AS</string>
+    <string name="elem_D_FF_AS_tt">Ein Baustein zum Speichern eines Bits.
+        Der an Eingang D anliegende Wert wird bei einer steigenden Flanke an Eingang C gespeichert.
+        Es gibt zwei Eingänge, welche ein sofortiges Setzen bzw. Rücksetzen ohne Taktsignal erlauben.
+        Die Bitbreite kann gewählt werden, so dass mehrere Bits gespeichert werden können.
+    </string>
+    <string name="elem_D_FF_AS_pin_D">Das zu speichernde Bit.</string>
+    <string name="elem_D_FF_AS_pin_C">Takt des Flipflops. Wechselt dieser Wert auf 1, wird der an D anliegende Wert abgespeichert.</string>
+    <string name="elem_D_FF_AS_pin_Q">Gibt den gespeicherten Wert zurück.</string>
+    <string name="elem_D_FF_AS_pin_~Q">Gibt den gespeicherten Wert negiert zurück.</string>
+    <string name="elem_D_FF_AS_pin_Set">asynchrones Setzen. Eine Eins an diesem Eingang setzt alle gespeicherten Bits auf Eins.</string>
+    <string name="elem_D_FF_AS_pin_Clr">asynchrones Löschen. Eine Eins an diesem Eingang setzt alle gespeicherten Bits auf Null.</string>
+
+    <string name="elem_Monoflop">Monoflop</string>
+    <string name="elem_Monoflop_short">Mono</string>
+    <string name="elem_Monoflop_tt">Ein Monoflop wird bei einer steigenden Flanke am Takteingang gesetzt.
+        Nach einer einstellbaren Verzögerungszeit wird das Monoflop automatisch wieder gelöscht.
+        Das Monoflop ist retriggerbar. Es kann nur genutzt werden, wenn es genau ein Taktelement in der Schaltung gibt.
+        Dieses Taktelement wird dann für die Zeitbestimmung verwendet.
+    </string>
+    <string name="elem_Monoflop_pin_R">Reset Eingang. Eine Eins setzt das Monoflop auf Null zurück.</string>
+    <string name="elem_Monoflop_pin_C">Eine steigende Flanke an diesem Eingang setzt das Monoflop. Der Ausgang Q wird auf
+        Eins gesetzt. Nach Ablauf der Verzögerungszeit fällt Q wieder auf Null zurück.</string>
+    <string name="elem_Monoflop_pin_Q">Ausgang des Monoflops</string>
+    <string name="elem_Monoflop_pin_~Q">Invertierter Ausgang</string>
+
+    <!-- Speicher -->
+
+    <string name="elem_Register">Register</string>
+    <string name="elem_Register_short">Reg</string>
+    <string name="elem_Register_tt">Ein Baustein zum Speichern von Werten. Die Bitbreite kann gewählt werden.
+        Der an Eingang D anliegende Wert wird bei einer steigenden Flanke an Eingang C gespeichert.
+        Im Unterschied zu einem D Flipflop verfügt das Register über einen Freigabeeingang für den Takt.</string>
+    <string name="elem_Register_pin_D">Das zu speichernde Datenwort liegt hier an.</string>
+    <string name="elem_Register_pin_C">Der Takteingang. Eine steigende Flanke speichert den an D anliegenden Wert ab.</string>
+    <string name="elem_Register_pin_en">Nur wenn dieser Eingang 1 ist, kann gespeichert werden.</string>
+    <string name="elem_Register_pin_Q">Gibt den abgespeicherten Wert aus.</string>
+    <string name="elem_ROM">ROM</string>
+    <string name="elem_ROM_tt">Ein nichtflüchtiger Speicherbaustein welcher einmalig beschreibbar ist.
+        Die gespeicherten Daten können im Attribute-Dialog bearbeitet werden.
+    </string>
+    <string name="elem_ROM_pin_A">Dieser Eingang bestimmt die Speicheradresse des Datenwortes, welches ausgegeben werden soll.</string>
+    <string name="elem_ROM_pin_D">Hier wird das Datenwort ausgegeben, wenn am "Select"-Eingang eine 1 anliegt.</string>
+    <string name="elem_ROM_pin_sel">Ist dieser Pin high (1), ist der Ausgang aktiviert. Ist er low (0), ist der Ausgang hochohmig.</string>
+
+    <string name="elem_RAMDualPort">RAM, getrennte Ports</string>
+    <string name="elem_RAMDualPort_short">RAM</string>
+    <string name="elem_RAMDualPort_tt">Ein RAM Modul mit getrennten Daten-Anschlüssen für Lesen und Schreiben.
+        Es gibt einen Eingang für das Beschreiben und einen Ausgang für das Auslesen der gespeicherten Daten.</string>
+    <string name="elem_RAMDualPort_pin_A">Die Adresse, an der gelesen bzw. geschrieben wird.</string>
+    <string name="elem_RAMDualPort_pin_C">Der Takt. Eine steigende Flanke aktiviert das Speichern.</string>
+    <string name="elem_RAMDualPort_pin_Din">Die Daten, die gespeichert werden sollen.</string>
+    <string name="elem_RAMDualPort_pin_D">Ausgabe der gespeicherten Daten.</string>
+    <string name="elem_RAMDualPort_pin_ld">Ist diese Leitung high, wird der Ausgang aktiviert, und die Daten liegen dort an.</string>
+    <string name="elem_RAMDualPort_pin_str">Ist diese Leitung high, wird das Datenwort gespeichert, wenn der Takt ansteigt.</string>
+
+    <string name="elem_BlockRAMDualPort">Block-RAM, getrennte Ports</string>
+    <string name="elem_BlockRAMDualPort_short">RAM</string>
+    <string name="elem_BlockRAMDualPort_tt">Ein RAM Modul mit getrennten Daten-Anschlüssen für Lesen und Schreiben.
+        Es gibt einen Eingang für das Beschreiben und einen Ausgang für das Auslesen der gespeicherten Daten.
+        Dieser RAM-Baustein aktualisiert seinen Ausgang nur bei einer steigenden Flanke an der Clock.
+        Das erlaubt die Verwendung von Block-RAM in einem FPGA.
+    </string>
+    <string name="elem_BlockRAMDualPort_pin_A">Die Adresse, an der gelesen bzw. geschrieben wird.</string>
+    <string name="elem_BlockRAMDualPort_pin_C">Der Takt. A rising edge activates storing and reading.</string>
+    <string name="elem_BlockRAMDualPort_pin_Din">Die Daten, die gespeichert werden sollen.</string>
+    <string name="elem_BlockRAMDualPort_pin_D">Ausgabe der gespeicherten Daten.</string>
+    <string name="elem_BlockRAMDualPort_pin_str">Ist diese Leitung high, wird das Datenwort gespeichert, wenn der Takt ansteigt.</string>
+
+    <string name="elem_EEPROMDualPort">EEPROM, getrennte Ports</string>
+    <string name="elem_EEPROMDualPort_short">EEPROM</string>
+    <string name="elem_EEPROMDualPort_tt">Ein EEPROM Modul mit getrennten Daten-Anschlüssen für Lesen und Schreiben.
+        Es gibt einen Eingang für das Beschreiben und einen Ausgang für das Auslesen der gespeicherten Daten.</string>
+    <string name="elem_EEPROMDualPort_pin_A">Die Adresse, an der gelesen bzw. geschrieben wird.</string>
+    <string name="elem_EEPROMDualPort_pin_C">Der Takt. Eine steigende Flanke aktiviert das Speichern.</string>
+    <string name="elem_EEPROMDualPort_pin_Din">Die Daten, die gespeichert werden sollen.</string>
+    <string name="elem_EEPROMDualPort_pin_D">Ausgabe der gespeicherten Daten.</string>
+    <string name="elem_EEPROMDualPort_pin_ld">Ist diese Leitung high, wird der Ausgang aktiviert, und die Daten liegen dort an.</string>
+    <string name="elem_EEPROMDualPort_pin_str">Ist diese Leitung high, wird das Datenwort gespeichert, wenn der Takt ansteigt.</string>
+
+
+    <string name="elem_RAMSinglePort">RAM, bidirektionaler Port</string>
+    <string name="elem_RAMSinglePort_short">RAM</string>
+    <string name="elem_RAMSinglePort_tt">Ein RAM Module mit einem bidirektionalem Anschluss für das Lesen und Schreiben von Daten.</string>
+    <string name="elem_RAMSinglePort_pin_A">Die Adresse, an der gelesen und geschrieben wird.</string>
+    <string name="elem_RAMSinglePort_pin_C">Der Takt. Eine steigende Flanke aktiviert das Speichern.</string>
+    <string name="elem_RAMSinglePort_pin_D">Der bidirektionale Datenanschluss.</string>
+    <string name="elem_RAMSinglePort_pin_ld">Ist dieser Eingang 1, wird das Datenwort ausgegeben.</string>
+    <string name="elem_RAMSinglePort_pin_str">Ist dieser Eingang 1, wird mit steigendem Takt das Datenwort gespeichert.</string>
+    <string name="elem_RAMSinglePortSel">RAM, Chip Select</string>
+    <string name="elem_RAMSinglePortSel_short">RAM</string>
+    <string name="elem_RAMSinglePortSel_tt">Ein RAM-Baustein mit einem bidirektionalem Anschluss für das Lesen und Schreiben von Daten.
+        Es gibt einen CS-Eingang. Ist dieser Eingang low, ist der Baustein deaktiviert.
+        Mit diesem können mehrere solcher Bausteine mit einem Adressdekoder zu einem größeren RAM zusammen geschaltet werden.
+        Der Schreibzyklus läuft wie folgt ab: Indem CS auf high gesetzt wird, wird der Baustein ausgewählt.
+        Eine steigende Flanke an WE übernimmt die Adresse, und die folgende fallende Flanke an WE speichert die Daten.
+    </string>
+    <string name="elem_RAMSinglePortSel_pin_A">Die Adresse, an der gelesen und geschrieben wird.</string>
+    <string name="elem_RAMSinglePortSel_pin_WE">Bei einer 1 werden die Daten in das RAM geschrieben.</string>
+    <string name="elem_RAMSinglePortSel_pin_D">Der bidirektionale Datenanschluss.</string>
+    <string name="elem_RAMSinglePortSel_pin_CS">Ist dieser Eingang 1, ist der Baustein aktiv.</string>
+    <string name="elem_RAMSinglePortSel_pin_OE">Ist dieser Eingang 1, wird das Datenwort ausgegeben.</string>
+    <string name="elem_EEPROM">EEPROM</string>
+    <string name="elem_EEPROM_tt">Ein EEPROM-Baustein mit einem bidirektionalem Anschluss für das Lesen und Schreiben von Daten.
+        Es gibt einen CS-Eingang. Ist dieser Eingang low, ist der Baustein deaktiviert.
+        Der Dateninhalt wird gespeichert wie bei einem ROM. Er bleibt also erhalten, wenn die Simulation beendet
+        und neu gestartet wird.
+        Der Schreibzyklus läuft wie folgt ab: Indem CS auf high gesetzt wird, wird der Baustein ausgewählt.
+        Eine steigende Flanke an WE übernimmt die Adresse, und die folgende fallende Flanke an WE speichert die Daten.
+    </string>
+    <string name="elem_EEPROM_pin_A">Die Adresse, an der gelesen und geschrieben wird.</string>
+    <string name="elem_EEPROM_pin_WE">Bei einer 1 werden die Daten in das EEPROM geschrieben.</string>
+    <string name="elem_EEPROM_pin_D">Der bidirektionale Datenanschluss.</string>
+    <string name="elem_EEPROM_pin_CS">Ist dieser Eingang 1, ist der Baustein aktiv.</string>
+    <string name="elem_EEPROM_pin_OE">Ist dieser Eingang 1, wird das Datenwort ausgegeben.</string>
+    <string name="elem_GraphicCard">Grafik-RAM</string>
+    <string name="elem_GraphicCard_short">Gr-RAM</string>
+    <string name="elem_GraphicCard_tt">Wird verwendet, um Bitmap Grafiken anzuzeigen. Der Baustein verhält sich wie ein
+        RAM-Baustein mit dem Unterschied, dass der RAM-Inhalt als Grafik angezeigt wird. Jede Speicherstelle definiert
+        die Farbe eines Pixels, wobei eine feste Farbpalette verwendet wird.
+        Es werden zwei Grafikseiten angelegt, sodass ein Screen-Switching möglich ist (siehe Eingang B).
+        Die gesamte Speichergröße beträgt damit damit dx*dy*2 Speicherworte.
+        Die verwendete Palette ist wie folgt aufgebaut: Die Indizes 0-9 entsprechen den Farben Weiß, Schwarz, Rot,
+        Grün, Blau, Gelb, Türkis, Magenta, Orange und Pink. Die Indizes 32-63 bilden Grauwerte ab und die Indizes
+        64-127 repräsentieren 64 Farbwerte mit je zwei Bit pro Farbkanal. Dadurch ergibt sich eine einfache Palette,
+        die mit nur 7-Bit angesprochen werden kann.
+        Wird von der Architektur ein 16-Bit Index unterstützt, kann ab Index 0x8000 ein High-Color-Modus mit 5 Bit
+        pro Farbkanal verwendet werden, welcher 32768 Farben ermöglicht.
+    </string>
+    <string name="elem_GraphicCard_pin_A">Die Adresse, an der gelesen und geschrieben wird.</string>
+    <string name="elem_GraphicCard_pin_str">Ist dieser Eingang 1, wird mit steigendem Takt das Datenwort gespeichert.</string>
+    <string name="elem_GraphicCard_pin_C">Der Takt. Eine steigende Flanke aktiviert das Speichern.</string>
+    <string name="elem_GraphicCard_pin_ld">Ist dieser Eingang 1, wird das Datenwort ausgegeben.</string>
+    <string name="elem_GraphicCard_pin_B">Auswahl der anzuzeigenden Seite.
+        Mit diesem Eingang kann zwischen zwei Speicherseiten umgeschaltet werden.</string>
+    <string name="elem_GraphicCard_pin_D">Der bidirektionale Datenanschluss.</string>
+
+    <string name="elem_RAMDualAccess">RAM, Dual Port</string>
+    <string name="elem_RAMDualAccess_short">RAM</string>
+    <string name="elem_RAMDualAccess_tt">RAM mit einem Port, der das Beschreiben und Lesen des RAMs ermöglicht, und einem
+        zweiten Leseport. Dieser zweite Port kann verwendet werden, um einer Grafik-Logik Zugriff auf den Speicherinhalt
+        zu geben. Auf diese Weise kann ein Prozessor in das RAM schreiben, und eine Grafik-Logik kann das RAM
+        gleichzeitig auslesen.</string>
+    <string name="elem_RAMDualAccess_pin_1D">Ausgabeport 1</string>
+    <string name="elem_RAMDualAccess_pin_2D">Ausgabeport 2</string>
+    <string name="elem_RAMDualAccess_pin_1A">Die Adresse, an der über Port 1 gelesen bzw. geschrieben wird.</string>
+    <string name="elem_RAMDualAccess_pin_2A">Die Adresse, an der über Port 2 gelesen wird.</string>
+    <string name="elem_RAMDualAccess_pin_C">Der Takt. Eine steigende Flanke aktiviert das Speichern.</string>
+    <string name="elem_RAMDualAccess_pin_1Din">Die Daten, die gespeichert werden sollen.</string>
+    <string name="elem_RAMDualAccess_pin_ld">Ist diese Leitung high, wird der Ausgang D1 aktiviert, und die Daten liegen dort an.</string>
+    <string name="elem_RAMDualAccess_pin_str">Ist diese Leitung high, wird das Datenwort an D1 gespeichert, wenn der Takt ansteigt.</string>
+
+    <string name="elem_RegisterFile">Registerspeicher</string>
+    <string name="elem_RegisterFile_short">Register</string>
+    <string name="elem_RegisterFile_tt">Speicher mit einem Schreib- und zwei Leseports. Kann verwendet werden um
+        Prozessorregister zu implementieren.
+        Es können so gleichzeitig zwei Register gelesen und ein Drittes beschrieben werden.</string>
+    <string name="elem_RegisterFile_pin_Da">Inhalt des Registers a.</string>
+    <string name="elem_RegisterFile_pin_Db">Inhalt des Registers b.</string>
+    <string name="elem_RegisterFile_pin_Ra">Nummer des Registers a.</string>
+    <string name="elem_RegisterFile_pin_Rb">Nummer des Registers b.</string>
+    <string name="elem_RegisterFile_pin_Rw">Nummer des zu beschreibenden Registers.</string>
+    <string name="elem_RegisterFile_pin_we">Bei einer 1 werden die Daten in das Register Rw übernommen.</string>
+    <string name="elem_RegisterFile_pin_C">Takteingang</string>
+    <string name="elem_RegisterFile_pin_Din">Die zu schreibenden Daten.</string>
+
+    <string name="elem_Counter">Zähler</string>
+    <string name="elem_Counter_short">Zähler</string>
+    <string name="elem_Counter_tt">Ein einfacher Zähler-Baustein.
+        Zählt jede steigende Flanke am C Eingang und kann über den clr Eingang zurückgesetzt werden.
+        Die Bitbreite des Zählers kann im Attribute-Dialog festgelegt werden.</string>
+    <string name="elem_Counter_pin_C">Eingang des Taktsignals.</string>
+    <string name="elem_Counter_pin_clr">Setzt den Zähler synchron auf 0 zurück, wenn dieser Eingang auf 1 gesetzt wird.</string>
+    <string name="elem_Counter_pin_ovf">Overflow Ausgang. Wird auf 1 gesetzt, wenn der Zähler seinen Maximalwert hat und der en Eingang auf 1 gesetzt ist.</string>
+    <string name="elem_Counter_pin_out">Gibt den gezählten Wert aus.</string>
+    <string name="elem_Counter_pin_en">Der Zähler zählt nur, wenn dieser Eingang auf 1 gesetzt ist.</string>
+
+    <string name="elem_CounterPreset">Zähler, beschreibbar</string>
+    <string name="elem_CounterPreset_tt">Zähler, dessen Wert gesetzt werden kann. Zudem kann ein Maximalwert und eine Zählrichtung vorgegeben werden.</string>
+    <string name="elem_CounterPreset_short">Zähler</string>
+    <string name="elem_CounterPreset_pin_out">Gibt den gezählten Wert aus.</string>
+    <string name="elem_CounterPreset_pin_ovf">Overflow Ausgang. Wird auf 1 gesetzt, der 'en' Eingang auf 1 gesetzt ist
+        und wenn der Zähler beim Aufwärtszählen seinen Maximalwert erreicht, bzw. beim Abwärtszählen die 0 erreicht hat.</string>
+    <string name="elem_CounterPreset_pin_C">Eingang des Taktsignals.</string>
+    <string name="elem_CounterPreset_pin_clr">Setzt den Zähler synchron auf 0 zurück, wenn dieser Eingang auf 1 gesetzt wird.</string>
+    <string name="elem_CounterPreset_pin_en">Der Zähler zählt nur, wenn dieser Eingang auf 1 gesetzt ist.</string>
+    <string name="elem_CounterPreset_pin_dir">Gibt die Zählrichtung an. Eine 0 bedeutet aufwärts.</string>
+    <string name="elem_CounterPreset_pin_ld">Wenn gesetzt wird beim nächsten Taktsignal der Wert am Eingang 'in' in den Zähler übernommen.</string>
+    <string name="elem_CounterPreset_pin_in">Dieses Datenwort wird im Zähler gespeichert, wenn ld=1 gesetzt ist.</string>
+
+
+
+    <!--Arithmetik -->
+
+    <string name="elem_Add">Addierer</string>
+    <string name="elem_Add_short">Add</string>
+    <string name="elem_Add_tt">Ein Bauteil für einfache Additionen.
+        Führt eine Addition der Ganzzahlen an Eingang a und Eingang b durch (a+b).
+        Ist der Carry-Eingang gesetzt, wird das Ergebnis um Eins erhöht.</string>
+    <string name="elem_Add_pin_a">Erster Eingang für die Addition.</string>
+    <string name="elem_Add_pin_b">Zweiter Eingang für die Addition.</string>
+    <string name="elem_Add_pin_s">Das Ergebnis der Addition</string>
+    <string name="elem_Add_pin_c_i">Carry-Eingang. Wenn gesetzt, wird das Ergebnis um Eins erhöht.
+        Kann von vorhergehenden Bausteinen über den Carry-Out Ausgang gesetzt werden.</string>
+    <string name="elem_Add_pin_c_o">Ist gesetzt, wenn bei der Addition ein Übertrag aufgetreten ist.</string>
+    <string name="elem_Sub">Subtrahierer</string>
+    <string name="elem_Sub_short">Sub</string>
+    <string name="elem_Sub_tt">Ein Bauteil für einfache Subtraktionen.
+        Führt eine Subtraktion der Ganzzahlen an Eingang a und Eingang b durch (a-b).
+        Ist der Carry-Eingang gesetzt, wird das Ergebnis nochmals um 1 verringert.</string>
+    <string name="elem_Sub_pin_c_i">Carry-Eingang. Wenn gesetzt wird das Ergebnis um Eins verringert.</string>
+    <string name="elem_Sub_pin_a">Eingang a für die Subtraktion.</string>
+    <string name="elem_Sub_pin_b">Eingang b für die Subtraktion.</string>
+    <string name="elem_Sub_pin_s">Ausgang gibt das Ergebnis der Subtraktion aus.</string>
+    <string name="elem_Sub_pin_c_o">Carry-Ausgang. Gibt 1 aus, wenn bei der Subtraktion ein Überlauf aufgetreten ist.</string>
+    <string name="elem_Mul">Multiplizierer</string>
+    <string name="elem_Mul_short">Mult</string>
+    <string name="elem_Mul_tt">Ein Baustein für Multiplikation.
+        Multipliziert die an Eingang a und Eingang b anliegenden Ganzzahlen.
+    </string>
+    <string name="elem_Mul_pin_a">Eingang a für Multiplikation.</string>
+    <string name="elem_Mul_pin_b">Eingang b für Multiplikation.</string>
+    <string name="elem_Mul_pin_mul">Ausgang mit dem Ergebnis der Multiplikation.</string>
+    <string name="elem_Div">Dividierer</string>
+    <string name="elem_Div_short">Div</string>
+    <string name="elem_Div_tt">Ein Baustein für Divisionen.
+        Dividiert die an Eingang a anliegende Ganzzahl durch die an Eingang b anliegenden Ganzzahl.
+        Ist der Divisor Null, wird stattdessen durch Eins geteilt.
+        Bei vorzeichenbehafteter Division ist der Rest der Division immer positiv.
+    </string>
+    <string name="elem_Div_pin_a">Der Dividend</string>
+    <string name="elem_Div_pin_b">Der Divisor</string>
+    <string name="elem_Div_pin_q">Der ganzzahlige Quotient.</string>
+    <string name="elem_Div_pin_r">Der Rest der Division.</string>
+    <string name="elem_BarrelShifter">Bit-Schieber</string>
+    <string name="elem_BarrelShifter_short">shift</string>
+    <string name="elem_BarrelShifter_tt">Ein Baustein zum Schieben von Bits.
+        Verschiebt einen Wert um die am Eingang shift angegebene Anzahl von Bits.</string>
+    <string name="elem_BarrelShifter_pin_in">Eingang mit zu verschiebenden Bits.</string>
+    <string name="elem_BarrelShifter_pin_shift">Eingang mit Weite der Verschiebung.</string>
+    <string name="elem_BarrelShifter_pin_out">Ausgang mit dem Ergebnis der Verschiebeoperation.</string>
+    <string name="elem_Comparator">Komparator</string>
+    <string name="elem_Comparator_tt">Ein Baustein zum Vergleichen von Datenworten.
+        Vergleicht die Datenworte an Eingang a und Eingang b und setzt die Ausgänge entsprechend.</string>
+    <string name="elem_Comparator_pin_a">Eingang a für den Vergleich.</string>
+    <string name="elem_Comparator_pin_b">Eingang b für den Vergleich.</string>
+    <string name="elem_Comparator_pin_=">Ausgang ist 1, wenn die Werte an beiden Eingängen gleich sind.</string>
+    <string name="elem_Comparator_pin_&gt;">Ausgang ist 1, wenn Eingang a größer ist als Eingang b.</string>
+    <string name="elem_Comparator_pin_&lt;">Ausgang ist 1, wenn Eingang a kleiner ist als Eingang b</string>
+    <string name="elem_Neg">Negation</string>
+    <string name="elem_Neg_short">Neg</string>
+    <string name="elem_Neg_pin_in">Eingang des Datenworts, welches im 2-er Komplement negiert werden soll.</string>
+    <string name="elem_Neg_pin_out">Gibt das Ergebnis der Negation im 2-er Komplement zurück.</string>
+    <string name="elem_Neg_tt">Ein Baustein für die Negation von Datenworten im 2-er Komplement.</string>
+    <string name="elem_BitExtender">Biterweiterung</string>
+    <string name="elem_BitExtender_short">Biterw.</string>
+    <string name="elem_BitExtender_tt">Erweitert die Bitanzahl eines vorzeichenbehafteten Eingangswertes unter
+        Erhalt des Vorzeichens.
+        Ist der Eingang ein einzelnes Bit, wird dieses Bit auf allen Ausgangsbits ausgegeben.</string>
+    <string name="elem_BitExtender_pin_in">Eingangswert.
+        Die Eingangsbitzahl muss kleiner sein als die Ausgangsbitzahl!</string>
+    <string name="elem_BitExtender_pin_out">Vorzeichenrichtig erweiterter Eingangswert.
+        Die Eingangsbitzahl muss kleiner sein als die Ausgangsbitzahl!</string>
+    <string name="elem_BitCount">Bitzähler</string>
+    <string name="elem_BitCount_short">Bitzähl.</string>
+    <string name="elem_BitCount_tt">Gibt die Anzahl der 1-Bits im Eingangswert aus.</string>
+    <string name="elem_BitCount_pin_in">Die 1-Bits in diesem Datenwort werden gezählt.</string>
+    <string name="elem_BitCount_pin_out">Ausgang mit der Anzahl der gezählten 1-Bits.</string>
+
+
+    <!-- Schalter -->
+
+    <string name="elem_DiodeForward">Diode zu Plus</string>
+    <string name="elem_DiodeForward_tt">Vereinfachte unidirektionale Diode, die genutzt werden kann, um eine Leitung auf
+        Plus zu ziehen.
+        Wird verwendet, um ein "Wired Or" zu implementieren. Daher ist am Ausgang ein Pull Down Widerstand erforderlich!
+        Innerhalb der Simulation verhält sich eine Diode wie ein aktives Gatter mit dreiwerteiger Wertetabelle:
+        Ist der Eingang 1, ist auch der Ausgang 1. In den anderen Fällen (0 und hochohmig) ist der Ausgang hochohmig (High Z).
+        Damit können sich antiparallel zusammen geschaltete Dioden gegenseitig im high-Zustand halten, was mit realen
+        Dioden nicht möglich ist.
+        Es handelt sich um eine ideale Diode: In Durchlassrichtung gibt es keinen Spannungsabfall über der Diode.</string>
+    <string name="elem_DiodeForward_pin_in">Ist der Eingang 1, ist auch der Ausgang 1. In allen anderen Fällen ist der Ausgang hochohmig.</string>
+    <string name="elem_DiodeForward_pin_out">Ist der Eingang 1, ist auch der Ausgang 1. In allen anderen Fällen ist der Ausgang hochohmig.</string>
+    <string name="elem_DiodeBackward">Diode zu Masse</string>
+    <string name="elem_DiodeBackward_tt">Vereinfachte unidirektionale Diode, die genutzt werden kann, um eine Leitung
+        auf Masse zu ziehen.
+        Wird verwendet, um ein "Wired And" zu implementieren. Daher ist am Ausgang ein Pull Up Widerstand erforderlich!
+        Innerhalb der Simulation verhält sich eine Diode wie ein aktives Gatter mit dreiwerteiger Wertetabelle:
+        Ist der Eingang 0, ist auch der Ausgang 0. In den anderen Fällen (1 und hochohmig) ist der Ausgang hochohmig (High Z).
+        Damit können sich antiparallel zusammen geschaltete Dioden gegenseitig im low-Zustand halten, was mit realen
+        Dioden nicht möglich ist.
+        Es handelt sich um eine ideale Diode: In Durchlassrichtung gibt es keinen Spannungabfall über der Diode.</string>
+    <string name="elem_DiodeBackward_pin_in">Ist der Eingang 0, ist auch der Ausgang 0. In allen anderen Fällen ist der Ausgang hochohmig.</string>
+    <string name="elem_DiodeBackward_pin_out">Ist der Eingang 0, ist auch der Ausgang 0. In allen anderen Fällen ist der Ausgang hochohmig.</string>
+    <string name="elem_Switch">Schalter</string>
+    <string name="elem_Switch_pin">Einer der Anschlüsse des Schalters.</string>
+    <string name="elem_Switch_tt">Einfacher Schalter. Der Schalter hat keine Gatterlaufzeit.
+        Eine Signaländerung wird instantan von einem Ende des Schalters zum anderen propagiert.</string>
+    <string name="elem_SwitchDT">Wechselschalter</string>
+    <string name="elem_SwitchDT_tt">Einfacher Wechselschalter. Der Schalter hat keine Gatterlaufzeit.
+        Eine Signaländerung wird instantan von einem Ende des Schalters zum anderen propagiert.</string>
+    <string name="elem_Fuse">Fuse</string>
+    <string name="elem_Fuse_tt">Eine Sicherung, die verwendet werden kann, um einen einmal programmierbaren Speicher aufzubauen.</string>
+    <string name="elem_Fuse_pin_out1">Einer der Ausgänge der Sicherung.</string>
+    <string name="elem_Fuse_pin_out2">Einer der Ausgänge der Sicherung.</string>
+    <string name="elem_Relay">Relais</string>
+    <string name="elem_Relay_tt">Ein Relais ist ein Schalter, welcher über eine Spule umgeschaltet werden kann.
+        Wenn ein Strom durch das Relais fließt, wird der Schalter geöffnet bzw. geschlossen.
+        Es gibt keine Freilaufdiode, sodass die Stromrichtung keine Rolle spielt.
+        Der Schalter wird betätigt, wenn die Eingänge unterschiedliche Werte haben.
+        Das Relais verhält sich damit ähnlich wie ein XOr Gatter.</string>
+    <string name="elem_Relay_pin_in1">Ein Steuereingang des Relais.</string>
+    <string name="elem_Relay_pin_in2">Ein Steuereingang des Relais.</string>
+    <string name="elem_RelayDT">Relais mit Wechselkontakt</string>
+    <string name="elem_RelayDT_tt">Ein Relais ist ein Schalter, welcher über eine Spule umgeschaltet werden kann.
+        Wenn ein Strom durch das Relais fließt, wird der Schalter geöffnet bzw. geschlossen.
+        Es gibt keine Freilaufdiode, sodass die Stromrichtung keine Rolle spielt.
+        Der Schalter wird betätigt, wenn die Eingänge unterschiedliche Werte haben.
+        Das Relais verhält sich damit ähnlich wie ein XOr Gatter.</string>
+    <string name="elem_RelayDT_pin_in1">Ein Steuereingang des Relais.</string>
+    <string name="elem_RelayDT_pin_in2">Ein Steuereingang des Relais.</string>
+    <string name="elem_PFET">P-Kanal FET</string>
+    <string name="elem_PFET_tt">P-Kanal Feldeffekttransistor.
+        Der Bulk ist mit der pos. Versorgung verbunden. Der Transistor wird ohne eine Body-Diode simuliert.</string>
+    <string name="elem_PFET_pin_G">Gate</string>
+    <string name="elem_PFET_pin_S">Source</string>
+    <string name="elem_PFET_pin_D">Drain</string>
+    <string name="elem_NFET">N-Kanal FET</string>
+    <string name="elem_NFET_tt">N-Kanal Feldeffekttransistor.
+        Der Bulk ist mit Masse verbunden. Der Transistor wird ohne eine Body-Diode simuliert.</string>
+    <string name="elem_NFET_pin_G">Gate</string>
+    <string name="elem_NFET_pin_S">Source</string>
+    <string name="elem_NFET_pin_D">Drain</string>
+    <string name="elem_FGPFET">P-Kanal Floating Gate FET</string>
+    <string name="elem_FGPFET_tt">P-Kanal Feldeffekttransistor mit Floating Gate.
+        Der Bulk ist mit Masse verbunden. Der Transistor wird ohne eine Body-Diode simuliert.
+        Ist das Floating Gate geladen, ist der Transistor immer sperrend.
+        Die Programmierung kann direkt mit der Taste [P] verändert werden.</string>
+    <string name="elem_FGPFET_pin_G">Gate</string>
+    <string name="elem_FGPFET_pin_S">Source</string>
+    <string name="elem_FGPFET_pin_D">Drain</string>
+    <string name="elem_FGNFET">N-Kanal Floating Gate FET</string>
+    <string name="elem_FGNFET_tt">N-Kanal Feldeffekttransistor mit Floating Gate.
+        Der Bulk ist mit Masse verbunden. Der Transistor wird ohne eine Body-Diode simuliert.
+        Ist das Floating Gate geladen, ist der Transistor immer sperrend.
+        Die Programmierung kann direkt mit der Taste [P] verändert werden.</string>
+    <string name="elem_FGNFET_pin_G">Gate</string>
+    <string name="elem_FGNFET_pin_S">Source</string>
+    <string name="elem_FGNFET_pin_D">Drain</string>
+    <string name="elem_TransGate">Transmissionsgatter</string>
+    <string name="elem_TransGate_tt">Ein reales Transmissionsgatter ist aus nur zwei Transistoren aufgebaut.
+        Daher wird es oft eingesetzt, um Transistoren einzusparen.</string>
+    <string name="elem_TransGate_pin_A">Eingang A</string>
+    <string name="elem_TransGate_pin_B">Eingang B</string>
+    <string name="elem_TransGate_pin_S">Steuereingang</string>
+    <string name="elem_TransGate_pin_~S">Steuereingang, invertiert</string>
+
+
+
+    <!-- Sonstige -->
+
+    <string name="elem_Testcase">Testfall</string>
+    <string name="elem_Testcase_tt">Beschreibt einen Testfall. In einem Testfall kann beschrieben werden, wie sich eine
+        Schaltung verhalten soll. Es kann dann automatisch überprüft werden, ob das Verhalten der Schaltung tatsächlich
+        dieser Beschreibung entspricht. Ist das nicht der Fall, wird eine entsprechende Fehlermeldung angezeigt.</string>
+    <string name="elem_AsyncSeq">Asynchrones Timing</string>
+    <string name="elem_AsyncSeq_tt">Erlaubt die Konfiguration des Timings eines asynchronen Automaten wie z.B einer
+        Muller-Pipeline. Die Schaltung muss im Gatterschrittmodus gestartet werden und muss zunächst einen stabilen Zustand
+        einnehmen. Interaktiv oder mit einem Reset-Element kann dann der Automat gestartet werden.
+        Die Taktelemente können in diesem Modus nicht verwendet werden.</string>
+    <string name="elem_PowerSupply">Versorgung</string>
+    <string name="elem_PowerSupply_tt">Hat keine weitere Funktion. Stellt nur sicher, dass VDD und GND angeschlossen sind.
+        Kann im Zusammenhang mit den 74xx Bausteinen verwendet werden, um Anschlüsse für die Spannungsversorgung
+        zu erzeugen, welche dann auch auf korrekte Beschaltung geprüft werden.</string>
+    <string name="elem_PowerSupply_pin_VDD">Muss mit VDD verbunden werden!</string>
+    <string name="elem_PowerSupply_pin_GND">Muss mit GND verbunden werden!</string>
+    <string name="elem_Reset">Reset</string>
+    <string name="elem_Reset_pin_Reset">Reset Ausgang.</string>
+    <string name="elem_Reset_tt">Der Ausgang dieses Elements ist Eins, solange sich die Schaltung nach dem Einschalten
+        in der Stabilisierungsphase befindet. Hat sich die Schaltung stabilisiert wird der Ausgang auf Null gesetzt.
+        Bei einem invertiertem Ausgang verhält es sich genau anders herum.</string>
+    <string name="elem_Break">Break</string>
+    <string name="elem_Break_pin_brk">Stoppt den schnellen Simulationsvorlauf, bei einer steigenden Flanke.</string>
+    <string name="elem_Break_tt">Wenn dieses Element in der Schaltung verwendet wird, wird der "Run To Break"
+        Knopf zwischen "Start" und "Stop" aktiviert. Dieser Knopf taktet die Schaltung bis eine steigende Flanke
+        am Eingang des "Break" Elements erkannt wird. Dieses Element kann zur Fehlersuche eingesetzt werden, indem
+        die Schaltung bis zu einem beliebigen Haltepunkt vorgetaktet wird.
+        Auch kann damit ein Assemblerbefehl BRK implementiert werden.
+        Dies erlaubt dann, ein Programm bis zum nächsten BRK-Befehl auszuführen.
+        Diese Funktion kann nur genutzt werden, wenn der Echtzeittakt deaktiviert ist!</string>
+
+    <string name="elem_External">Extern</string>
+    <string name="elem_External_tt">Element zur Anbindung von externen Programmen zur Berechnung der Logik.
+        Wird verwendet, um das Verhalten eines Elements mit einer Hardwarebeschreibungssprache wie VHDL oder
+        Verilog zu beschreiben. Die eigentliche Simulation des Verhaltens muss mit einem externen Simulator erfolgen.
+        Zur Zeit wird nur der VHDL-Simulator ghdl und der Verilog-Simulator Icarus Verilog unterstützt.
+    </string>
+
+    <string name="elem_Diode">Diode</string>
+    <string name="elem_Diode_tt">Echt bidirektionale Diode.
+        Kann verwendet werden, um ein "Wired AND" oder ein "Wired OR" zu implementieren.
+        Es handelt sich um eine ideale Diode: In Durchlassrichtung gibt es keinen Spannungabfall über der Diode.</string>
+
+
+    <string name="error">Fehler</string>
+    <string name="err_N_isNotInputOrOutput">Pin {0} in Element {1} ist weder Eingang noch Ausgang</string>
+    <string name="err_aSingleClockNecessary">Es muss genau ein Taktelement geben. Alle Flipflops müssen an diesem Takt hängen.</string>
+    <string name="err_analyseNoInputs">Die Schaltung hat keine benannten Eingänge</string>
+    <string name="err_analyseNoOutputs">Die Schaltung hat keine benannten Ausgänge</string>
+    <string name="err_breakTimeOut">Nach {0} Zyklen ist am Breakpoint ''{1}'' kein Break aufgetreten.
+        Evtl. sollte die Anzahl der Timout-Zyklen im Break-Element erhöht werden.</string>
+    <string name="err_builder_exprNotSupported">Ausdruck {0} wird nicht unterstützt.</string>
+    <string name="err_builder_operationNotSupported">Operation {0} wird nicht unterstützt.</string>
+    <string name="err_builder_couldNotFillLUT">Fehler beim Erstellen der LookUpTable.</string>
+    <string name="err_burnError">Es sind mehrere zusammengeschaltete Ausgänge gleichzeitig aktiv und haben einen Kurzschluss erzeugt.</string>
+    <string name="err_pullUpAndDown">Ein Pull-Up- und Pull-Down-Widerstand in einem Netz ist nicht erlaubt.</string>
+    <string name="err_cannotAnalyse_N">Element {0} kann nicht analysiert werden.</string>
+    <string name="err_containsVarAndNotVar">Enthält [var] und [nicht var]</string>
+    <string name="err_duplicatePinLabel">Pin {0} in Element {1} existiert mehrfach</string>
+    <string name="err_element_N_notFound">Element {0} nicht gefunden</string>
+    <string name="err_exact_N0_valuesNecessaryNot_N1">Es sind {0} Werte erforderlich, nicht {1}</string>
+    <string name="err_ffNeedsToBeConnectedToClock">Flipflops müssen direkt mit dem Takt verbunden sein.</string>
+    <string name="err_invalidFileFormat">Ungültiges Dateiformat</string>
+    <string name="err_isAlreadyInitialized">Die Schaltung wurde bereits initialisiert</string>
+    <string name="err_labelNotConnectedToNet_N">Ein Tunnel {0} ist nicht verbunden!</string>
+    <string name="err_moreThanOneClockFound">Es gibt mehr als einen Taktgeber</string>
+    <string name="err_clockIsNotUsed">Das Taktsignal wird nicht verwendet!</string>
+    <string name="err_needs_N0_bits_found_N2_bits">Es werden {0} Bits benötigt, jedoch wurden {1} Bits gefunden</string>
+    <string name="err_netOfPin_N_notFound">Das Netz von Pin {0} wurde nicht gefunden</string>
+    <string name="err_noClockFound">Kein Taktgeber in der Schaltung gefunden</string>
+    <string name="err_noInputsAvailable">Es sind keine Eingänge vorhanden</string>
+    <string name="err_noShapeFoundFor_N">Es wurde kein Diagramm für {0} gefunden.</string>
+    <string name="err_noValueSetFor_N0_atElement_N1">Mit dem Eingang ''{0}'' an Element ''{1}'' ist nichts verbunden. Offene Eingänge sind nicht erlaubt.</string>
+    <string name="err_notAllOutputsSameBits">Es haben nicht alle Ausgänge die gleiche Bitbreite</string>
+    <string name="err_notAllOutputsSupportHighZ">Wenn mehrere Ausgänge verbunden sind, müssen alle Ausgänge Tri-State Ausgänge sein.</string>
+    <string name="err_noOutConnectedToWire">Es ist kein Ausgang mit der Leitung verbunden ({0}). Der Zustand der Leitung ist undefiniert.</string>
+    <string name="err_oneResultIsRequired">Tabelle zu klein: Mindestens ein Ergebnis ist erforderlich!</string>
+    <string name="err_output_N_notDefined">Ausgang {0} ist nicht definiert</string>
+    <string name="err_pinMap_NoNameForPin_N">Kein Name für Pin {0}</string>
+    <string name="err_pinMap_Pin_N_AssignedTwicePin">Pin {0} doppelt belegt!</string>
+    <string name="err_pinMap_pin_N0_isNotAnInput">Pin {0} ist kein Eingang!</string>
+    <string name="err_pinMap_pin_N0_isNotAnOutput">Pin {0} ist kein Ausgang!</string>
+    <string name="err_pinMap_noEqualsfound">Kein &quot;=&quot; gefunden!</string>
+    <string name="err_pinMap_toMannyInputsDefined">Zu viele Eingänge verwendet!</string>
+    <string name="err_pinMap_toMannyOutputsDefined">Zu viele Ausgänge verwendet!</string>
+    <string name="err_pinNotPresent">Pin nicht vorhanden</string>
+    <string name="err_pinWithoutName">Es gibt einen Pin ohne einen Namen.</string>
+    <string name="err_clockWithoutName">Es gibt ein Taktelement ohne einen Namen. Wenn ein Taktelement eingebettet wird, benötigt auch dieses eine Bezeichnung.</string>
+    <string name="err_pin_N0_atElement_N1_notFound">Pin {0} von Element {1} wurde nicht gefunden</string>
+    <string name="err_pin_N_notFound">Pin {0} wurde nicht gefunden.</string>
+    <string name="err_customShapeHasNoPin_N">Die importierte SVG Datei definiert keinen Pin {0}</string>
+    <string name="err_pin_N_unknown">Pin {0} ist unbekannt</string>
+    <string name="err_seemsToOscillate">Die Schaltung scheint zu oszillieren!
+Zur Analyse können Sie die Schaltung im Gatterschrittmodus ausführen.</string>
+    <string name="err_portIsInUse">Kann den Remote Port nicht öffnen! Läuft schon eine andere Instanz?</string>
+    <string name="err_selectorInputCountMismatch">Die Zahl der Eingänge passt nicht zur Bitbreite der Auswahlleitung.</string>
+    <string name="err_spitterDefSyntaxError">Fehler in der Portdefinition "{0}" eines Splitters</string>
+    <string name="err_splitterBitsMismatch">Die Bitzahl am Spiltter passt nicht</string>
+    <string name="err_splitterNotAllBitsDefined">Es sind nicht alle Eingangsbits definiert!</string>
+    <string name="err_splitterNotUnambiguously">Es sind Eingangsbits mehrfach definiert!</string>
+    <string name="err_spitterToManyBits">Es sind nur 64 Bits im Splitter erlaubt!</string>
+    <string name="err_tableBecomesToSmall">Es sind mindestens zwei Eingänge erforderlich!</string>
+    <string name="err_toManyInputs_max_N0_is_N1">Zu viele Variablen (Eingänge+Flipflops). Es sind nur {0} Variablen erlaubt, es wurden jedoch {1} gefunden.</string>
+    <string name="err_toManyInputsIn_N0_max_N1_is_N2">Zu viele Variablen bei der Vereinfachung von {0}.
+Es sind nur {1} Variablen erlaubt, es wurden jedoch {2} gefunden.</string>
+    <string name="err_varNotAllowedInCUPL_N">In CUPL ist die Variable {0} nicht erlaubt!</string>
+    <string name="err_varNotDefined_N">Variable {0} ist nicht definiert.</string>
+    <string name="err_parserUnexpectedToken_N">Unerwartetes Zeichen {0}</string>
+    <string name="err_parserMissingClosedParenthesis">Fehlende schließende Klammer</string>
+    <string name="err_notANumber_N0_inLine_N1">Wert {0} in Zeile {1} ist keine Zahl!</string>
+    <string name="err_testDataExpected_N0_found_N1_numbersInLine_N2">Erwarte {0} anstelle von {1} Werten in Zeile {2}!</string>
+    <string name="err_unexpectedToken_N0_inLine_N1">Unerwartete Eingabe ({0}) in Zeile {1}</string>
+    <string name="err_variable_N0_notFound">Variable {0} nicht gefunden!</string>
+    <string name="err_noTestInputSignalsDefined">Keine Eingangssignale im Testfall definiert!</string>
+    <string name="err_noTestOutputSignalsDefined">Keine Ausgangssignale im Testfall definiert!</string>
+    <string name="err_noTestData">Keine Testdaten vorhanden.</string>
+    <string name="err_remoteExecution">Fehler beim Ausführen eines Befehls</string>
+    <string name="err_pullUpAndDownNotAllowed">Es können nicht ein Pull-Up-Widerstand und ein Pull-Down-Widerstand auf eine Leitung geschaltet werden.</string>
+    <string name="err_openingDocumentation">Browser konnte nicht geöffnet werden.</string>
+    <string name="err_couldNotCreateFolder_N0">Konnte den Order &quot;{0}&quot; nicht erzeugen!</string>
+    <string name="err_switchHasNoNet">Ein Schalter kann nicht nur mit Eingängen verbunden werden.</string>
+    <string name="err_file_N0_ExistsTwiceBelow_N1">Die Datei {0} existiert mehrfach unter {1}</string>
+    <string name="err_couldNotFindIncludedFile_N0">Die Datei {0} konnte nicht gefunden werden.</string>
+    <string name="err_postProcessErrorIn_N0">Fehler im Bearbeitungsschritt &quot;{0}&quot;.</string>
+    <string name="err_processDoesNotTerminate_N">Der Prozess &quot;{0}&quot; wird nicht beendet!</string>
+    <string name="err_processExitedWithError_N1_N2">Der Prozess meldet den Rückgabewert {0}: {1}</string>
+    <string name="err_errorRunningFitter">Fehler beim Starten des externen Fitters!</string>
+    <string name="err_noExpressionsAvailable">Es liegen keine minimierten Gleichungen vor!</string>
+    <string name="msg_optimizationInProgress">Gleichungen werden berechnet! Einen Moment Geduld!</string>
+    <string name="err_varName_N_UsedTwice">Die Variable {0} wird mehrfach verwendet!</string>
+    <string name="err_fileNeedsToBeSaved">Die Datei muss zunächst gespeichert werden!</string>
+    <string name="err_recursiveNestingAt_N0">Die Schaltung {0} bindet sich selbst ein!</string>
+    <string name="err_minimizationFailed">Das Ergebnis der Minimierung ist nicht korrekt!
+Sind evtl. die Namen der Variablen nicht eindeutig?</string>
+    <string name="err_toManyIterations">Zu viele Iterationen in einer Schleife.</string>
+    <string name="err_diodeNeedsPullUpResistorAtOutput">Diode benötigt am Ausgang einen PullUp-Widerstand!</string>
+    <string name="err_diodeNeedsPullDownResistorAtOutput">Diode benötigt am Ausgang einen PullDown-Widerstand!</string>
+    <string name="err_testSignal_N_notFound">Testsignal {0} in der Schaltung nicht gefunden!</string>
+    <string name="err_toManyBits_Found_N0_maxIs_N1">Es sind nur {1} Bits erlaubt, es sind jedoch {0} Bits angegeben!</string>
+    <string name="err_MultiBitFlipFlopFound">Es sind keine Flipflops mit mehr als einem Bit erlaubt!</string>
+    <string name="err_invalidTransmissionGateState">Die Steuereingänge eines Transmission-Gates müssen invertiert beschaltet werden!</string>
+    <string name="err_nameUsedTwice_N">Signal {0} wurde mehrfach verwendet!</string>
+    <string name="err_errorParsingTestdata">Fehler beim Einlesen der Testdaten.</string>
+    <string name="err_backtrackOf_N_isImpossible">Die Modelkomponente {0} kann nicht analysiert werden.</string>
+    <string name="err_errorInPowerSupply">Fehler in der Stromversorgung an {0}.</string>
+    <string name="err_pinIsNotANumber_N">Die Pinnummer {0} ist keine Zahl!</string>
+    <string name="err_vhdlExporting">Fehler beim Export zu VHDL.</string>
+    <string name="err_vhdlNoEntity_N">Kein VHDL Code für {0} verfügbar!</string>
+    <string name="err_verilogNoElement_N">Kein Verilog Code für {0} verfügbar!</string>
+    <string name="err_vhdlErrorWritingTestBench">Fehler beim erzeugen des Testfalls!</string>
+    <string name="err_vhdlValuesOfType_N_notAllowed">Werte vom Typ {0} sind nicht erlaubt!</string>
+    <string name="err_vhdlANameIsMissing">Es fehlt ein Name. Sind z.B. alle Pins benannt?</string>
+    <string name="err_hdlMultipleOutputsConnectedToNet_N_N_N">Es sind mehrere Ausgänge miteinander verbunden.
+        Diese Art der Verschaltung wird beim HDL-Export nicht unterstützt ({0}, {1}, {2}).</string>
+    <string name="err_unnamedNet">unbenanntes Netz</string>
+    <string name="err_toManyVars">Zu viele Variablen!</string>
+    <string name="err_invalidExpression">Ungültiger Ausdruck!</string>
+    <string name="err_function_N0_notFoundInLine_N1">Funktion {0} nicht gefunden in Zeile {1}!</string>
+    <string name="err_wrongNumOfArgsIn_N0_InLine_N1_found_N2_expected_N3">Zahl der Argumente in Funktion {0} in Zeile {1} stimmt nicht (gefunden {2}, erwartet {3})!</string>
+    <string name="err_invalidValue_N0_inFunction_N1">Ungültiger Wert {0} in Funktion {1}!</string>
+    <string name="err_Node_N_isAComponent">Das Element {0} ist kein Pfadelement.</string>
+    <string name="err_loadingLibrary">Fehler beim Laden einer Bibliothek.</string>
+    <string name="err_noManifestFound">Die JAR Datei enthält kein Manifest!</string>
+    <string name="err_noMainFoundInManifest">Das Manifest enthält keinen Main-Class-Eintrag!</string>
+    <string name="err_mainClass_N_NotFound">Die Klasse {0} wurde nicht gefunden!</string>
+    <string name="err_couldNotInitializeMainClass_N">Es konnte keine Instanz der Klasse {0} erzeugt werden!</string>
+    <string name="err_notMoreOutBitsThanInBits">Es muss mehr Eingangsbits als Ausgangsbits geben!</string>
+    <string name="err_constantsNotAllowed">Physikalische Pins können nicht auf konstante Werte gesetzt werden!</string>
+    <string name="err_invalidNumberFormat_N_N">Der String {0} ist keine Zahl (Pos {1})!</string>
+    <string name="err_invalidPinName_N">Der Name &quot;{0}&quot; ist nicht erlaubt!</string>
+    <string name="err_whiteSpaceNotAllowedInTT2Name">Im Namen der TT2-Datei ist kein Leerzeichen erlaubt!</string>
+    <string name="err_tableHasToManyResultColumns">Die Tabelle hat zu viele Spalten!</string>
+    <string name="err_errorExportingZip">Fehler beim Schreiben der ZIP-Datei.</string>
+    <string name="err_moreThanOneFastClock">Es ist nur ein Taktelement mit hoher Frequenz erlaubt.</string>
+    <string name="err_circuitHasCycles">Die Schaltung enthält Zyklen und kann daher nicht analysiert werden.
+        Zyklen entstehen, wenn ein Ausgang eines Gatters auf einen der Eingänge des selben Gatters zurück geführt wird.
+        Die Verwendung von Schaltern, FETs oder Relais verursacht ebenfalls Zyklen.</string>
+    <string name="err_monoflopRequiresOneClock">Wird ein Monoflop verwendet, muss es genau ein Taktelement geben!</string>
+    <string name="err_couldNotCreateElement_N">Konnte kein Element vom Typ "{0}" erzeugen!</string>
+    <string name="err_centralDefinedRomsAreNotSupported">Zentral definierte ROM-Inhalte werden nicht unterstützt!</string>
+    <string name="err_namesAreNotUnique_N">Der Name "{0}" ist nicht eindeutig!</string>
+
+    <string name="err_errorWritingDataToProcess">Es konnten keine Werte an den externen Prozess übergeben werden!</string>
+    <string name="err_errorReadingDataFromProcess">Es konnten keine Werte vom externen Prozess gelesen werden!</string>
+    <string name="err_errorCreatingProcess">Der externe Prozess konnte nicht gestartet werden!</string>
+    <string name="err_timeoutReadingData_O">Zeitüberschreitung beim Lesen von Daten!
+        {0}</string>
+    <string name="err_notEnoughDataReceived_O">Es wurden nicht genug Daten empfangen!
+        {0}</string>
+    <string name="err_invalidCharacterReceived_N_O">Der Prozess sendete ein ungültiges Zeichen: {0}!
+        {1}</string>
+    <string name="err_processTerminatedUnexpected_O">Der Prozess wurde unerwartet beendet!
+        {0}</string>
+    <string name="err_couldNotTerminateProcess">Der Prozess konnte nicht beendet werden!</string>
+    <string name="err_couldNotStartProcess_N">Prozess konnte nicht gestartet werden: {0}</string>
+    <string name="err_exitValueNotNull_N_O">Rückgabewert der Anwendung war nicht 0 sondern {0}:
+        {1}</string>
+    <string name="err_canOnlyExportExternalVHDL">Externer Code kann nur exportiert werden, wenn es sich um VHDL handelt!</string>
+    <string name="err_canOnlyExportExternalVerilog">Externer Code kann nur exportiert werden, wenn es sich um Verilog handelt!</string>
+    <string name="err_ifExternalComponentIsUsedTwiceCodeMustBeIdentical_N">Wird eine externes Element mehrfach verwendet, muss der Code identisch sein! Betrifft {0}</string>
+    <string name="err_writingToStdOut_O">Konnte nicht auf stdOut schreiben:
+        {0}</string>
+    <string name="err_ghdlNotInstalled">
+        Der VHDL Simulator ghdl scheint nicht installiert zu sein. Installieren Sie ghdl (http://ghdl.free.fr/) und versuchen Sie es erneut. Sollte es immer noch Probleme geben, überprüfen Sie den Pfad zur ausfühbaren ghdl-Datei in den Digital-Einstellungen.
+    </string>
+    <string name="err_iverilogNotInstalled">
+        Der Verilog Simulator Icarus scheint nicht installiert zu sein. Installieren Sie Icarus (http://iverilog.icarus.com/) und versuchen Sie es erneut. Sollte es immer noch Probleme geben, überprüfen Sie den Pfad zur ausfühbaren iverilog-Datei in den Digital-Einstellungen.
+    </string>
+    <string name="err_errorAnalysingCircuit_N">Fehler bei der Analyse der Schaltung: {0}</string>
+    <string name="err_romNeedsALabelToBeExported">Jedes ROM braucht eine eindeutige Bezeichnung um exportiert zu werden!</string>
+    <string name="err_lutNeedsALabelToBeExported">Jede LUT braucht eine eindeutige Bezeichnung um exportiert zu werden!</string>
+    <string name="err_counterNeedsMoreBits">Der Zähler benötigt mindestens zwei Bits.</string>
+    <string name="err_clocksNotAllowedInAsyncMode">Taktelemente können im asynchronen Modus nicht verwendet werden.</string>
+    <string name="err_verilogExporting">Fehler beim Export zu Verilog.</string>
+    <string name="err_noRomFound">Kein Programmspeicher im Modell gefunden! Ein Programmspeicher muss gewählt werden!</string>
+    <string name="err_errorLoadingRomData">Fehler beim Laden des Programmspeichers.</string>
+    <string name="err_parsingSVG">Fehler beim Laden der SVG-Datei.</string>
+    <string name="err_morePinsDefinedInSVGAsNeeded">Die SVG-Datei enthält Pins, die es in der Schaltung nicht gibt.</string>
+    <string name="err_allMemoriesNeedToHaveTheSameByteWidth">Alle Speicher in welche Daten geladen werden sollen, benötigen die selbe Bitbreite.</string>
+    <string name="err_ProgMemLabelsNotDifferent">Wenn Programme in mehrere RAMs geladen werden sollen, müssen alle RAMs
+        unterschiedliche Bezeichnungen haben. Die lexikalische Ordnung legt dann die Reihenfolge der RAMs fest.</string>
+    <string name="err_midiSystemNotAvailable">Das MIDI-System ist nicht verfügbar.</string>
+    <string name="err_midiChannel_N_NotAvailable">Der MIDI-Kanal {0} ist nicht verfügbar.</string>
+    <string name="err_midiInstrument_N_NotAvailable">Das MIDI-Instrument {0} ist nicht verfügbar.</string>
+    <string name="err_midiInstrumentsNotAvailable">Die MIDI-Instrumente sind nicht verfügbar.</string>
+    <string name="err_whileExecutingTests_N0">Während der Ausführung der Tests "{0}" ist ein Fehler aufgetreten!</string>
+    <string name="err_hdlNotKnown_N">HDL nicht bekannt: {0}</string>
+    <string name="msg_errorStartCommand_N">Fehler beim Starten des Kommandos {0}</string>
+    <string name="err_thereIsAUnnamedIO">Es gibt einen unbenannten Ein- oder Ausgang.</string>
+    <string name="err_NameOfIOIsInvalidOrNotUnique_N">Der Signalname "{0}" ist ungültig oder mehrfach verwendet!</string>
+    <string name="err_substitutingError">Fehler bei der Substitution von Elementen für die Analyse.</string>
+    <string name="err_evaluatingGenericsCode_N_N">Fehler bei der Auswertung des generischen Codes der Schaltung. Code:
+        {1}
+        in Komponente: {0}
+    </string>
+    <string name="msg_errParsingGenerics">Fehler bei der Analyse des generischen Codes.</string>
+
+    <string name="err_vgaModeNotDetected_N">Videomodus wurde nicht erkannt ({0})</string>
+
+    <string name="key_AddrBits">Adress-Bits</string><!-- ROM, RAMDualPort, RAMSinglePort, RAMSinglePortSel, EEPROM -->
+    <string name="key_AddrBits_tt">Anzahl der Adress-Bits, die verwendet werden.</string>
+    <string name="key_Bits">Daten-Bits</string><!-- And, NAnd, Or, NOr, XOr, XNOr, Not, LookUpTable, Delay, Out, In, Ground, VDD, Const, PullUp, PullDown, Driver, DriverInvSel, Multiplexer, Demultiplexer, D_FF, D_FF_AS, Register, ROM, RAMDualPort, RAMSinglePort, RAMSinglePortSel, EEPROM, GraphicCard, Counter, Add, Sub, Mul, BarrelShifter, Comparator, Neg, BitCount, Switch, Relay, PFET, NFET, FGPFET, FGNFET, TransGate -->
+    <string name="key_Bits_tt">Anzahl der Daten-Bits, die verwendet werden.</string>
+    <string name="key_Color">Farbe</string><!-- LED, LightBulb, Seven-Seg, Seven-Seg-Hex, LedMatrix -->
+    <string name="key_Color_tt">Die Farbe des Elementes.</string>
+    <string name="key_backgroundColor">Hintergrundfarbe</string>
+    <string name="key_backgroundColor_tt">Hintergrundfarbe der Schaltung, wenn sie eingebettet wird. Wird für DILs nicht verwendet.</string>
+    <string name="key_Cycles">Timeout Zyklen</string><!-- Break -->
+    <string name="key_Cycles_tt">Wenn nach dieser Anzahl von Takten kein Break eingegangen ist, wird ein Fehler erzeugt</string>
+    <string name="key_Data">Daten</string><!-- LookUpTable, ROM, EEPROM -->
+    <string name="key_Data_tt">Die Daten, welche in diesem Element gespeichert sind.</string>
+    <string name="key_Default">Vorgabe</string><!-- Demultiplexer, RS_FF, JK_FF, D_FF, T_FF, JK_FF_AS, D_FF_AS -->
+    <string name="key_Default_tt">Dieser Wert wird beim Schaltungsstart gesetzt.
+        Beim Demultiplexer wird dieser Wert für die nicht gewählten Ausgänge gesetzt.</string>
+    <string name="key_InDefault">Vorgabe</string><!-- In -->
+    <string name="key_InDefault_tt">Dieser Wert wird beim Schaltungsstart gesetzt. Ein "Z" steht für "hochohmig".</string>
+    <string name="key_isHighZ">Eingang kann hochohmig sein</string><!-- In, Splitter -->
+    <string name="key_isHighZ_tt">Wenn gesetzt, ist ein hochohmiger Eingang erlaubt. Bei einem Eingangselement ist ein
+        hochohmiger Eingang auch erlaubt, wenn der Vorgabewert auf hochohmig ("Z") gesetzt wird.</string>
+    <string name="key_avoidActiveLow">Keine Ausgabe von Null.</string>
+    <string name="key_avoidActiveLow_tt">Vermeidet die Ausgabe von Null. Ist vor allem beim Aufbau von Relaisschaltungen
+        hilfreich. Kann nur aktiviert werden, wenn ein hochohmiger Ausgang erlaubt ist.</string>
+    <string name="key_Description">Beschreibung</string><!-- Out, In, Text -->
+    <string name="key_Description_tt">Eine kurze Beschreibung des Elementes.</string>
+    <string name="key_Frequency">Frequenz/Hz</string><!-- Clock -->
+    <string name="key_Frequency_tt">Gibt die Frequenz an, wenn der Echtzeittakt aktiviert ist</string>
+    <string name="key_IEEEShapes">Verwende US Symbole (IEEE 91-1984)</string>
+    <string name="key_IEEEShapes_tt">Verwende IEEE 91-1984 Symbole anstelle der rechteckigen Symbole</string>
+    <string name="key_Inputs">Anzahl der Eingänge</string><!-- And, NAnd, Or, NOr, XOr, XNOr, LookUpTable -->
+    <string name="key_Inputs_tt">Legt die Anzahl der Eingänge fest. Alle Eingänge müssen beschaltet werden.</string>
+    <string name="key_Label">Bezeichnung</string><!-- Out, LED, In, Clock, Button, Probe, LightBulb, LedMatrix, RotEncoder, Keyboard, Terminal, RS_FF, JK_FF, D_FF, T_FF, JK_FF_AS, D_FF_AS, Register, ROM, RAMDualPort, RAMSinglePort, RAMSinglePortSel, EEPROM, GraphicCard, Counter, Add, Sub, Mul, BarrelShifter, Comparator, Switch, Relay, PFET, NFET, FGPFET, FGNFET, Testcase, PowerSupply, Reset, Break -->
+    <string name="key_Label_tt">Die Bezeichnung dieses Elementes.</string>
+    <string name="key_Size">Größe</string><!-- LED, SevenSeg -->
+    <string name="key_Size_tt">Die Größe der Darstellung in der Schaltung.</string>
+    <string name="key_Language">Sprache</string>
+    <string name="key_Language_tt">Sprache der Oberfläche. Wird erst nach einem Neustart wirksam.</string>
+    <string name="key_NetName">Netzname</string><!-- Tunnel -->
+    <string name="key_NetName_tt">Alle Netze mit identischem Namen werden miteinander verbunden.</string>
+    <string name="key_InputSplitting">Eingangsaufteilung</string><!-- Splitter -->
+    <string name="key_InputSplitting_tt">Sollen z.B. je vier Bits, zwei Bits und noch einmal zwei Bits als Eingänge
+        verwendet werden, kann das mit der Eingabe "4,2,2" konfiguriert werden. Die Zahl gibt dabei jeweils die Bitanzahl an.
+        Als Vereinfachung kann das *-Zeichen verwendet werden: Mit "[Bits]*[Anzahl]" wie "1*16" können 16 einzelne Bits
+        konfiguriert werden.
+        Es können auch die zu verwendenden Bits direkt und in beliebiger Reihenfolge angegeben werden. So werden mit der
+        Eingabe"4-7,0-3" die Bits 4-7 und 0-3 konfiguriert. Diese Notation erlaubt eine beliebige Bit-Anordnung.
+        Die Eingangsbits müssen vollständig und eindeutig angegeben werden.</string>
+    <string name="key_OutputSplitting">Ausgangsaufteilung</string><!-- Splitter -->
+    <string name="key_OutputSplitting_tt">Sollen z.B. je vier Bits, zwei Bits und noch einmal zwei Bits als Ausgänge
+        verwendet werden, kann das mit der Eingabe "4,2,2" konfiguriert werden. Die Zahl gibt dabei jeweils die Bitanzahl an.
+        Als Vereinfachung kann das *-Zeichen verwendet werden: Mit "[Bits]*[Anzahl]" wie "1*16" können 16 einzelne Bits
+        konfiguriert werden.
+        Es können auch die zu verwendenden Bits direkt und in beliebiger Reihenfolge angegeben werden. So werden mit der
+        Eingabe"4-7,0-3" die Bits 4-7 und 0-3 konfiguriert. Diese Notation erlaubt eine beliebige Bit-Anordnung.
+        Ausgangsbits können auch mehrfach ausgegeben werden: "0-7,1-6,4-7"</string>
+    <string name="key_SelectorBits">Anzahl der Auswahlbits</string><!-- Multiplexer, Demultiplexer, Decoder -->
+    <string name="key_SelectorBits_tt">Anzahl der Bits, die in der Auswahlleitung vorhanden sind.</string>
+    <string name="key_Signed">Operation mit Vorzeichen</string><!-- Comparator, Div -->
+    <string name="key_Signed_tt">Wenn gesetzt, findet die Operation vorzeichenrichtig (2-er Komplement) statt.</string>
+    <string name="key_Closed">Geschlossen</string><!-- Switch -->
+    <string name="key_Closed_tt">Gibt an, ob der Schalter bei Modelstart offen oder geschlossen ist.</string>
+    <string name="key_Value">Wert</string><!-- Const -->
+    <string name="key_Value_tt">Der Wert der Konstanten.</string>
+    <string name="key_Width">Breite</string>
+    <string name="key_Width_tt">Breite des Symbols, wenn diese Schaltung in eine andere eingefügt wird.</string>
+    <string name="key_Height">Höhe</string>
+    <string name="key_Height_tt">Höhe des Symbols, wenn diese Schaltung in eine andere eingefügt wird.</string>
+    <string name="key_autoReload">Bei jedem Start automatisch neu laden.</string><!-- ROM -->
+    <string name="key_autoReload_tt">Lädt das HEX-File bei jedem Modelstart neu.</string>
+    <string name="key_flipSelPos">Tausche Selektorposition</string><!-- Driver, DriverInvSel, Multiplexer, Demultiplexer, Decoder -->
+    <string name="key_flipSelPos_tt">Mit dieser Option kann der Anschluss des Selektors auf die andere Seite des Multiplexers verschoben werden.</string>
+    <string name="key_intFormat">Zahlenformat</string><!-- Probe -->
+    <string name="key_intFormat_tt">Das Zahlenformat für die Anzeige der Werte.</string>
+    <string name="key_intFormat_ascii">ASCII</string>
+    <string name="key_intFormat_bin">Binär</string>
+    <string name="key_intFormat_dec">Dezimal</string>
+    <string name="key_intFormat_decSigned">Dezimal mit Vorzeichen</string>
+    <string name="key_intFormat_def">Vorgabe</string>
+    <string name="key_intFormat_hex">Hexadezimal</string>
+    <string name="key_intFormat_oct">Oktal</string>
+    <string name="key_barrelSigned">Verschiebeweite hat Vorzeichen</string><!-- BarrelShifter -->
+    <string name="key_barrelSigned_tt">Verschiebeweite verwendet Zweierkomplement</string>
+    <string name="key_barrelShifterMode">Modus</string><!-- BarrelShifter -->
+    <string name="key_barrelShifterMode_tt">Modus der Verschiebung.</string>
+    <string name="key_barrelShifterMode_logical">Logisch</string>
+    <string name="key_barrelShifterMode_rotate">Rotation</string>
+    <string name="key_barrelShifterMode_arithmetic">Arithmetisch</string>
+    <string name="key_direction">Richtung</string><!-- BarrelShifter -->
+    <string name="key_direction_tt">Richtungsangabe.</string>
+    <string name="key_direction_left">Links</string>
+    <string name="key_direction_right">Rechts</string>
+    <string name="key_maxStepCount">Maximale Messpunktezahl</string><!-- Data -->
+    <string name="key_maxStepCount_tt">Die maximale Anzahl an Messpunkten, die gespeichert werden, bevor die ältesten Messungen verworfen werden.</string>
+    <string name="key_microStep">Zeige Einzelgatterschritte</string><!-- Data -->
+    <string name="key_microStep_tt">Zeigt in der Grafik alle Einzelgatterschritte an.</string>
+    <string name="key_rotation">Rotation</string><!-- And, NAnd, Or, NOr, XOr, XNOr, Not, LookUpTable, Delay, Out, LED, In, Clock, Button, Probe, LightBulb, LedMatrix, RotEncoder, Keyboard, Terminal, Ground, VDD, Const, Tunnel, Splitter, PullUp, PullDown, Driver, DriverInvSel, Multiplexer, Demultiplexer, Decoder, RS_FF, JK_FF, D_FF, T_FF, JK_FF_AS, D_FF_AS, Register, ROM, RAMDualPort, RAMSinglePort, RAMSinglePortSel, EEPROM, GraphicCard, Counter, Add, Sub, Mul, BarrelShifter, Comparator, Neg, BitCount, DiodeForward, DiodeBackward, Switch, Fuse, Relay, PFET, NFET, FGPFET, FGNFET, TransGate, PowerSupply, Reset, Break -->
+    <string name="key_rotation_tt">Legt die Ausrichtung des Elementes in der Schaltung fest.</string>
+    <string name="key_mirror">Spiegeln</string>
+    <string name="key_mirror_tt">Spiegelt das Element in der Schaltung.</string>
+    <string name="key_runRealTime">Echtzeittakt starten</string><!-- Clock -->
+    <string name="key_runRealTime_tt">Wenn eingeschaltet, wird beim Start der Schaltung der Echtzeittakt gestartet.</string>
+    <string name="key_showDataGraph">Zeige Messwertegraph bei Simulationsstart</string>
+    <string name="key_showDataGraph_tt">Beim Start der Simulation wird ein Graph mit den Messwerten angezeigt.</string>
+    <string name="key_showDataGraphMicro">Zeige Messwertgraph im Gatterschrittmodus bei Simulationsstart</string>
+    <string name="key_showDataGraphMicro_tt">Beim Start der Simulation wird ein Graph mit den Messwerten im Gatterschrittmodus
+        angezeigt. Dabei werden alle Gatterwechsel angezeigt.</string>
+    <string name="key_addValueToGraph">Im Messwertegraph anzeigen</string>
+    <string name="key_addValueToGraph_tt">Zeigt den Wert im Messwertegraph an.</string>
+    <string name="key_showDataTable">Zeige Messwertetabelle bei Simulationsstart</string>
+    <string name="key_showDataTable_tt">Beim Start der Simulation wird eine Tabelle mit den Messwerten angezeigt.</string>
+    <string name="key_termHeight">Zeilen</string><!-- Terminal -->
+    <string name="key_termHeight_tt">Die Anzahl der anzuzeigenden Zeilen.</string>
+    <string name="key_termWidth">Zeichen pro Zeile</string><!-- Terminal -->
+    <string name="key_termWidth_tt">Die Anzahl der Zeichen, die in einer Zeile angezeigt werden können.</string>
+    <string name="key_valueIsProbe">Als Messwert verwenden</string><!-- RS_FF, JK_FF, D_FF, T_FF, JK_FF_AS, D_FF_AS, Register -->
+    <string name="key_valueIsProbe_tt">Wenn gesetzt, taucht der Wert als Messwert in Graph und Tabelle auf.
+        Zusätzlich muss eine Bezeichnung angegeben werden, welche als Identifikation des Messwertes dienen kann.</string>
+    <string name="key_Testdata">Testdaten</string><!-- Testcase -->
+    <string name="key_Testdata_tt">Hier wird der eigentliche Testfall angelegt.
+        Details dazu finden sich in der Hilfe des Testdateneditors.</string>
+    <string name="key_graphicWidth">Breite in Pixel</string><!-- GraphicCard -->
+    <string name="key_graphicWidth_tt">Breite des Grafik-Bildschirmes in Pixel</string>
+    <string name="key_graphicHeight">Höhe in Pixel</string><!-- GraphicCard -->
+    <string name="key_graphicHeight_tt">Höhe des Grafik-Bildschirmes in Pixel</string>
+    <string name="key_isProgramMemory">Programmspeicher</string><!-- ROM -->
+    <string name="key_isProgramMemory_tt">Zeichnet dieses ROM als Programmspeicher aus.
+        Es kann damit von einer externen IDE beschrieben werden.</string>
+    <string name="key_isProgramCounter">Programmzähler</string>
+    <string name="key_isProgramCounter_tt">Weist dieses Register als Programmzähler aus. Der Wert dieses Registers wird
+        an die externe Assembler-IDE zurückgegeben, um während des Debuggings die aktuelle Codezeile zu markieren.</string>
+    <string name="key_Blown">Programmiert</string><!-- DiodeForward, DiodeBackward, Fuse, FGPFET, FGNFET -->
+    <string name="key_Blown_tt">Wenn gesetzt, ist die Diode "durchgebrannt" bzw "programmiert".
+        Bei Floating Gate FETs wird das Gate geladen. Diese Einstellung kann direkt über die Taste 'P' verändert werden.</string>
+    <string name="key_ExpressionFormat">Format</string>
+    <string name="key_ExpressionFormat_tt">Anzeigeformat der Ausdrücke.</string>
+    <string name="key_relayNormallyClosed">Relais ist ein Öffner</string><!-- Relay -->
+    <string name="key_relayNormallyClosed_tt">Wenn gesetzt, ist das Relais unbestromt geschlossen.</string>
+    <string name="key_poles">Pole</string><!-- Relay -->
+    <string name="key_poles_tt">Anzahl der Schaltkontakte des Relais.</string>
+    <string name="key_commonCathode">Gemeinsamer Anschluss</string><!-- Seven-Seg -->
+    <string name="key_commonCathode_tt">Wenn gesetzt, hat die Anzeige einen Anschluss mit einer gemeinsamen Kathode oder Anode.</string>
+    <string name="key_commonConnectionType">Gemeinsame</string>
+    <string name="key_commonConnectionType_tt">Art des gemeinsamen Anschlusses.</string>
+    <string name="key_commonConnectionType_cathode">Kathode</string>
+    <string name="key_commonConnectionType_anode">Anode</string>
+
+    <string name="key_ledPersistence">Flimmern vermeiden</string><!-- Seven-Seg, LedMatrix -->
+    <string name="key_ledPersistence_tt">Die Schaltfrequenz in der Simulation kann nicht so hoch werden,
+        dass das menschliche Auge kein Flimmern mehr wahrnimmt. Um dennoch das Flackern zu unterdrücken, kann
+        bei den LEDs mit dieser Option ein "nachleuchten" eingeschaltet werden.</string>
+    <string name="key_atf1502Fitter">ATF15xx Fitter</string>
+    <string name="key_atf1502Fitter_tt">Pfad zum Fitter für den ATF15xx.
+        Geben Sie hier das Verzeichnis an, welches die Dateien fit15xx.exe enthält.
+        Diese Datei wird von Microchip (früher ATMEL) zur Verfügung gestellt.</string>
+    <string name="key_pin">Pinnummer</string>
+    <string name="key_pin_tt">Ist das Feld leer, bedeutet das, dass dieses Signal keinem Pin zugewiesen ist.</string>
+    <string name="key_rowDataBits">Zeilen</string><!-- LedMatrix -->
+    <string name="key_rowDataBits_tt">Gibt direkt die Zahl der Zeilen an, indem die Anzahl der Bits des Zeilenwortes festgelegt wird.</string>
+    <string name="key_colAddrBits">Adressbits der Spalten</string><!-- LedMatrix -->
+    <string name="key_colAddrBits_tt">Adressiert die einzelnen Spalten. Drei Bits bedeuten also acht Spalten.</string>
+    <string name="key_lockedMode">Bearbeitung gesperrt</string>
+    <string name="key_lockedMode_tt">Die Schaltung ist für die Bearbeitung gesperrt. Dioden und FG-FETs können jedoch konfiguriert werden.</string>
+    <string name="key_pinNumber">Pinnummer</string><!-- Out, In, Clock -->
+    <string name="key_pinNumber_tt">Nummer dieses Pins. Wird für die Darstellung einer Schaltung als DIL-Gehäuse und die
+        Pinzuordnung bei der Programmierung eines CPLD verwendet.
+        Bei mehreren Bits, können alle Pinnummern als kommagetrennte Liste angegeben werden.</string>
+    <string name="key_pinCount">Pinanzahl DIL</string>
+    <string name="key_pinCount_tt">Anzahl der Pins des DILs. Wird hier eine 0 eingetragen, wird die Anzahl automatisch bestimmt.</string>
+    <string name="key_defTreeSelect">Baumansicht beim Start anzeigen</string>
+    <string name="key_defTreeSelect_tt">Wenn gesetzt, wird die Baumansicht beim Start automatisch angezeigt.</string>
+    <string name="key_inverterConfig">inverse Eingänge</string><!-- And, NAnd, Or, NOr, XOr, XNOr, RS_FF, JK_FF, D_FF, T_FF, JK_FF_AS, D_FF_AS, Counter -->
+    <string name="key_inverterConfig_tt">Es können die Eingänge ausgewählt werden, welche invertiert werden sollen.</string>
+    <string name="key_fontSize">Schriftgröße im Menü [%]</string>
+    <string name="key_fontSize_tt">Für die Menüs kann eine abweichende Schriftgröße gewählt werden.
+        Angabe in Prozent der Standardgröße.</string>
+    <string name="key_withEnable">Enable Eingang</string><!-- T_FF -->
+    <string name="key_withEnable_tt">Wenn gesetzt, ist ein Enable-Eingang (T) vorhanden.</string>
+    <string name="key_unidirectional">Unidirektional</string><!-- PFET, NFET -->
+    <string name="key_unidirectional_tt">Unidirektionale Transistoren wirken nur von Source zu Drain. Sie können deutlich
+        schneller simuliert werden als bidirektionale Transistoren. Da es keine Rückwirkung von Drain zu Source gibt, können
+        Transistoren in diesem Modus auch keine Kurzschlüsse über die Drain-Source Strecke verursachen. Daher kann dieser
+        Modus in manchen CMOS-Schaltungen erforderlich sein.</string>
+    <string name="key_activeLow">Active Low</string><!-- Button -->
+    <string name="key_activeLow_tt">Wenn gesetzt, ist der Ausgang im aktiven Zustand Low.</string>
+    <string name="key_libraryPath">Bibliothek</string>
+    <string name="key_libraryPath_tt">Ordner, in welchem sich die Bibliothek mit vordefinierten Schaltungen befindet.
+        Enthält z.B. die ICs der 74xx Reihe. Es können auch eigene Schaltungen hinzugefügt werden, indem diese
+        hier gespeichert werden.
+        Es muss darauf geachtet werden, dass der Name aller Dateien in diesem Ordner und allen Unterordnern eindeutig ist.
+    </string>
+    <string name="key_grid">Raster anzeigen</string>
+    <string name="key_grid_tt">Zeigt im Hauptfenster ein Raster an, um das platzieren der Elemente zu erleichtern.</string>
+    <string name="key_wireToolTips">Leitungen als ToolTip</string>
+    <string name="key_wireToolTips_tt">Wenn gesetzt, werden Leitungen hervorgehoben, wenn die Maus darauf zeigt.</string>
+    <string name="key_mapToKey">Auf Tastatur legen</string><!-- Button -->
+    <string name="key_mapToKey_tt">Taste wird durch die Tastatur bedienbar. Um die Cursor-Tasten zu nutzen, kann als
+        Bezeichnung UP, DOWN, LEFT oder RIGHT verwendet werden.</string>
+    <string name="key_jarPath">Java Bibliothek</string>
+    <string name="key_jarPath_tt">Eine jar Datei, welche neue Bauteile als Java Klassen enthält.</string>
+    <string name="key_showWireBits">Zeigt die Anzahl der Leitungen auf einem Bus</string>
+    <string name="key_showWireBits_tt">Zeigt die Anzahl der Leitungen eines Bus an. ACHTUNG: Dieser Wert wird nur beim
+        Start der Simulation aktualisiert.</string>
+    <string name="key_inputBits">Anzahl Eingangsbits</string><!-- BitExtender -->
+    <string name="key_inputBits_tt">Die Anzahl der Ausgangsbits muss größer sein als die Anzahl der Eingangsbits.</string>
+    <string name="key_outputBits">Anzahl Ausgangsbits</string><!-- BitExtender -->
+    <string name="key_outputBits_tt">Die Anzahl der Ausgangsbits muss größer sein als die Anzahl der Eingangsbits.</string>
+    <string name="key_textFontSize">Schriftgröße</string>
+    <string name="key_textFontSize_tt">Legt die für diesen Text zu verwendende Schriftgröße fest.</string>
+    <string name="key_delayTime">Dauer</string>
+    <string name="key_delayTime_tt">Dauer der Verzögerung in Gatterlaufzeiten.</string>
+    <string name="key_invertOutput">invertierter Ausgang</string>
+    <string name="key_invertOutput_tt">Wenn gesetzt, wird der Ausgang invertiert.</string>
+    <string name="key_timerDelay">Impulsdauer</string>
+    <string name="key_timerDelay_tt">Die Impulsdauer wird in Taktzyklen angegeben.</string>
+    <string name="key_splitterSpreading">Spreizung</string>
+    <string name="key_splitterSpreading_tt">Bestimmt die Spreizung der Ein- und Ausgänge in der Schaltung.</string>
+    <string name="key_romContent">ROM Inhalte</string>
+    <string name="key_romContent_tt">Inhalt aller ROM Bausteine</string>
+
+    <string name="key_applicationType">Anwendung</string>
+    <string name="key_applicationType_tt">Gibt an, welche Anwendung gestartet werden soll, um den Code auszuführen.</string>
+    <string name="key_applicationType_Generic">Generisch</string>
+    <string name="key_applicationType_GHDL">GHDL</string>
+    <string name="key_applicationType_IVERILOG">IVerilog</string>
+    <string name="key_externalInputs">Eingänge</string>
+    <string name="key_externalInputs_tt">Die Eingänge des externen Prozesses. Es handelt sich um eine kommaseparierte
+        Liste mit Signalnamen. Bei jedem Signalnamen kann, mit einem Doppelpunkt getrennt, eine Bitanzahl angegeben werden.
+        Die Eingänge eines 8-Bit Addierers könnten also mit "a:8,b:8,c_in" beschrieben werden.</string>
+    <string name="key_externalOutputs">Ausgänge</string>
+    <string name="key_externalOutputs_tt">Die Ausgänge des externen Prozesses. Es handelt sich um eine kommaseparierte
+        Liste mit Signalnamen. Bei jedem Signalnamen kann, mit einem Doppelpunkt getrennt, eine Bitanzahl angegeben werden.
+        Die Ausgänge eines 8-Bit Addierers könnten also mit "s:8,c_out" beschrieben werden.</string>
+    <string name="key_Code">Programmcode</string>
+    <string name="key_Code_tt">Der Programmcode welcher ausgeführt werden soll.</string>
+    <string name="key_ghdlPath">GHDL</string>
+    <string name="key_ghdlPath_tt">Pfad der ausführbaren ghdl-Datei. Nur wichtig, wenn ghdl zur Interpretation von
+        VHDL-Code verwendet werden soll.</string>
+    <string name="key_iverilogPath">IVerilog</string>
+    <string name="key_iverilogPath_tt">Pfad zum Icarus-Verilog-Installationsordner. Nur notwendig, wenn Sie iverilog
+        verwenden möchten, um mit Verilog definierte Komponenten zu simulieren.</string>
+    <string name="key_maxValue">Maximalwert</string>
+    <string name="key_maxValue_tt">Wird hier eine Null eingetragen, wird der maximal mögliche Wert verwendet (Alle Bits sind Eins).</string>
+
+    <string name="key_dipDefault">Ausgabe ist High</string>
+    <string name="key_dipDefault_tt">Der Vorgabewert des DIP-Schalters, wenn die Simulation gestartet wird.</string>
+    <string name="key_macMouse">Die MacOS Mausklicks verwenden.</string>
+    <string name="key_macMouse_tt">Das unter MacOS übliche STRG-Klick anstelle von Rechtsklick verwenden.</string>
+    <string name="key_noComponentToolTips">Keine ToolTips für Bauteile auf der Arbeitsfläche.</string>
+    <string name="key_noComponentToolTips_tt">Wenn gesetzt, werden keine ToolTips für die Bauteile auf der Arbeitsfläche angezeigt.
+        Vor allem in einer Präsentation können diese ToolTips sehr störend sein.</string>
+    <string name="key_tunnelRenameDialog">Dialog zum automatischen umbenennen von Tunneln anzeigen</string>
+    <string name="key_tunnelRenameDialog_tt">Wenn gesetzt, wird nach dem Umbenennen eines Tunnels ein Dialog für automatisches Umbenennen
+        aller gleichnamigen Tunnel angezeigt.</string>
+
+    <string name="key_ATMISP">ATMISP</string>
+    <string name="key_ATMISP_tt">Pfad zur ausführbaren Datei ATMISP.exe. Wenn gesetzt, kann die Software ATMISP automatisch gestartet werden!</string>
+
+    <string name="key_customShape">Benutzerdefinierte Form</string>
+    <string name="key_customShape_tt">Importieren einer SVG-Datei</string>
+
+    <string name="key_preloadProgram">Datei beim Start in den Programmspeicher laden.</string>
+    <string name="key_preloadProgram_tt">Wird ein Prozessor simuliert, der einen RAM-Baustein als Programmspeicher
+        verwendet, ist es schwierig, diesen Prozessor zu starten, da der RAM Inhalt beim Start der Simulation immer mit
+        Nullen initialisiert wird. Diese Einstellung erlaubt das Laden von Daten in den Programmspeicher.
+        Der Programmspeicher in der Simulation muss als solcher markiert sein.
+    </string>
+    <string name="key_preloadProgramFile">Programdatei</string>
+    <string name="key_preloadProgramFile_tt">Datei welche beim Start der Simulation in den Programspeicher geladen werden
+        soll.
+    </string>
+
+    <string name="key_RectWidth">Breite</string>
+    <string name="key_RectWidth_tt">Breite in Rastereinheiten</string>
+    <string name="key_RectHeight">Höhe</string>
+    <string name="key_RectHeight_tt">Höhe in Rastereinheiten</string>
+    <string name="key_RectInside">Text innen</string>
+    <string name="key_RectInside_tt">Text ins Innere des Rechtecks setzen.</string>
+    <string name="key_RectBottom">Text unten</string>
+    <string name="key_RectBottom_tt">Text unten ans Rechteck setzen.</string>
+    <string name="key_RectRight">Text rechts</string>
+    <string name="key_RectRight_tt">Text rechts ans Rechteck setzen.</string>
+
+    <string name="key_wideShape">Breites Symbol</string>
+    <string name="key_wideShape_tt">Verwendet ein breiteres Symbol zur Darstellung des Gatters.</string>
+
+    <string name="key_shapeType">Form</string>
+    <string name="key_shapeType_tt">Die Form, welche für die Repräsentation der Schaltung in einer einbettenden
+        Schaltung verwendet werden soll. Bei der Form "Einfach" werden die Eingänge auf der linken und die Ausgänge auf
+        der rechten Seite eines einfachen Rechtecks angezeigt.
+        Bei "Layout" bestimmt die Lage und Orientierung der Ein- und Ausgänge in
+        der Schaltung die Position der Pins. Hier sind auch Pins oben und unten möglich.
+        Bei der Wahl von "DIL-Gehäuse" wird ein DIL-Gehäuse zur Darstellung verwendet. Die Pin-Nummern der Ein- und
+        Ausgänge bestimmen hier die Position der Pins.
+    </string>
+    <string name="key_shapeType_DEFAULT">Vorgabe</string>
+    <string name="key_shapeType_SIMPLE">Einfach</string>
+    <string name="key_shapeType_DIL">DIL-Gehäuse</string>
+    <string name="key_shapeType_LAYOUT">Layout</string>
+    <string name="key_shapeType_CUSTOM">Benutzerdefiniert</string>
+
+    <string name="key_textOrientation">Ausrichtung</string>
+    <string name="key_textOrientation_tt">Lage der Koordinate relativ zum Text.</string>
+    <string name="key_textOrientation_LEFTBOTTOM">links unten</string>
+    <string name="key_textOrientation_CENTERBOTTOM">mitte unten</string>
+    <string name="key_textOrientation_RIGHTBOTTOM">rechts unten</string>
+    <string name="key_textOrientation_RIGHTCENTER">rechts mitte</string>
+    <string name="key_textOrientation_RIGHTTOP">rechts oben</string>
+    <string name="key_textOrientation_CENTERTOP">mitte oben</string>
+    <string name="key_textOrientation_LEFTTOP">links oben</string>
+    <string name="key_textOrientation_LEFTCENTER">links mitte</string>
+    <string name="key_textOrientation_CENTERCENTER">mitte mitte</string>
+
+    <string name="key_midiChannel">MIDI-Kanal</string>
+    <string name="key_midiChannel_tt">Legt den MIDI-Kanal fest.</string>
+    <string name="key_midiInstrument">MIDI-Instrument</string>
+    <string name="key_midiInstrument_tt">Das MIDI-Instrument, welches verwendet werden soll.</string>
+    <string name="key_midiProgChange">Programmwechsel erlauben</string>
+    <string name="key_midiProgChange_tt">Fügt einen weiteren Eingang PC hinzu. Wird dieser Eingang auf High gesetzt,
+        wird mit dem Wert am Eingang N das Programm (Instrument) gewechselt.</string>
+
+    <string name="key_enabled">Aktiviert</string>
+    <string name="key_enabled_tt">Aktiviert oder deaktiviert diese Komponente.</string>
+
+    <string name="key_toolChainConfig">Toolchain Konfiguration</string>
+    <string name="key_toolChainConfig_tt">Kann für eine Integration einer externen Toolchain verwendet werden.
+        Erlaubt den Start externer Tools, um z.B. einen FPGA zu programmieren o.ä.</string>
+
+    <string name="key_generic">generische Parametrisierung</string>
+    <string name="key_generic_tt">Anweisung um eine generische Schaltung anzupassen.</string>
+
+    <string name="key_isGeneric">Schaltung ist generisch</string>
+    <string name="key_isGeneric_tt">Erlaubt die Erzeugung von generischen Schaltungen.</string>
+
+    <string name="key_showTutorial">Tutorial beim Start anzeigen</string>
+    <string name="key_showTutorial_tt">Aktiviert das Tutorial.</string>
+
+    <string name="key_switchActsAsInput">Schalter verhält sich wie ein Eingang</string>
+    <string name="key_switchActsAsInput_tt">Wird das Model analysiert, verhält sich der Schalter wie ein Eingang, wobei
+        "offen" einer '0' und "geschlossen" einer '1' entspricht.</string>
+
+    <string name="menu_exportSVGSettings">SVG Exporteinstellungen</string>
+    <string name="key_SVG_LaTeX">Text im LaTeX-Format</string>
+    <string name="key_SVG_LaTeX_tt">Text wird in LaTeX-Notation eingefügt. Inkscape ist für die Weiterverabeitung erforderlich.</string>
+    <string name="key_SVG_pinsInMathMode">Pin-Labels im Math-Mode</string>
+    <string name="key_SVG_pinsInMathMode_tt">Für Pin-Labels auch dann den Math-Mode verwenden, wenn keine Indizes enthalten sind.</string>
+    <string name="key_SVG_hideTest">Testfälle verbergen</string>
+    <string name="key_SVG_hideTest__">Die Testfälle werden nicht mit exportiert.</string>
+    <string name="key_SVG_noShapeFilling">Polygone nicht ausfüllen</string>
+    <string name="key_SVG_noShapeFilling_tt">Polygone werden nicht ausgefüllt.</string>
+    <string name="key_SVG_smallIO">kleine Ein- und Ausgänge</string>
+    <string name="key_SVG_smallIO_tt">Ein- und Ausgänge werden als kleine Kreise dargestellt.</string>
+    <string name="key_SVG_noPinMarker">Pin-Marker weglassen</string>
+    <string name="key_SVG_noPinMarker_tt">Die blauen und roten Pin-Marker an den Symbolen entfallen.</string>
+    <string name="key_SVG_highContrast">hoher Kontrast</string>
+    <string name="key_SVG_highContrast_tt">Leitungen und der Text der Pins werden in Schwarz ausgegeben.</string>
+    <string name="key_SVG_monochrome">monochrom</string>
+    <string name="key_SVG_monochrome_tt">Es werden nur Graustufen verwendet.</string>
+    <string name="key_SVG_thinnerLines">dünne Linien</string>
+    <string name="key_SVG_thinnerLines_tt">Wenn gesetzt, werden die Linen etwas dünner gezeichnet.</string>
+
+    <string name="key_equalsInsteadOfPlus">Die Gleich-Taste verwenden.</string>
+    <string name="key_equalsInsteadOfPlus_tt">Die Gleich-Taste anstelle der Plus-Taste verwenden.
+        Dies ist immer dann sinvoll, wenn das Plus-Zeichen keine Primärtaste ist, sondern die Zweitbelegung des
+        Gleich-Zeichens, also z.B. bei amerikanischem oder französischem Tastaturlayout.</string>
+
+    <string name="key_snapToGrid">An Gitter ausrichten</string>
+    <string name="key_snapToGrid_tt">Wenn gesetzt, wird das Element am Gitter ausgerichtet.</string>
+
+    <string name="mod_insertWire">Leitung eingefügt.</string>
+    <string name="mod_insertCopied">Aus Zwischenablage eingefügt.</string>
+    <string name="mod_setKey_N0_in_element_N1">Wert ''{0}'' in Element ''{1}'' verändert.</string>
+    <string name="mod_setAttributesIn_N">Attribute in Element ''{0}'' verändert.</string>
+    <string name="mod_wireDeleted">Leitung gelöscht.</string>
+    <string name="mod_movedOrRotatedElement_N">Element ''{0}'' verschoben oder rotiert.</string>
+    <string name="mod_movedWire">Leitung verschoben.</string>
+    <string name="mod_deletedSelection">Auswahl gelöscht.</string>
+    <string name="mod_insertedElement_N">Element ''{0}'' eingefügt.</string>
+    <string name="mod_deletedElement_N">Element ''{0}'' entfernt.</string>
+    <string name="mod_insertedWire">Leitung eingefügt.</string>
+    <string name="mod_movedSelected">Auswahl verschoben.</string>
+    <string name="mod_undo_N">Rückgängig: {0}</string>
+    <string name="mod_redo_N">Wiederherstellen: {0}</string>
+    <string name="mod_circuitAttrModified">Schaltungsattribute verändert.</string>
+    <string name="mod_modifiedMeasurementOrdering">Reihenfolge der Messwerte verändert.</string>
+    <string name="mod_groupEdit">In selektierten Elementen Attribute geändert.</string>
+    <string name="mod_splitWire">Leitung in zwei Leitungen teilen.</string>
+
+    <string name="lib_Logic">Logisch</string>
+    <string name="lib_arithmetic">Arithmetik</string>
+    <string name="lib_flipFlops">FlipFlops</string>
+    <string name="lib_io">IO</string>
+    <string name="lib_memory">Speicher</string>
+    <string name="lib_mux">Multiplexer</string>
+    <string name="lib_wires">Leitungen</string>
+    <string name="lib_switching">Schalter</string>
+    <string name="lib_misc">Sonstige</string>
+    <string name="lib_more">mehr</string>
+    <string name="lib_ram">RAM</string>
+    <string name="lib_eeprom">EEPROM</string>
+
+    <string name="menu_window">Fenster</string>
+    <string name="menu_about">Über Digital</string>
+    <string name="menu_analyse">Analyse</string>
+    <string name="menu_analyse_tt">Analyse der aktuellen Schaltung</string>
+    <string name="menu_cut">Ausschneiden</string>
+    <string name="menu_copy">Kopieren</string>
+    <string name="menu_custom">Benutzerdefiniert</string>
+    <string name="menu_library">Bibliothek</string>
+    <string name="menu_delete">Löschen</string>
+    <string name="menu_delete_tt">Löscht ausgewählte Elemente</string>
+    <string name="menu_edit">Bearbeiten</string>
+    <string name="menu_editAttributes">Einstellungen der Schaltung</string>
+    <string name="menu_editAttributes_tt">Die Einstellungen der Schaltung beeinflussen das Verhalten der aktuell
+        geöffneten Schaltung.
+        So kann z.B. das Erscheiningsbild festgelegt werden, welche die Schaltung annimmt, wenn sie in andere
+        Schaltungen eingebettet wird. Diese Einstellungen werden mit der Schaltung zusammen gespeichert.
+    </string>
+    <string name="menu_editSettings">Einstellungen</string>
+    <string name="menu_editSettings_tt">In den globalen Einstellungen des Simulators werden u.a.
+        die Sprache, die für die elementaren Gatter zu verwendende Symbolform oder die Pfade externer
+        Tools vorgegeben.
+    </string>
+    <string name="menu_element">Stoppen der Simulation</string>
+    <string name="menu_element_tt">Stoppt die Simulation und erlaubt das Bearbeiten der Schaltung.</string>
+    <string name="menu_elements">Bauteile</string>
+    <string name="menu_export">Export</string>
+    <string name="menu_exportPNGLarge">Export PNG groß</string>
+    <string name="menu_exportPNGSmall">Export PNG klein</string>
+    <string name="menu_exportSVG">Export SVG</string>
+    <string name="menu_exportAnimatedGIF">Export Animated GIF</string>
+    <string name="menu_fast">Run To Break</string>
+    <string name="menu_fast_tt">Führt die Schaltung aus, bis ein Stopsignal über ein BRK-Element detektiert wird.</string>
+    <string name="menu_file">Datei</string>
+    <string name="menu_help">Hilfe</string>
+    <string name="menu_update">Aktualisieren</string>
+    <string name="menu_update_tt">Aktualisieren des Bauteile-Menüs. Evtl. fehlende Dateien werden nachgeladen.</string>
+    <string name="menu_maximize">Einpassen</string>
+    <string name="menu_micro">Gatterschrittmodus</string>
+    <string name="menu_micro_tt">Startet die Schaltung im Gatterschrittmodus</string>
+    <string name="menu_new">Neu</string>
+    <string name="menu_new_tt">Aktuelle Schaltung löschen.</string>
+    <string name="menu_newSub">Neue Teilschaltung</string>
+    <string name="menu_newSub_tt">Öffnet ein neues Fenster, um darin eine neue eingebettete Teilschaltung zu erstellen.</string>
+    <string name="menu_open">Öffnen</string>
+    <string name="menu_openRecent">Zuletzt verwendet</string>
+    <string name="menu_openRecentNewWindow">Zuletzt verwendet in neuem Fenster</string>
+    <string name="menu_openWin">Öffnen in neuem Fenster</string>
+    <string name="menu_openWin_tt">Öffnet eine Schaltung in einem neuen Fenster</string>
+    <string name="menu_orderInputs">Sortieren der Eingänge</string>
+    <string name="menu_orderInputs_tt">Sortiert die Eingänge für die Verwendung als eingebettete Schaltung</string>
+    <string name="menu_orderMeasurements">Sortieren der Messwerte</string>
+    <string name="menu_orderMeasurements_tt">Sortiert die Messwerte für die grafische Anzeige und die Tabellenansicht</string>
+    <string name="menu_orderOutputs">Sortieren der Ausgänge</string>
+    <string name="menu_orderOutputs_tt">Sortiert die Ausgänge für die Verwendung als eingebettete Schaltung</string>
+    <string name="menu_paste">Einfügen</string>
+    <string name="menu_rotate">Rotieren</string>
+    <string name="menu_sim">Simulation</string>
+    <string name="menu_run">Start der Simulation</string>
+    <string name="menu_run_tt">Startet die Simulation der Schaltung</string>
+    <string name="menu_save">Speichern</string>
+    <string name="menu_saveAs">Speichern unter</string>
+    <string name="menu_saveData">Daten speichern</string>
+    <string name="menu_saveData_tt">Speichert die Daten als CSV Datei</string>
+    <string name="menu_speedTest">Geschwindigkeitstest</string>
+    <string name="menu_speedTest_tt">Führt einen Geschwindigkeitstest durch. Es wird die maximal mögliche Taktfrequenz ermittelt</string>
+    <string name="menu_step">Gatterschritt</string>
+    <string name="menu_step_tt">Führt einen Einzelgatterschritt aus</string>
+    <string name="menu_runToBreakMicro">Run To Break im Gatterschrittmodus</string>
+    <string name="menu_runToBreakMicro_tt">Führt alle Einzelgatterschritte aus, bis eine steigende Flanke an einem Break-Element erkannt wird.
+        Ist kein Break-Element vorhanden, werden die verbleibenden Einzelgatterschritte ausgeführt.</string>
+    <string name="menu_synthesise">Synthese</string>
+    <string name="menu_synthesise_tt">Erzeugt minimale boolsche Ausdrücke, welche durch eine Wahrheitstabelle beschrieben werden.</string>
+    <string name="menu_table_N_variables">{0} Variablen</string>
+    <string name="menu_table_create">Erzeugen</string>
+    <string name="menu_table_createCUPL_tt">Erzeugt eine CUPL Quelldatei welche die Schaltung beschreibt.</string>
+    <string name="menu_table_createTT2_tt">Erzeugt eine dem Berkeley Logic Interchange Format (BLIF) ähnliche Beschreibung der Logik.
+        Danach wird der Atmel-Fitter gestartet, um daraus die JEDEC Datei zu erzeugen.</string>
+    <string name="menu_table_createCircuit">Schaltung</string>
+    <string name="menu_table_createCircuit_tt">Erzeugt eine Schaltung, welche der Wahrheitstabelle entspricht.</string>
+    <string name="menu_table_createCircuitJK">Schaltung mit JK Flipflops</string>
+    <string name="menu_table_createCircuitJK_tt">Erzeugt eine Schaltung, welche der Wahrheitstabelle entspricht. Verwendet JK-Flipflops.</string>
+    <string name="menu_table_createCircuitLUT">Schaltung mit LUTs</string>
+    <string name="menu_table_createCircuitLUT_tt">Erzeugt eine Schaltung, welche der Wahrheitstabelle entspricht. Verwendet LookUpTables um die Verknüpfungen zu erzeugen.</string>
+    <string name="menu_table_createNAnd">Schaltung mit NAnd-Gattern</string>
+    <string name="menu_table_createNAndTwo">Schaltung mit NAnd-Gattern mit zwei Eingängen</string>
+    <string name="menu_table_createNAndTwo_tt">Erzeugt eine Schaltung, welche der Wahrheitstabelle entspricht nur mit NAnd-Gattern mit zwei Eingängen.</string>
+    <string name="menu_table_createNAnd_tt">Erzeugt eine Schaltung, welche der Wahrheitstabelle entspricht nur mit NAnd-Gattern.</string>
+    <string name="menu_table_createNOr">Schaltung mit NOr-Gattern</string>
+    <string name="menu_table_createNOrTwo">Schaltung mit NOr-Gattern mit zwei Eingängen</string>
+    <string name="menu_table_createNOrTwo_tt">Erzeugt eine Schaltung, welche der Wahrheitstabelle entspricht nur mit NOr-Gattern mit zwei Eingängen.</string>
+    <string name="menu_table_createNOr_tt">Erzeugt eine Schaltung, welche der Wahrheitstabelle entspricht nur mit NOr-Gattern.</string>
+    <string name="menu_table_createTwo">Schaltung mit Gattern mit zwei Eingängen</string>
+    <string name="menu_table_createTwo_tt">Erzeugt eine Schaltung und verwendet nur Gatter mit zwei Eingängen.</string>
+    <string name="menu_table_createThree">Schaltung mit Gattern mit drei Eingängen</string>
+    <string name="menu_table_createThree_tt">Erzeugt eine Schaltung und verwendet nur Gatter mit maximal drei Eingängen.</string>
+    <string name="menu_table_create_hardware">Bausteine</string>
+    <string name="menu_table_create_jedec_tt">Erzeugt eine JEDEC Datei für den Baustein</string>
+    <string name="menu_table_exportTableLaTeX">Erzeuge LaTeX</string>
+    <string name="menu_table_createFunctionFixture">Erzeuge Testfall</string>
+    <string name="menu_table_createFunctionFixture_tt">Erzeugt eine Testfallbeschreibung, welche in einen Testfall
+        übernommen werden kann.
+    </string>
+    <string name="menu_table_createFunctionFixture_isSequential">Der Testfall ist nur funktionsfähig, wenn die Schaltung
+        rein kombinatorisch ist!
+    </string>
+
+    <string name="menu_table_exportHex">Erzeuge HEX</string>
+    <string name="menu_table_exportHex_tt">Die HEX-Datei kann in ein ROM oder eine LUT geladen werden.</string>
+    <string name="menu_table_new">Neu</string>
+    <string name="menu_table_new_combinatorial">Kombinatorisch</string>
+    <string name="menu_table_new_sequential">Automat</string>
+    <string name="menu_table_new_sequential_bidir">Automat bidirektional</string>
+    <string name="menu_table_reorder_inputs">Eingangsvariablen umsortieren/löschen</string>
+    <string name="menu_table_reorder_outputs">Ergebnisspalten umsortieren/löschen</string>
+    <string name="menu_table_columnsAdd">Ergebnisspalte hinzufügen</string>
+    <string name="menu_table_columnsAdd_tt">Fügt der Tabelle eine Ergebnisspalte hinzu.</string>
+    <string name="menu_table_columnsAddVariable">Eingangsvariable hinzufügen</string>
+    <string name="menu_table_columnsAddVariable_tt">Fügt der Tabelle eine Variablenspalte hinzu.</string>
+    <string name="menu_table_setXTo0">Setze X auf 0</string>
+    <string name="menu_table_setXTo0_tt">Setzt die Don't Cares auf 0.</string>
+    <string name="menu_table_setXTo1">Setze X auf 1</string>
+    <string name="menu_table_setXTo1_tt">Setzt die Don't Cares auf 1.</string>
+    <string name="menu_table_JK">Erzeuge J/K Ansteuerterme</string>
+    <string name="menu_table_setAllToX">Alles auf X setzen</string>
+    <string name="menu_table_setAllToX_tt">Setzt alle Werte auf "don't care".</string>
+    <string name="menu_table_setAllTo0">Alles auf 0 setzen</string>
+    <string name="menu_table_setAllTo0_tt">Setzt alle Werte auf Null.</string>
+    <string name="menu_table_setAllTo1">Alles auf 1 setzen</string>
+    <string name="menu_table_setAllTo1_tt">Setzt alle Werte auf Eins.</string>
+    <string name="menu_table_invert">Alle Bits invertieren</string>
+    <string name="menu_table_invert_tt">Aus einer "1" wird eine "0" und umgekehrt. Don't Cares bleiben unverändert.
+    </string>
+    <string name="menu_table_showAllSolutions">Lösungsdialog anzeigen</string>
+    <string name="menu_table_showAllSolutions_tt">Zeigt den Lösungsdialog wieder an, wenn er manuell geschlossen wurde.</string>
+    <string name="menu_terminalDelete">Löschen</string>
+    <string name="menu_terminalDelete_tt">Löschen des Terminal-Inhalts</string>
+    <string name="menu_view">Ansicht</string>
+    <string name="menu_zoomIn">Vergrößern</string>
+    <string name="menu_zoomOut">Verkleinern</string>
+    <string name="menu_expression">Ausdruck</string>
+    <string name="menu_expression_tt">Erzeugt eine Schaltung aus einem Ausdruck.</string>
+    <string name="menu_runTests">Tests ausführen</string>
+    <string name="menu_runTests_tt">Führt alle Tests in der Schaltung aus!</string>
+    <string name="menu_actualToDefault">Eingänge übernehmen</string>
+    <string name="menu_actualToDefault_tt">Aktuelle Eingangswerte als neue Vorgabewerte übernehmen.</string>
+    <string name="menu_restoreAllFuses">Alle Dioden/FGFETS zurücksetzen</string>
+    <string name="menu_restoreAllFuses_tt">Setzt alle Dioden (Fuses) bzw. FGFETs in den unprogrammierten Zustand zurück. Die Konfiguration geht dabei verloren!</string>
+    <string name="menu_programDiode">Diode programmieren</string>
+    <string name="menu_help_elements">Hilfe</string>
+    <string name="menu_help_elements_tt">Zeigt eine Dokumentation der vorhandenen Elemente.</string>
+    <string name="menu_viewHelp">Hilfedialog</string>
+    <string name="menu_viewHelp_tt">Zeigt den Hilfedialog der aktuellen Schaltung an.</string>
+    <string name="menu_probe_memory">Speicher</string>
+    <string name="menu_probe_memory_tt">Zeigt den Inhalt der Speicherbausteine an.</string>
+    <string name="menu_insertAsNew">Einfügen in neues Fenster</string>
+    <string name="menu_insertAsNew_tt">Der Inhalt der Zwischenablage wird in einem neuen Fenster geöffnet.</string>
+    <string name="menu_treeSelect">Baumansicht der Bauteile</string>
+    <string name="menu_treeSelect_tt">Zeigt am linken Rand des Fensters eine Baumansicht der verfügbaren Bauteile.</string>
+
+    <string name="menu_special">Sonderfunktionen 74xx</string>
+    <string name="menu_addPrefix">IO-Präfix anfügen</string>
+    <string name="menu_addPrefix_tt">Alle selektierten Eingänge und Ausgänge mit einem Präfix versehen.
+        Kann verwendet werden, um die Bezeichnung der Ein- und Ausgänge nach dem Kopieren anzupassen.
+        Dies vereinfacht die Erzeugung von 74xx Schaltungen.</string>
+    <string name="menu_removePrefix">IO-Präfix entfernen</string>
+    <string name="menu_removePrefix_tt">Das erste Zeichen aller selektierten Eingänge und Ausgänge entfernen.
+        Kann verwendet werden, um die Bezeichnung der Ein- und Ausgänge nach dem Kopieren anzupassen.
+        Dies vereinfacht die Erzeugung von 74xx Schaltungen.</string>
+    <string name="menu_numbering">Pinnummerierung</string>
+    <string name="menu_numbering_tt">Wizard zur einfachen Nummerierung der Pins.</string>
+    <string name="menu_removePinNumbers">Pinnummern entfernen</string>
+    <string name="menu_removePinNumbers_tt">Alle Pinnummern in der Schaltung werden entfernt.</string>
+
+    <string name="menu_undo">Rückgängig</string>
+    <string name="menu_undo_tt">Letzte Aktion rückgängig machen</string>
+    <string name="menu_redo">Wiederherstellen</string>
+    <string name="menu_redo_tt">Letzte rückgängig gemachte Aktion wieder herstellen.</string>
+    <string name="menu_showDataAsGraph">Zeige Graph</string>
+    <string name="menu_showDataAsGraph_tt">Zeigt die Daten als Graph an.</string>
+    <string name="menu_showDataAsTable">Zeige Tabelle</string>
+    <string name="menu_showDataAsTable_tt">Zeigt die Daten als Tabelle an.</string>
+    <string name="menu_addPowerSupply">Spannungsversorung ergänzen</string>
+    <string name="menu_addPowerSupply_tt">Erweitert die Schaltung um eine Spannungsversorung.</string>
+    <string name="menu_exportVHDL">Export zu VHDL</string>
+    <string name="menu_exportVHDL_tt">Exportiert die Schaltung zu VHDL</string>
+    <string name="menu_exportVerilog">Export zu Verilog</string>
+    <string name="menu_exportVerilog_tt">Exportiert die Schaltung zu Verilog</string>
+    <string name="menu_karnaughMap">KV-Tafel</string>
+    <string name="menu_karnaughMap_tt">Zeigt eine KV-Tafel der Tabelle an.</string>
+    <string name="menu_pdfDocumentation">Dokumentation</string>
+    <string name="menu_openPdfDocumentation">Öffne {0}</string>
+    <string name="menu_showDataTable">Zeige Messwertetabelle</string>
+    <string name="menu_showDataTable_tt">Zeigt eine Tabelle mit allen Messwerten in einem eigenen Fenster an.</string>
+    <string name="menu_showDataGraph">Zeige Messwertegraph</string>
+    <string name="menu_showDataGraph_tt">Ein Graph mit den Messwerten wird in einem eigenen Fenster angezeigt.</string>
+    <string name="menu_exportZIP">Export als ZIP-Datei</string>
+    <string name="menu_exportZIP_tt">Exportiert die Schaltung als eine ZIP-Datei, welche auch alle eingebetteten
+        Schaltungen enthält.
+        Die ZIP-Datei enthält damit alle Dateien, die für den Betrieb der Schaltung erforderlich sind.</string>
+    <string name="menu_labelPins">Ein- und Ausgänge benennen</string>
+    <string name="menu_labelPins_tt">Für alle unbenannten Ein- und Ausgänge eine Bezeichnung setzen.</string>
+
+    <string name="menu_tutorial">Tutorial starten</string>
+    <string name="menu_tutorial_tt">Startet das Anfänger-Tutorial.</string>
+
+    <string name="menu_stats">Schaltungsstatistik</string>
+    <string name="menu_stats_tt">Zeigt eine Liste der verwendeten Komponenten</string>
+    <string name="stat_number">Zahl</string>
+    <string name="stat_part">Bauteil</string>
+    <string name="stat_inputs">Eing.</string>
+    <string name="stat_bits">Bits</string>
+    <string name="stat_addrBits">Adr. Bits</string>
+
+    <string name="msg_errorOpeningDocumentation">Fehler beim Öffnen einer PDF-Datei!</string>
+
+    <string name="message">&lt;h1&gt;Digital&lt;/h1&gt;Ein einfacher Simulator für digitale Schaltkreise.
+Geschrieben von H. Neemann 2016-2019
+
+Die Icons stammen aus dem &lt;a href=&quot;http://tango.freedesktop.org&quot;&gt;Tango Desktop Project&lt;/a&gt;.
+
+Besuche das Projekt auf &lt;a href=&quot;https://github.com/hneemann/[[name]]&quot;&gt;GitHub&lt;/a&gt;.
+Die jeweils neueste Version steht dort ebenfalls zum
+&lt;a href=&quot;https://github.com/hneemann/[[name]]/releases/latest&quot;&gt;Download&lt;/a&gt; bereit.
+
+Per GitHub kann auch ein &lt;a href=&quot;https://github.com/hneemann/[[name]]/issues/new?body=version:%20[[version]]&amp;labels=bug&quot;&gt;Fehler&lt;/a&gt; gemeldet oder
+eine &lt;a href=&quot;https://github.com/hneemann/[[name]]/issues/new?labels=enhancement&quot;&gt;Verbesserung&lt;/a&gt; vorgeschlagen werden.
+    </string>
+    <string name="msg_N_nodes">{0} aktive Elemente</string>
+    <string name="msg_analyseErr">Fehler bei der Analyse der Schaltung.</string>
+    <string name="msg_clockError">Fehler bei der Berechnung einer Taktänderung.</string>
+    <string name="msg_color">Farbe</string>
+    <string name="msg_errorCalculatingStep">Fehler beim Berechnen eines Simulationsschrittes.</string>
+    <string name="msg_errorCreatingModel">Fehler beim Erzeugen der Schaltung.</string>
+    <string name="msg_errorDuringCalculation">Fehler während der Vereinfachung.</string>
+    <string name="msg_errorDuringHardwareExport">Fehler bei der Erzeugung der Hardware-Konfiguration.</string>
+    <string name="msg_errorEditingValue">Fehler bei der Eingabe eines Wertes.</string>
+    <string name="msg_errorImportingModel_N0">Fehler beim Import der Schaltung {0}.</string>
+    <string name="msg_errorUpdatingLibrary">Fehler beim Aktualisieren der Bauteile-Bibliothek!</string>
+    <string name="msg_errorReadingFile">Fehler beim Lesen einer Datei.</string>
+    <string name="msg_remoteUnknownCommand">Das Kommando {0} ist unbekannt!</string>
+    <string name="msg_errorWritingFile">Fehler beim Schreiben einer Datei.</string>
+    <string name="msg_fastRunError">Ein Fehler beim schnellen Lauf.</string>
+    <string name="msg_frequency_N">Die maximale Frequenz beträgt {0} kHz.</string>
+    <string name="msg_missingShape_N">Es fehlt ein Diagramm für {0}.</string>
+    <string name="msg_pins">Pinbelegung</string>
+    <string name="msg_pinMap_pin_N_is_N">Pin {0}: {1}</string>
+    <string name="msg_restartNeeded">Die Änderung der Einstellung erfordert einen Neustart!</string>
+    <string name="msg_enterAnExpression">Geben Sie einen Ausdruck ein:</string>
+    <string name="msg_runningTestError">Fehler bei der Ausführung der Tests:</string>
+    <string name="msg_testResult">Testergebnis</string>
+    <string name="msg_test_N_Passed">{0}: ok</string>
+    <string name="msg_test_N_Failed">{0}: Fehler</string>
+    <string name="msg_test_missingLines">(Zu viele Einträge!)</string>
+    <string name="msg_test_missingLines_tt">Es wurden alle Testfälle ausgeführt, aber nicht alle Ergebnisse werden angezeigt.
+        Die Bewertung des Testergebnisses ist dennoch korrekt!</string>
+
+    <string name="msg_testExp_N0_found_N1">E: {0} / F: {1}</string>
+    <string name="msg_creatingHelp">Fehler bei der Erzeugung der Hilfe!</string>
+    <string name="msg_clipboardContainsNoImportableData">In der Zwischenablage befinden sich keine importierbaren Daten!</string>
+    <string name="msg_selectAnEmptyFolder">Wählen Sie einen leeren Ordner aus!</string>
+    <string name="msg_fitterResult">Meldung vom externen Fitter</string>
+    <string name="msg_startExternalFitter">Starten des externen Fitters</string>
+    <string name="msg_actualCircuit">Aktuelle Schaltung</string>
+    <string name="msg_fileNotAccessible">Dieser Dateiname ist nicht aus dem aktuellen Projekt importierbar!</string>
+    <string name="msg_fileIsNotUnique">Der Dateiname ist nicht eindeutig!
+        Alle Dateinamen im Arbeitsverzeichniss und allen Unterverzeichnissen müssen eindeutig sein. Dies gilt
+        auch für den Bibliotheksordner. Wenn es in Ihrem Arbeitsverzeichniss eine Datei 7400.dig gibt, können Sie weder
+        diese noch die Datei 7400.dig aus der Bibliothek verwenden, da sich dieser Dateiname nun nicht mehr eindeutig
+        zuordnen lässt.
+    </string>
+    <string name="msg_duplicateLibraryFiles">Es gibt mehrere Dateien mit identischen Dateinamen, welche nicht eindeutig
+        zugeordnet werden können! Betroffen sind:</string>
+    <string name="msg_and_N_More">und {0} weitere.</string>
+    <string name="msg_fileNotImportedYet">Die Datei wurde noch nicht importiert.</string>
+    <string name="msg_fileExists">Die Datei {0} existiert schon! Soll die Datei überschrieben werden?</string>
+    <string name="msg_isLocked">Die Bearbeitung der Schaltung ist gesperrt. Sie können die Sperrung unter
+        "{0}->{1}->{2}" aufheben.
+        Das Kopieren von Elementen und die Konfiguration von Dioden und FG-FETs mit der Taste [P] ist auch im gesperrten Zustand möglich.</string>
+    <string name="msg_speedTestError">Fehler bei der Ausführung des Geschwindigkeitstests!</string>
+    <string name="msg_pin_N">Pin {0}</string>
+    <string name="msg_numberingWizard">Nummerierungshilfe</string>
+    <string name="msg_pin_numbering_N">Wählen Sie Pin {0}:</string>
+    <string name="msg_framesWritten_N">Geschriebene Bilder: {0}</string>
+    <string name="msg_errorWritingGif">Fehler beim Schreiben der GIF Datei!</string>
+    <string name="btn_gifComplete">Fertig</string>
+    <string name="btn_gifComplete_tt">Die GIF-Datei wird abgeschlossen.</string>
+    <string name="msg_gifExport">GIF-Export</string>
+    <string name="msg_errCausedBy">verursacht durch</string>
+    <string name="msg_inputsToInvert">Zu invertierende Eingänge</string>
+    <string name="msg_none">keine</string>
+    <string name="msg_errGettingPinNames">Die Namen der Pins konnten nicht ermittelt werden.</string>
+    <string name="msg_errInFile_N">Aufgetreten in Datei {0}.</string>
+    <string name="msg_affectedComponentsAre_N">Betroffen sind: {0}.</string>
+    <string name="msg_signal_N">Leitung {0}</string>
+    <string name="msg_thereAreMissingPinNumbers">Für die Pins {0} wurden keine Pinnummern festgelegt!
+        Es werden automatisch freie Pins zugeordnet. Die Schaltung kann damit auf realer Hardware in der Regel nicht
+        verwendet werden!</string>
+    <string name="msg_modelHasErrors">Es kann nur eine fehlerfreie Schaltung exportiert werden!</string>
+    <string name="msg_noKVMapAvailable">Keine KV-Tafel verfügbar!</string>
+    <string name="msg_dataNotUpdatedAnymore">Daten werden nicht mehr aktualisiert!</string>
+    <string name="msg_modifyThisAttribute">Diesen Wert verändern.</string>
+    <string name="msg_invalidEditorValue">Ein Feld enthält einen ungültigen Wert!</string>
+    <string name="msg_create CHNFile">Erzeugen der CHN-Datei</string>
+    <string name="msg_tableHasManyRowsConfirm">Die Tabelle ist sehr groß, der Export kann etwas dauern.
+Soll dennoch exportiert werden?</string>
+    <string name="msg_circuitIsRequired">Um eine Hardwarebeschreibung zu erzeugen, muss zuvor eine Schaltung erstellt
+        und analysiert werden. Aus nur einer Wahrheitstabelle kann keine Hardwarebeschreibung erzeugt werden.</string>
+    <string name="msg_noData">keine Daten</string>
+
+    <string name="msg_errorClosingExternalProcess">Konnte externen Prozess nicht beenden!</string>
+    <string name="msg_checkResult">Ergebnis der Überprüfung:</string>
+    <string name="btn_checkCode">Prüfen</string>
+    <string name="btn_checkCode_tt">Startet die Anwendung um zu prüfen, ob der eingegebene Code korrekt ist. Falls das
+        nicht der Fall ist, wird die Fehlermeldung der externen Anwendung angezeigt. Wenn es möglich ist, werden zudem
+        die Eingangs- und Ausgangsdefinitionen an den aktuellen Code angepasst.</string>
+    <string name="msg_codeNotConsistent">Ein- und Ausgängsdefinitionen konnten nicht automatisch erzeugt werden.
+        Bitte prüfen Sie die Einstellungen!</string>
+    <string name="msg_applicationFileNotFound">Ausführbare Datei "{0}" nicht gefunden!</string>
+    <string name="msg_enterText">Text eingeben!</string>
+    <string name="btn_startATMISP">Starte ATMISP</string>
+    <string name="btn_startATMISP_tt">Startet das externe Programm ATMISP. Dieses muss zuvor installiert worden sein.</string>
+    <string name="msg_errorStartingATMISP">Fehler beim Starten von ATMISP!
+Ist in den Einstellungen der korrekte Pfad zur ausführbaren Datei ATMISP.exe angegeben?</string>
+    <string name="msg_ATMISPIsStillRunning">ATMISP läuft noch!
+Wenn dieser Dialog geschlossen wird, wird ATMISP beendet!
+Stellen Sie sicher, dass der Flash-Vorgang abgeschlossen ist, bevor Sie diesen Dialog schließen!</string>
+
+    <string name="menu_runAllTests">Starte alle Tests</string>
+    <string name="menu_runAllTests_tt">Führt alle Tests im aktuellen Verzeichnis aus.</string>
+    <string name="msg_testPassed_N">{0} Testzeilen überprüft</string>
+    <string name="msg_testFile">Testdatei</string>
+    <string name="msg_truthTable">Wahrheitstabelle</string>
+    <string name="msg_errorImportingSvg">Fehler beim Import der SVG-Datei.</string>
+    <string name="msg_errorCreatingSvgTemplate">Fehler beim Erzeugen der SVG-Datei.</string>
+    <string name="msg_couldNotCreateStats">Statistik konnte nicht erzeugt werden.</string>
+
+    <string name="msg_errorReadingToolchainConfig_N">Fehler beim Einladen der Toolchain-Konfiguration {0}</string>
+    <string name="msg_commandStarted_N">Kommando "{0}" wurde gestartet! Die Bearbeitung kann etwas dauern!</string>
+    <string name="msg_commandEnded_N">Kommando "{0}" wurde beendet!</string>
+
+    <string name="msg_renameNet">Netz umbenennen</string>
+    <string name="msg_renameNet_N_OLD_NEW">Es gibt noch {0} weitere Tunnel mit dem Netznamen ''{1}''.
+        Sollen alle {0} zu ''{2}'' umbenannt werden?</string>
+
+    <string name="msg_dataWillBeLost_n">Sollen die Änderungen im Feld "{0}" wirklich verworfen werden?</string>
+    <string name="btn_copyToClipboard">Zwischenablage</string>
+    <string name="btn_copyToClipboard_tt">Kopiert den Text in die Zwischenablage.</string>
+
+    <string name="ok">Ok</string>
+    <string name="rot_0">0°</string>
+    <string name="rot_180">180°</string>
+    <string name="rot_270">270°</string>
+    <string name="rot_90">90°</string>
+    <string name="stat_clocks">Break nach {0} Halbzyklen an Breakpoint ''{1}''.</string>
+    <string name="tt_deleteItem">Eintrag löschen</string>
+    <string name="tt_moveItemDown">Eintrag nach unten schieben</string>
+    <string name="tt_moveItemUp">Eintrag nach oben schieben</string>
+    <string name="win_allSolutions">Alle möglichen Lösungen</string>
+    <string name="win_testdata_N">Testdaten {0}</string>
+    <string name="win_data">Daten</string>
+    <string name="win_confirmExit">Beenden bestätigen!</string>
+    <string name="win_measures">Messwerte</string>
+    <string name="win_measures_fullstep">Messwerte im Vollschrittmodus</string>
+    <string name="win_measures_microstep">Messwerte im Einzelgattermodus</string>
+    <string name="win_saveChanges">Änderungen speichern?</string>
+    <string name="win_stateChanged">Die Datei wurde verändert!</string>
+    <string name="win_table">Tabelle</string>
+    <string name="win_table_exportDialog">Export</string>
+    <string name="win_itempicker_title">Auswahl</string>
+    <string name="win_valueInputTitle_N">Eingabe {0}</string>
+    <string name="win_karnaughMap">Karnaugh-Veitch Tafel</string>
+    <string name="win_romDialog">Vorhandene ROMs</string>
+
+    <string name="btn_help">Hilfe</string>
+
+    <string name="win_romDialogHelpTitle">Zentrale ROM Inhalte</string>
+    <string name="msg_romDialogHelp"><![CDATA[
+        <html>
+        <h3>Motivation</h3>
+        Wenn eine Schaltung, die einen ROM-Baustein enthält, mehrfach eingebettet wird,
+        wird im Normalfall dessen Inhalt für jede Instanz dieser Schaltung verwendet.
+        Unter Umständen kann es aber gewünscht sein, dass eine solche Schaltung zwar
+        mehrfach eingebettet wird, dass aber für jede Instanz unterschiedliche
+        ROM-Inhalte verwendet werden.<br/>
+        Dieses Problem tritt z.B. auf, wenn ein 74xx ROM mehrfach verwendet wird,
+        jedoch mit jeweils anderem Speicherinhalt.<br/>
+        <h3>Funktion</h3>
+        An dieser Stelle können daher für alle ROMs in der Schaltung Inhalte definiert werden.
+        Wenn das Simulationsmodel erzeugt wird, werden für die ROMs zunächst die Inhalte
+        verwendet, die direkt im jeweiligen ROM gespeichert sind. Dann wird überprüft, ob an
+        dieser Stelle ein alternativer Inhalt definiert ist. Ist dies der Fall, wird der hier
+        verwendete Inhalt in das entsprechende ROM geladen.
+        <h3>Verwendung</h3>
+        Zu beachten ist, dass jedes ROM einen eindeutigen Namen benötigt, über welchen der ROM-Inhalt
+        zugeordnet wird. Dazu verwendet man in der Bezeichnung des ROMs das Mal-Zeichen ('*')
+        Dieses wird dann durch den kompletten Pfad, aufgebaut aus den Bezeichnungen der eingebetteten
+        Schaltungen ersetzt. Enthält eine Schaltung nur einen ROM-Baustein, ist es ausreichend, nur
+        das Mal-Zeichen als Bezeichnung zu verwenden.
+        Alle eingebetteten Schaltungen müssen mit einem Namen versehen werden, damit ein eindeutiger
+        Name für jedes ROM gebildet werden kann.
+        </html>
+        ]]>
+    </string>
+
+    <string name="msg_newRelease_N"><![CDATA[
+        <html>
+        <h1>Neue Version {0} verfügbar</h1>
+        <p>Es ist eine neue Version des Simulators verfügbar.</p>
+        <p>In den <a href="https://github.com/hneemann/[[name]]/releases/latest">Release Notes</a>
+        können Sie nachlesen, was sich in der Version {0} verändert hat.</p>
+        <p>Hier geht es zum <a href="https://github.com/hneemann/[[name]]/releases/latest">Download</a>.</p>
+        </html>
+    ]]></string>
+
+    <string name="msg_expressionHelpTitle">Ausdrücke</string>
+    <string name="msg_expressionHelp">Zur Definition eines Ausdruckes können alle üblichen
+Notationen verwendet werden:
+
+Und: &quot;&amp;&quot;, &quot;&amp;&amp;&quot;, &quot;*&quot;, &quot;∧&quot;
+Oder: &quot;|&quot;, &quot;||&quot;, &quot;+&quot;, &quot;∨&quot;, &quot;#&quot;
+Exkl. Oder: &quot;^&quot;, &quot;⊻&quot;
+Nicht: &quot;!&quot;, &quot;~&quot;, &quot;&#172;&quot;
+
+UND hat Vorrang vor ODER bzw. Exkl. ODER.
+Mehrere Ausdrücke können durch "," oder ";" getrennt werden.
+Sollen die Ausdrücke benannt werden, kann die let-Anweisung verwendet
+werden: "let U=A+B, let V=A*B"</string>
+    <string name="msg_testVectorHelpTitle">Testvektoren</string>
+    <string name="msg_testVectorHelp"><![CDATA[<html>
+    <head><style>pre { background-color: #E0E0E0;}</style></head>
+    <body>
+<p>Die erste Zeile muss, durch ein Leerzeichen getrennt, die
+Ein- und Ausgänge auflisten, die verwendet werden sollen.
+In den folgenden Zeilen stehen dann die Sollwerte.
+Dabei steht ein 'X' für Don't Care, und ein 'Z' für hochohmig.
+Wird der Wert 'C' verwendet, werden zunächst alle anderen Werte gesetzt, dann wird ein
+Taktzyklus durchgeführt, und erst daran anschließend werden die Werte verglichen.
+Auf diese Weise können Schaltwerke einfacher getestet werden.
+Eine Zeile, die mit einem Doppelkreuz ('#') beginnt ist ein Kommentar.</p>
+<p>Ein Test für einen 2-Bit Zähler könnte damit wie folgt aussehen:</p>
+
+<pre>
+C Q1 Q0
+0 0  0
+C 0  1
+C 1  0
+C 1  1
+C 0  0
+</pre>
+
+<p>Gestartet werden die Tests über Start->Tests ausführen.</p>
+<p>
+Um vereinfacht sehr viele Tests durchzuführen, existiert die 'repeat([n])' Anweisung:
+Beginnt eine Zeile mit 'repeat([n])', werden [n] Testzeilen erzeugt. Dabei kann die
+Variable 'n' verwendet werden, um die Testdaten zu erzeugen. Bei 'repeat(16)' werden
+16 Zeilen erzeugt, wobei n von 0 bis 15 läuft. Wenn es mehrere Bit-Eingänge gibt,
+und diese sollen gemeinsam auf einen binären Wert gesetzt werden, vereinfacht dies die
+bits([bits],[value]) Anweisung. Mit dieser werden [bits] Bits des Wertes [value] erzeugt.</p>
+
+<p>Im Folgenden ein Beispiel, welches einen 4-Bit Addierer testet:</p>
+
+<pre>
+           C_i-1  A_3 A_2 A_1 A_0  B_3 B_2 B_1 B_0  C_i S_3 S_2 S_1 S_0
+repeat(256)  0    bits(4,n>>4)     bits(4,n)        bits(5,(n>>4)+(n&15))
+repeat(256)  1    bits(4,n>>4)     bits(4,n)        bits(5,(n>>4)+(n&15)+1)
+</pre>
+
+<p>Die Eingangssignale sind das Carry-In (C_i-1) und die acht Eingangsbits A_3-A_0
+und B_3-B_0. Erzeugt werden die jeweils 4 Eingangsbits mit der bits-Anweisung.
+Das Ergebnis (C_i,S_3-S_0) wird ebenfalls durch eine bits-Anweisung erzeugt.
+Das ganze geschieht einmal mit C_i-1=0 und in der nächsten Zeile mit C_i-1=1.
+Auf diese Weise werden 512 Testzeilen erzeugt, welche alle möglichen
+Eingangskonfigurationen abdecken.</p>
+<p>Sollen mehrere Zeilen wiederholt werden, oder werden geschachtelte Schleifen benötigt,
+kann die loop-Anweisung verwendet werden. Das obige Beispiel könnte man also
+auch wie folgt umsetzen:</p>
+
+<pre>           C_i-1  A_3 A_2 A_1 A_0  B_3 B_2 B_1 B_0  C_i S_3 S_2 S_1 S_0
+loop(a,16)
+  loop(b,16)
+             0    bits(4,a)        bits(4,b)        bits(5,a+b)
+             1    bits(4,a)        bits(4,b)        bits(5,a+b+1)
+  end loop
+end loop
+</pre>
+
+<p>Unter Umständen ist die Erzeugung von Zufallszahlen in Testfällen hilfreich.
+Diese können mit der Funktion 'random([n])' erzeugt werden. Die erzeugte Zahl ist
+größer gleich Null und kleiner als [n]. Betrachtet man einen 16-Bit Multiplikator als Beispiel,
+kann kein vollständiger Test durchgeführt werden, da dieser 2^32 Eingangskombinationen hätte.
+Ein Regressionstest, welcher 100000 zufällige Zahlen multipliziert, könnte daher wie folgt aussehen:</p>
+
+<pre>
+   A    B      Y
+loop(i,100000)
+  let a = random(1&lt;&lt;16);
+  let b = random(1&lt;&lt;16);
+  (a)  (b)   (a*b)
+end loop
+</pre>
+
+<p>Ein Eingang, welcher hochhomige Werte erlaubt, kann auch als Testausgang verwendet werden.
+In diesem Fall kann der Signalname mit einem nachgestellten '_out' verwendet werden, um den
+aktuellen Wert zurückzulesen und zu überprüfen. Dazu muss der entsprechende Eingang auf
+hochohmig ('Z') gesetzt sein.</p>
+
+<pre>OE CLK D D_out
+0   0  0 0
+0   C  1 1
+1   0  z 1
+0   C  0 0
+1   0  z 0
+</pre>
+
+<p>Die Schaltung zu diesem Test hat nur einen Eingang 'D', welcher aber hochohmig sein kann.
+Daher steht auch das Signal 'D_out' zur Verfügung, um in diesem Fall den Wert zu prüfen.</p>
+
+</body></html>]]></string>
+
+
+    <string name="fsm_title">Endlicher Automat</string>
+    <string name="fsm_noMove">keine Bewegung</string>
+    <string name="fsm_moveTrans">Übergänge</string>
+    <string name="fsm_moveStates">Übergänge+Zustände</string>
+    <string name="fsm_set_N">setze {0}</string>
+    <string name="menu_fsm">Endlicher Automat</string>
+    <string name="menu_fsm_tt">Dialog für die Erstellung endlicher Automaten.</string>
+    <string name="menu_fsm_create">Erzeugen</string>
+    <string name="menu_fsm_create_table">Zustandsübergangstabelle</string>
+    <string name="menu_fsm_create_counter">Zähler erzeugen</string>
+    <string name="menu_fsm_create_counter_N">{0} Zustände</string>
+    <string name="menu_fsm_Help_tt">Hilfe zur Bedienung des FSM Editors.</string>
+    <string name="key_stateNum">Zustandsnummer</string>
+    <string name="key_stateNum_tt">Die Nummer welche diesen Zustand representiert.</string>
+    <string name="key_isInitialState">Startzustand</string>
+    <string name="key_isInitialState_tt">Wenn gesetzt, ist dies der Initialzustand, in welchem der Automat gestartet wird.</string>
+    <string name="key_stateValues">Ausgänge</string>
+    <string name="key_stateValues_tt">Legt Ausgangswerte fest.
+        Mit einfachen Zuweisungen wie "A=1, B=0" können Ausgänge gesetzt werden.
+        Mit Anweisungen wie "A=101" können mehrbittige Ausgänge gesetzt werden.
+        Ausgänge die hier nicht definiert werden, werden bei Zuständen auf Null gesetzt.
+        Bei Übergängen bleiben nicht angegebene Ausgänge unverändert.
+    </string>
+    <string name="key_transCond">Bedingung</string>
+    <string name="key_transCond_tt">Ein boolscher Ausdruck.</string>
+    <string name="key_transRad">Radius</string>
+    <string name="key_transRad_tt">Radius des Kreises in der Darstellung.</string>
+    <string name="err_notDeterministic_N">Der Automat ist nicht deterministisch: {0}</string>
+    <string name="err_fsmNumberUsedTwice_N">Zustandsnummer {0} ist nicht eindeutig.</string>
+    <string name="err_fsmNoInitialState">Es gibt keinen Initialzustand.</string>
+    <string name="err_fsmState_N_notFound">Zustand ''{0}'' nicht gefunden!</string>
+    <string name="err_fsmInvalidOutputAssignment_N">Falsche Zuweisung an einen Ausgang (''{0}'')!</string>
+    <string name="err_fsmErrorInCondition_N">Fehler in Bedingung ''{0}''!</string>
+    <string name="msg_fsm_errorLoadingFile">Fehler beim Laden der Datei!</string>
+    <string name="msg_fsm_errorStoringFile">Fehler beim Speichern der Datei!</string>
+    <string name="msg_fsmTransition">Übergang</string>
+    <string name="msg_fsmState">Zustand</string>
+    <string name="msg_fsmNewState">Neuer Zustand</string>
+    <string name="msg_fsmCantCreateTable">Zustandsübergangstabelle kann nicht erzeugt werden.</string>
+    <string name="msg_fsmHelpTitle">Hilfe Endliche Automaten</string>
+    <string name="msg_fsmHelp"><![CDATA[
+<html><head></head>
+<body>
+  <h3>Mausbedienung</h3>
+  <dl>
+    <dt>Erzeugen eines Zustandes:</dt>
+    <dd>Rechter Mausklick auf einen freien Bereich.</dd>
+    <dt>Erzeugen eines Übergangs:</dt>
+    <dd>Rechte Maustaste drücken über dem Startzustand und dann ziehen auf den Zielzustand.</dd>
+    <dt>Löschen eines Zustandes oder eines Übergangs:</dt>
+    <dd>Mit der Maus auf das Objekt zeigen und [Entfernen] drücken.</dd>
+    <dt>Verschieben eines Zustandes oder eines Übergangs:</dt>
+    <dd>Linke Maustaste drücken und dann ziehen.</dd>
+    <dt>Bearbeiten eines Zustandes oder eines Übergangs:</dt>
+    <dd>Rechter Mausklick auf den Zustand oder den Übergang.</dd>
+  </dl>
+  <h3>Layouthilfe</h3>
+  <dl>
+    <dt>keine Bewegung:</dt>
+    <dd>Die Layouthilfe ist abgeschaltet.</dd>
+    <dt>Übergänge:</dt>
+    <dd>Die Layouthilfe bewegt die Pfeile der Übergänge um Überlappungen zu vermeiden.</dd>
+    <dt>Übergänge+Zustände</dt>
+    <dd>Die Layouthilfe bewegt sowohl die Zustände als auch die Übergänge um bei der Erzeugung eines
+    ausgewogenen Layouts zu unterstützen.</dd>
+  </dl>
+  <h3>Interpretation der Übergänge</h3>
+  Um die Erzeugung eines deterministischen Automaten zu erleichtern, werden unbedingte Übergänge auf
+  besondere Weise behandelt: Ein unbedingter Übergang wird nur ausgeführt, wenn bei keinem anderen
+  Übergang die Übergangsbedingung erfüllt ist. Es kann also einen unbedingten Übergang und bedingte
+  Übergänge geben, die vom selben Zustand ausgehen.<br/>
+  Ein unbedinger übergang legt damit fest, welcher Zustand angesprungen wird, wenn keine andere
+  Übergangsbedingung erfüllt ist.
+  Gibt es aus einem Zustand keinen unbedingten Übergang, bleibt der Automat in diesem Zustand, wenn keine
+  andere Übergangsbedingung erfüllt ist.
+</body></html>]]></string>
+
+    <string name="msg_graphHelpTitle">Der Messwertegraph</string>
+    <string name="msg_graphHelp"><![CDATA[
+        <html><body>
+        <h3>Was ist im Graphen zu sehen?</h3>
+        Im Gegensatz zu einem realen Logikanalysator zeigt die X-Achse des Messwertegraphen nicht die Zeit an.
+        Angezeigt wird ein Zähler welcher die Zustandsänderungen in der Schaltung zählt. Immer wenn eine Änderung
+        in der Schaltung stattfindet, wird der Zähler erhöht und der neue Zustand wird angezeigt.<br/>
+        Man kann es sich auch wie einen klassischen Logikanalysator vorstellen, welcher zur Optimierung keine Daten
+        abspeichert, wenn sich nichts in der Schaltung verändert hat.<br/>
+        Das bedeutet jedoch auch, dass aus dem Graphen nicht abgelesen werden kann, ob zwischen zwei Änderungen in der
+        Schaltung viel oder wenig Zeit vergangen ist.<br/>
+        Dieses Verhalten entsteht durch die Art der Simulation: Die Simulation der Schaltung kennt keine Zeit.
+        Es wird eine Veränderung an der Schaltung durchgeführt, und die Änderung des Schaltungszustandes wird berechnet,
+        bis sich die Schaltung wieder stabiliert hat. Dann erfolgt die nächste Änderung, deren Auswirkung ebenfalls
+        berechnet wird usw.. Diese Änderungen werden gezählt und der Zählerstand wird an der X-Achse des Graphen
+        angezeigt.<br/>
+        Das bedeutet unter anderem, dass man eine Schaltung nicht übertakten kann, da die Auswirkungen der fallenden
+        Flanke des Taktes erst berechnet werden, wenn sich die Schaltung nach der vorherigen steigenden Flanke wieder
+        stabilisiert hat.
+        </body></html>
+    ]]></string>
+
+    <string name="tutorial">Tutorial</string>
+    <string name="tutorial1">Im Folgenden führt Sie ein kurzes Tutorial zur ersten,
+        einfachen Schaltung:
+
+        Beginnen Sie, indem Sie einen Eingang in die Schaltung einfügen.
+        Sie finden den Eingang im Menu Bauteile▸IO.
+    </string>
+    <string name="tutorial2">Fügen Sie nun einen zweiten Eingang in die Schaltung ein.
+        Sie können auch auf den Eingang in der Toolbar klicken.
+
+        Setzen Sie den zweiten Eingang am besten mit etwas Abstand unter den ersten Eingang.
+        Sie können die Schaltung verschieben, wenn Sie die rechte Maustaste gedrückt halten.
+        Durch klicken auf Bauteile können Sie diese verschieben.
+    </string>
+    <string name="tutorial3">Als nächstes soll ein "Exklusiv Oder" Gatter eingefügt werden.
+        Sie finden dieses Gatter im Menu Bauteile▸Logisch.
+        Setzen Sie dieses Bauteil mit etwas Abstand rechts neben die Eingänge.
+    </string>
+    <string name="tutorial4">Als letztes Bauteil soll noch ein Ausgang eingefügt werden.
+        Platzieren Sie den Ausgang etwas rechts des "Exklusiv Oder" Gatters.
+    </string>
+    <string name="tutorial5">Um die Schaltung zu vervollständigen, sind Verbindungsleitungen zu ziehen.
+
+        Klicken Sie auf den roten Punkt am ersten Eingang und verbinden Sie diesen mit einem Eingang
+        des "Exklusiv Oder" Gatters, indem Sie danach auf einen blauen Punkt des "Exklusiv Oder"
+        Gatters klicken. Die Maustaste NICHT gedrückt halten!
+    </string>
+    <string name="tutorial6">Verbinden Sie den roten Punkt des zweiten Eingangs mit den zweiten blauen
+        Punkten des "Exklusiv Oder" Gatters und den roten Punkt des "Exklusiv Oder" Gatters mit dem
+        blauen Punkt des Ausgangs.
+
+        Während Sie die Leitung zeichnen, können Sie sie durch Klicken auf die Arbeitsfläche anheften.
+        Rechts-Klick bricht das Zeichnen der Leitung ab (Steuerung-Klick unter MacOS).
+    </string>
+    <string name="tutorial7">Damit ist Ihre erste Schaltung funktionsfähig.
+        Um die Simulation zu starten, können Sie auf den Play-Knopf in der Toolbar klicken.
+        Wenn Sie mit der Maus über die Toolbar fahren, werden Tool-Tipps angezeigt.
+    </string>
+    <string name="tutorial8">
+        Die Simulation ist jetzt aktiv.
+        Schalten Sie die Eingänge um, indem Sie darauf klicken.
+    </string>
+    <string name="tutorial9">
+        Um die Simulation zu beenden, klicken Sie auf den Stop-Knopf in der Toolbar.
+    </string>
+    <string name="tutorial10">
+        Der Vollständigkeit halber sollen die Ein- und Ausgänge benannt werden.
+
+        Durch Rechts-Klick auf einen Eingang öffnet sich ein Dialog (Unter MacOS wird
+        Steuerung-Klick verwendet). Hier kann der Eingang mit einer Bezeichnung versehen werden.
+    </string>
+    <string name="tutorial11">
+        Benennen Sie alle Ein- und Ausgänge.
+    </string>
+    <string name="tutorialUniqueIdents">
+        Ein- und Ausgänge sollten stets eindeutig benannt sein.
+    </string>
+    <string name="tutorialNotNeeded">
+        Tutorial überspringen
+    </string>
+</resources>

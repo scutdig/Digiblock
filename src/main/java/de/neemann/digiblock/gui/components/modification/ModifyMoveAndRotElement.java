@@ -1,0 +1,40 @@
+/*
+ * Copyright (c) 2017 Helmut Neemann
+ * Use of this source code is governed by the GPL v3 license
+ * that can be found in the LICENSE file.
+ */
+package de.neemann.digiblock.gui.components.modification;
+
+import de.neemann.digiblock.draw.elements.Circuit;
+import de.neemann.digiblock.draw.elements.VisualElement;
+import de.neemann.digiblock.draw.graphics.Vector;
+import de.neemann.digiblock.lang.Lang;
+import de.neemann.digiblock.undo.ModifyException;
+
+/**
+ * Modifier to move and rotate a single visual element
+ */
+public class ModifyMoveAndRotElement extends ModificationOfVisualElement {
+    private final Vector pos;
+    private final int rotation;
+
+    /**
+     * Create a new instance
+     *
+     * @param ve       the visual Element
+     * @param pos      the new position
+     * @param rotation the new rotation
+     */
+    public ModifyMoveAndRotElement(VisualElement ve, Vector pos, int rotation) {
+        super(ve, Lang.get("mod_movedOrRotatedElement_N", getToolTipName(ve)));
+        this.pos = pos;
+        this.rotation = rotation;
+    }
+
+    @Override
+    public void modify(Circuit circuit) throws ModifyException {
+        VisualElement ve = getVisualElement(circuit);
+        ve.setPos(pos);
+        ve.setRotation(rotation);
+    }
+}
