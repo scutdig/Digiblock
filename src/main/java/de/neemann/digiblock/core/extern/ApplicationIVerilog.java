@@ -10,6 +10,7 @@ import de.neemann.digiblock.core.extern.handler.ProcessInterface;
 import de.neemann.digiblock.core.extern.handler.StdIOInterface;
 import de.neemann.digiblock.gui.Settings;
 import de.neemann.digiblock.lang.Lang;
+import sun.misc.IOUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -49,7 +50,7 @@ public class ApplicationIVerilog extends ApplicationVerilogStdIO {
 
             file = createVerilogFile(label, code, inputs, outputs);
             String testOutputName = label + ".out";
-            String m1 = ProcessStarter.start(file.getParentFile(), iverilog, "-tvvp", "-o" + testOutputName, file.getName());
+            String m1 = ProcessStarter.start(file.getParentFile(), iverilog, "-y","~/Digital/blockbox","-tvvp", "-o" + testOutputName, file.getName());
             ProcessBuilder pb = new ProcessBuilder(vvp, "-M", ivlModuleDir, testOutputName).redirectErrorStream(true).directory(file.getParentFile());
             return new IVerilogProcessInterface(pb.start(), file.getParentFile());
         } catch (IOException e) {
@@ -87,7 +88,7 @@ public class ApplicationIVerilog extends ApplicationVerilogStdIO {
             file = createVerilogFile(label, code, inputs, outputs);
             String testOutputName = label + ".out";
 
-            return ProcessStarter.start(file.getParentFile(), iverilog, "-tvvp", "-o" + testOutputName, file.getName());
+            return ProcessStarter.start(file.getParentFile(), iverilog, "-y","","-tvvp", "-o" + testOutputName, file.getName());
         } catch (IOException e) {
             if (iverilogNotFound(e))
                 throw new IOException(Lang.get("err_iverilogNotInstalled"));

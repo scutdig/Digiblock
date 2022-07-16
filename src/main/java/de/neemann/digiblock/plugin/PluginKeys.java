@@ -48,4 +48,28 @@ public final class PluginKeys {
     public static final Key<IntFormat> INT_FORMAT
             = new Key.KeyEnum<>("intFormat", IntFormat.def, IntFormat.values())
             .setSecondary();
+
+    /**
+     * set the mode to primary i2c
+     */
+    public static final Key<Boolean> Primary_I2C
+            = new Key<>("primary_i2c",false)
+            .setName("primary i2c mode")
+            .setSecondary();
+
+
+    /**
+     * set the mode to secondary i2c
+     */
+    public static final Key<Boolean> Secondary_I2C
+            = new Key<>("secondary_i2c",false)
+            .setName("secondary i2c mode")
+            .setSecondary();
+    /**
+     * set the mode to spi
+     */
+    public static final Key<Boolean> SPI
+            = new Key<>("spi",false)
+            .setName("spi mode")
+            .setSecondary();
 }

@@ -715,6 +715,25 @@ public final class Keys {
             = new Key.KeyFile("iverilogPath", new File("iverilog")).setSecondary();
 
     /**
+     * Path to gtkwave installation directory
+     */
+    public static final Key<File> SETTINGS_GTKWAVE_PATH
+            = new Key.KeyFile("gtkwavePath", new File("")).setSecondary();
+
+    /**
+     * Path to iverilog source file
+     */
+    public static final Key<File> SETTINGS_IVERILOG_SOURCE_PATH
+            = new Key.KeyFile("ivlSourcePath", new File("")).setSecondary();
+
+    /**
+     * Path to iverilog destination file
+     */
+    public static final Key<File> SETTINGS_IVERILOG_TESTBENCH_PATH
+            = new Key.KeyFile("ivlTestbenchPath", new File("")).setSecondary();
+
+
+    /**
      * Avoid component tooltips in the main panel
      */
     public static final Key<Boolean> SETTINGS_NOTOOLTIPS =

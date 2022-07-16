@@ -6,10 +6,7 @@
 package de.neemann.digiblock.draw.library;
 
 import de.neemann.digiblock.core.NodeException;
-import de.neemann.digiblock.core.element.ElementAttributes;
-import de.neemann.digiblock.core.element.ElementFactory;
-import de.neemann.digiblock.core.element.ElementTypeDescription;
-import de.neemann.digiblock.core.element.Keys;
+import de.neemann.digiblock.core.element.*;
 import de.neemann.digiblock.draw.elements.Circuit;
 import de.neemann.digiblock.draw.elements.PinException;
 import de.neemann.digiblock.draw.elements.VisualElement;
@@ -55,6 +52,7 @@ public final class ElementTypeDescriptionCustom extends ElementTypeDescription {
         setShortName(file.getName());
         addAttribute(Keys.ROTATE);
         addAttribute(Keys.LABEL);
+        addAttribute(Keys.WIDTH);
         addAttribute(Keys.SHAPE_TYPE);
         if (isGeneric())
             addAttribute(Keys.GENERIC);

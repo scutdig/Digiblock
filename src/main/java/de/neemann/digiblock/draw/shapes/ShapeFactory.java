@@ -7,10 +7,7 @@ package de.neemann.digiblock.draw.shapes;
 
 import de.neemann.digiblock.core.NodeException;
 import de.neemann.digiblock.core.basic.*;
-import de.neemann.digiblock.core.element.ElementAttributes;
-import de.neemann.digiblock.core.element.ElementTypeDescription;
-import de.neemann.digiblock.core.element.Keys;
-import de.neemann.digiblock.core.element.PinDescriptions;
+import de.neemann.digiblock.core.element.*;
 import de.neemann.digiblock.core.extern.External;
 import de.neemann.digiblock.core.io.*;
 import de.neemann.digiblock.core.memory.*;
@@ -175,6 +172,7 @@ public final class ShapeFactory {
         map.put(RegsFile.DESCRIPTION.getName(), RectShape::new);
         map.put(PLL.DESCRIPTION.getName(), ((attributes, inputs, outputs) -> new GenericShape(PLL.DESCRIPTION.getName(), inputs, outputs, attributes.getLabel(), true, 6)));
 
+
         // disables string formatting for external components, see #272
         map.put(External.DESCRIPTION.getName(),
                 (attributes, inputs, outputs) ->
@@ -239,7 +237,8 @@ public final class ShapeFactory {
                                         pt.getOutputDescriptions(elementAttributes),
                                         elementAttributes.getLabel(),
                                         true,
-                                        customDescr.getAttributes().get(Keys.WIDTH))
+                                        elementAttributes.get(Keys.WIDTH))
+                                        // customDescr.getAttributes().get(Keys.WIDTH))
                                         .setTopBottomBorder(SIZE2 + Style.MAXLINETHICK)
                                         .setColor(customDescr.getAttributes().get(Keys.BACKGROUND_COLOR));
                         }

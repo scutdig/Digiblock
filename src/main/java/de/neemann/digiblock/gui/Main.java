@@ -5,6 +5,8 @@
  */
 package de.neemann.digiblock.gui;
 
+import de.neemann.digiblock.Verification.ApplicationIverilogTb;
+import de.neemann.digiblock.Verification.TestbenchKey;
 import de.neemann.digiblock.analyse.AnalyseException;
 import de.neemann.digiblock.analyse.ModelAnalyser;
 import de.neemann.digiblock.analyse.SubstituteLibrary;
@@ -39,6 +41,8 @@ import de.neemann.digiblock.gui.components.modification.ModifyMeasurementOrderin
 import de.neemann.digiblock.gui.components.table.TableDialog;
 import de.neemann.digiblock.gui.components.terminal.Keyboard;
 import de.neemann.digiblock.gui.components.terminal.KeyboardDialog;
+import de.neemann.digiblock.gui.components.terminal.Serial.Bus;
+import de.neemann.digiblock.gui.components.terminal.Serial.SerialDialog;
 import de.neemann.digiblock.gui.components.testing.TestAllDialog;
 import de.neemann.digiblock.gui.components.testing.ValueTableDialog;
 import de.neemann.digiblock.gui.components.tree.LibraryTreeModel;
@@ -150,6 +154,9 @@ public final class Main extends JFrame implements ClosingWindowListener.ConfirmS
     private File baseFilename;
     private File filename;
     private File rarsTempFile;
+    private File marsTempFile;
+    private File armv8TempFile;
+    private File gtkwaveTempFile;
     private FileHistory fileHistory;
     private boolean modifiedPrefixVisible = false;
 
@@ -203,6 +210,33 @@ public final class Main extends JFrame implements ClosingWindowListener.ConfirmS
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        try {
+            marsTempFile = File.createTempFile("mars", ".jar");
+            marsTempFile.deleteOnExit();
+            try (FileOutputStream out = new FileOutputStream(marsTempFile);
+                 InputStream in = ClassLoader.getSystemResourceAsStream("Mars4_5.jar")) {
+                if (in != null)
+                    IOUtils.copy(in, out);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            armv8TempFile = File.createTempFile("armv8", ".jar");
+            armv8TempFile.deleteOnExit();
+            try (FileOutputStream out = new FileOutputStream(armv8TempFile);
+                 InputStream in = ClassLoader.getSystemResourceAsStream("ARMv8_Assembler.jar")) {
+                if (in != null)
+                    IOUtils.copy(in, out);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
 
         circuitComponent = new CircuitComponent(this, library, shapeFactory);
         circuitComponent.addListener(this);
@@ -265,27 +299,7 @@ public final class Main extends JFrame implements ClosingWindowListener.ConfirmS
 
         menuBar.add(WindowManager.getInstance().registerAndCreateMenu(this));
 
-        /*
-        *   在菜单栏中添加 TestBench 选项
-         */
-        JMenu testBenchMenu = new JMenu(Lang.get("menu_testBench"));
-        menuBar.add(testBenchMenu);
-        testBenchMenu.add(new ToolTipAction(Lang.get("menu_testBench_create")) {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    Path target = Paths.get("java.io.tmpdir");
-                    loadRecourseFromJarByFolder("/testbench", target.toFile().getAbsolutePath());
-                    target.toFile().deleteOnExit();
-                    URI uri = target.resolve("testbench/index.html").toUri();
-                    Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
-                    if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE))
-                        desktop.browse(uri);
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
-            }
-        }.setToolTip(Lang.get("menu_testBench_create_tt")).createJMenuItem());
+        createTestbench(menuBar);
 
         JMenu helpMenu = new JMenu(Lang.get("menu_help"));
         helpMenu.add(new ToolTipAction(Lang.get("menu_help_elements")) {
@@ -1409,6 +1423,125 @@ public final class Main extends JFrame implements ClosingWindowListener.ConfirmS
         }
                 .setToolTip(Lang.get("menu_RARS_tt"))
                 .createJMenuItem());
+        assembly.add(new ToolTipAction("MARS") {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                try {
+                    String cmd = "java -jar " + marsTempFile.getAbsolutePath();
+                    Runtime.getRuntime().exec(cmd);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+                .setToolTip(Lang.get("menu_Mars_tt"))
+                .createJMenuItem());
+
+        assembly.add(new ToolTipAction("ARMv8") {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                try {
+                    String cmd = "java -jar " + armv8TempFile.getAbsolutePath();
+                    Runtime.getRuntime().exec(cmd);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+                .setToolTip(Lang.get("menu_ARMv8_tt"))
+                .createJMenuItem());
+
+
+    }
+
+    /**
+     * Create the TestBench menu
+     *
+     * @param menuBar the menu bar
+     */
+    private void createTestbench(JMenuBar menuBar) {
+
+        JMenu verificationMenu = new JMenu(Lang.get("menu_verification"));
+        menuBar.add(verificationMenu);
+
+        verificationMenu.add((new ToolTipAction(Lang.get("menu_instantiation_create")) {
+            public void actionPerformed(ActionEvent e) {
+                TestbenchKey.ISTESTBENCH = true;
+                try {
+                    (new ModelCreator(Main.this.circuitComponent.getCircuit(), Main.this.library)).createModel(false);
+                } catch (PinException|NodeException|ElementNotFoundException ei) {
+                    Main.this.showErrorWithoutARunningModel(Lang.get("msg_modelHasErrors"), ei);
+                    return;
+                }
+                if (TestbenchKey.TIPS) {
+                    JOptionPane.showMessageDialog(Main.this, "导出Testbench Verilog代码模版，文件名需要按以下规范命名：模块名_tb.v \n例子：模块RTL文件为adder.v，导出的Testbench 模版文件命名为adder_tb.v", "提示", -1);
+                    TestbenchKey.TIPS = false;
+                }
+
+
+                JFileChooser fc = new MyFileChooser();
+                if (filename != null)
+                    fc.setSelectedFile(SaveAsHelper.checkSuffix(filename, "v"));
+                ElementAttributes settings = Settings.getInstance().getAttributes();
+                File exportDir = settings.getFile("exportDirectory");
+                if (exportDir != null)
+                    fc.setCurrentDirectory(exportDir);
+                fc.addChoosableFileFilter(new FileNameExtensionFilter("Verilog", "v"));
+                (new SaveAsHelper(Main.this, fc, "v")).checkOverwrite(
+                        file -> {
+                    settings.setFile("exportDirectory", file.getParentFile());
+                    try (VerilogGenerator vlog = new VerilogGenerator(library, new CodePrinter(file))) {
+                        vlog.export(circuitComponent.getCircuit());
+                    }
+                });
+                TestbenchKey.ISTESTBENCH = false;
+            }
+        }).setToolTip(Lang.get("menu_instantiation_create_tt")).createJMenuItem());
+
+        verificationMenu.add((new ToolTipAction(Lang.get("menu_iverilog_create")) {
+            public void actionPerformed(ActionEvent e) {
+
+                AttributeDialog adg = new AttributeDialog(Main.this, IverilogSettings.getInstance().getKeys(), IverilogSettings.getInstance().getAttributes());
+                ElementAttributes modified = adg.setDialogTitle(Lang.get("menu_iverilog_create")).showDialog();
+                ApplicationIverilogTb app = new ApplicationIverilogTb();
+                File rtlDir = IverilogSettings.getInstance().get(Keys.SETTINGS_IVERILOG_SOURCE_PATH);
+                File tbDir = IverilogSettings.getInstance().get(Keys.SETTINGS_IVERILOG_TESTBENCH_PATH);
+                System.out.println(rtlDir.toString());
+                System.out.println(tbDir.toString());
+
+                try {
+                    if (!rtlDir.getName().isEmpty()) {
+                        String message = app.execIvl(rtlDir, tbDir);
+                        if (message != null && !message.isEmpty())
+                            createError(true, Lang.get("msg_checkResult") + "\n\n" + message).show();
+                        String str1 = app.execVpp(rtlDir);
+                    }
+                } catch (IOException ei) {
+                    createError(true, Lang.get("msg_checkResult")).addCause(ei).show();
+                } finally {
+                    IverilogSettings.getInstance().getAttributes().getValuesFrom(modified);
+                }
+            }
+
+            private ErrorMessage createError(boolean consistent, String message) {
+                if (!consistent)
+                    message = Lang.get("msg_codeNotConsistent") + "\n\n" + message;
+                return new ErrorMessage(message);
+            }
+        }).setToolTip(Lang.get("menu_iverilog_create_tt")).createJMenuItem());
+
+        verificationMenu.add((new ToolTipAction(Lang.get("menu_gtkWave_create")) {
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    File gtkDir = Settings.getInstance().get(Keys.SETTINGS_GTKWAVE_PATH);
+                    Path p = Paths.get(gtkDir.getAbsolutePath());
+                    String gtk = p.getParent().resolve("gtkwave.exe").toString();
+                    Runtime.getRuntime().exec(gtk);
+                } catch (IOException ei) {
+                    ei.printStackTrace();
+                }
+            }
+        }).setToolTip(Lang.get("menu_gtkWave_create_tt")).createJMenuItem());
 
     }
 
@@ -1653,6 +1786,9 @@ public final class Main extends JFrame implements ClosingWindowListener.ConfirmS
 
 
             windowPosManager.register("keyboard_" + k.getLabel(), new KeyboardDialog(this, k, handler));
+        }
+        for (Bus s: model.findNode(Bus.class)) {
+            windowPosManager.register("bus", new SerialDialog(s));
         }
     }
 

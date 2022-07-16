@@ -5,6 +5,7 @@
  */
 package de.neemann.digiblock.hdl.verilog2;
 
+import de.neemann.digiblock.Verification.TestbenchKey;
 import de.neemann.digiblock.hdl.vhdl2.*;
 import de.neemann.digiblock.core.element.ElementAttributes;
 import de.neemann.digiblock.data.Value;
@@ -32,6 +33,7 @@ import java.util.ArrayList;
 import static de.neemann.digiblock.testing.TestCaseElement.TESTDATA;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Pattern;
 
 /**
  * Creates a test bench for a model.
@@ -56,7 +58,7 @@ public class VerilogTestBenchCreator {
         this.topModuleName = topModuleName;
         testCases = new ArrayList<>();
         for (VisualElement ve : circuit.getElements())
-            if (ve.equalsDescription(TestCaseElement.TESTCASEDESCRIPTION))
+            if (TestbenchKey.ISTESTBENCH)
                 testCases.add(ve.getElementAttributes());
         testFileWritten = new ArrayList<>();
         renaming = model.getRenaming();
@@ -78,10 +80,7 @@ public class VerilogTestBenchCreator {
 
         for (ElementAttributes tc : testCases) {
             String testName = tc.getLabel();
-            if (testName.length() > 0)
-                testName = filename + "_" + testName + "_tb";
-            else
-                testName = filename + "_tb";
+            testName = filename;
 
             //testName = HDLPort.getHDLName(testName);
 
@@ -112,124 +111,51 @@ public class VerilogTestBenchCreator {
         out.print("//  A testbench for ").println(testName);
         out.println("`timescale 1us/1ns").println();
         out.print("module ").print(testName).println(";");
-
-        // Write local port declaration
         out.inc();
-
-        for (HDLPort p : main.getPorts()) {
+        for (HDLPort p : this.main.getPorts())
             out.print("  ").print(getSignalDeclarationCode(p)).println(";");
-        }
-
         out.println();
-        out.print(moduleName).print(" ").print(moduleName).print("0 (").println();
+        String pmoduleName = null;
+        if (moduleName.substring(moduleName.lastIndexOf('_')).toLowerCase().equals("_tb")) {
+            pmoduleName = moduleName.substring(0, moduleName.lastIndexOf('_'));
+        } else {
+            throw new IOException(Lang.get("err_testbenchModuleName"));
+        }
+        out.print(pmoduleName).print(" ").print(moduleName).print("0 (").println();
         out.inc();
-
         Separator comma = new Separator(out, ",\n");
-
-        for (HDLPort p : main.getPorts()) {
+        for (HDLPort p : this.main.getPorts()) {
             comma.check();
             out.print(".").print(p.getName()).print("(").print(p.getName()).print(")");
         }
         out.dec().println().print(");").println().println();
-
-        TestCaseDescription testdata = tc.get(TESTDATA);
-
-        ArrayList<HDLPort> dataOrder = new ArrayList<>();
-        ArrayList<HDLPort> inputsInOrder = new ArrayList<>();
-        ArrayList<HDLPort> outputsInOrder = new ArrayList<>();
-        for (String name : testdata.getNames()) {
-            String saveName = renaming.checkName(name);
-            boolean found = false;
-            for (HDLPort p : main.getPorts()) {
-                if (p.getName().equals(saveName)) {
-                    dataOrder.add(p);
-
-                    if (p.getDirection() == HDLPort.Direction.OUT) {
-                        inputsInOrder.add(p);
-                    } else {
-                        outputsInOrder.add(p);
-                    }
-
-                    found = true;
-                    break;
-                }
+        out.print("parameter PERIOD = 10;").println().println();
+        String pattern = ".*(clk|clock).*";
+        String clkName = "";
+        for (HDLPort p : this.main.getPorts()) {
+            if (Pattern.matches(pattern, getSignalDeclarationCode(p))) {
+                clkName = p.getName();
+                TestbenchKey.ISCOMBINATION = true;
             }
-            if (!found)
-                throw new TestingDataException(Lang.get("err_testSignal_N_notFound", name));
         }
-
-        int rowBits = 0;
-        for (HDLPort p : dataOrder) {
-            rowBits += p.getBits();
-        }
-
-        CodePrinterStr outTmp = new CodePrinterStr();
-
-        outTmp.inc();
-        LineListener parent = new LineListenerVerilog(outTmp, dataOrder, rowBits);
-        testdata.getLines().emitLines(parent, new Context());
-        int lineCount = ((LineListenerVerilog) parent).getLineCount();
-
-        String patternRange1 = rowBits == 1? "" : String.format("[%d:0] ", rowBits - 1);
-        String patternRange2 = lineCount == 1? "" : String.format("[0:%d]", lineCount - 1);
-
-        out.inc();
-        out.print("reg ").print(patternRange1).print("patterns").print(patternRange2).println(";");
-
-        String loopVar = "i";
-        int lv = 0;
-        while (loopVarExists(loopVar, main.getPorts()))
-            loopVar = "i" + (lv++);
-
-        out.print("integer ").print(loopVar).println(";");
-
         out.println().println("initial begin");
-        out.println(outTmp.toString());
-
-        out.inc();
-        out.print(String.format("for (%1$s = 0; %1$s < %2$d; %1$s = %1$s + 1)\n", loopVar, lineCount));
-        out.println("begin").inc();
-
-        int rangeStart = rowBits - 1;
-        for (HDLPort p : inputsInOrder) {
-            int rangeEnd = rangeStart - p.getBits() + 1;
-            String rangeStr = (rangeStart != rangeEnd)? ("[" + rangeStart + ":" + rangeEnd + "]") : ("[" + rangeStart + "]");
-
-            out.print(p.getName()).print(" = patterns[").print(loopVar).print("]").print(rangeStr).println(";");
-            rangeStart -= p.getBits();
+        out.print("  $dumpfile(\"db_").print(moduleName).print(".vcd\");").println();
+        out.print("  $dumpvars(0, ").print(moduleName).print(");").println();
+        out.print("  /*").println();
+        out.print("  * Please insert your code as fellow.").println();
+        out.print("  */").println().println();
+        if (TestbenchKey.ISCOMBINATION) {
+            out.print("  " + clkName + " = 1'b0;").println();
+            out.print("  #(PERIOD/2);\n");
+            out.print("  forever").println();
+            out.print("    #(PERIOD/2)  " + clkName + " =~ " + clkName + ";").println();
         }
-        out.println("#10;");
-
-        for (HDLPort p : outputsInOrder) {
-            String dontCareValue = (p.getBits()) + "'hx";
-            int rangeEnd = rangeStart - p.getBits() + 1;
-            String rangeStr = (rangeStart != rangeEnd)? ("[" + rangeStart + ":" + rangeEnd + "]") : ("[" + rangeStart + "]");
-
-            out.print("if (patterns[").print(loopVar).print("]").print(rangeStr).print(" !== ").print(dontCareValue).println(")")
-               .println("begin");
-            out.inc();
-            out.print("if (").print(p.getName()).print(" !== patterns[").print(loopVar).print("]").print(rangeStr).println(")")
-               .println("begin");
-            out.inc();
-            out.print("$display(\"%d:")
-               .print(p.getName()).print(": (assertion error). Expected %h, found %h\", ")
-               .print(loopVar).print(", ").print("patterns[").print(loopVar).print("]").print(rangeStr).print(", ")
-               .print(p.getName()).print(");")
-               .println();
-            out.println("$finish;");
-            out.dec().println("end");
-            out.dec().println("end");
-
-            rangeStart -= p.getBits();
-        }
-        out.dec();
-        out.println("end");
-
-        out.println().println("$display(\"All tests passed.\");");
-
-        out.dec().println("end");
-        out.println("endmodule");
+        out.print("end").println().println();
+        out.print("initial").println();
+        out.print("  #100000 $finish;").println();
+        out.print("endmodule");
     }
+
 
     private boolean loopVarExists(String loopVar, ArrayList<HDLPort> ports) {
         for (HDLPort p : ports)
