@@ -31,6 +31,7 @@ import de.neemann.digiblock.gui.components.graphics.GraphicCard;
 import de.neemann.digiblock.gui.components.graphics.LedMatrix;
 import de.neemann.digiblock.gui.components.graphics.VGA;
 import de.neemann.digiblock.gui.components.terminal.Keyboard;
+import de.neemann.digiblock.gui.components.terminal.Serial.Bus;
 import de.neemann.digiblock.gui.components.terminal.Terminal;
 import de.neemann.digiblock.lang.Lang;
 import de.neemann.digiblock.plugin.lattice.*;
@@ -146,7 +147,8 @@ public class ElementLibrary implements Iterable<ElementLibrary.ElementContainer>
                                 .add(Terminal.DESCRIPTION)
                                 .add(VGA.DESCRIPTION)
                                 .add(MIDI.DESCRIPTION)
-                                .add(PinControl.DESCRIPTION)))
+                                .add(PinControl.DESCRIPTION)
+                                .add(Bus.DESCRIPTION)))
                 .add(new LibraryNode(Lang.get("lib_wires"))
                         .add(Ground.DESCRIPTION)
                         .add(VDD.DESCRIPTION)
@@ -221,16 +223,17 @@ public class ElementLibrary implements Iterable<ElementLibrary.ElementContainer>
                         .add(Reset.DESCRIPTION)
                         .add(Break.DESCRIPTION)
                         .add(AsyncSeq.DESCRIPTION)
-                        .add(External.DESCRIPTION))
-                .add(new LibraryNode(Lang.get("lib_ip"))
-                        .add(new LibraryNode(Lang.get("lib_lattice"))
-                        .add(new LibraryNode(Lang.get("lib_machXO2"))
-                                .add(LRamDPTrue.DESCRIPTION)
-                                .add(LRamDQ.DESCRIPTION)
-                                .add(LRom.DESCRIPTION)
-                                .add(LRamDP.DESCRIPTION)
-//                                .add(RegsFile.DESCRIPTION)
-                                .add(PLL.DESCRIPTION))));
+                        .add(External.DESCRIPTION));
+//                .add(new LibraryNode(Lang.get("lib_ip"))
+//                        .add(new LibraryNode(Lang.get("lib_lattice"))
+//                        .add(new LibraryNode(Lang.get("lib_machXO2"))
+//                                .add(LRamDPTrue.DESCRIPTION)
+//                                .add(LRamDQ.DESCRIPTION)
+//                                .add(LRom.DESCRIPTION)
+//                                .add(LRamDP.DESCRIPTION)
+////                                .add(RegsFile.DESCRIPTION)
+//                                .add(PLL.DESCRIPTION)
+//                                .add(EFB.DESCRIPTION))));
 
         addExternalJarComponents(jarFile);
 

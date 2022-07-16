@@ -72,7 +72,7 @@ public class VerilogTemplate implements VerilogElement {
         Module m = getModule(node);
 
         if (!m.isWritten) {
-            out.println(m.code);
+            out.println(m.code.trim());
             m.setWritten();
         }
 
@@ -100,12 +100,18 @@ public class VerilogTemplate implements VerilogElement {
 
                 keyName = Value.toString(objv);
 
-                Object keyVal = node.getElementAttributes().hgsMapGet(keyName);
                 String kvs;
-                if (keyVal instanceof Boolean) {
-                    kvs = ((Boolean) keyVal) ? "1" : "0";
+                if (keyName.equals("shiftBits")) {                  // shiftBits is not the attribute of barrel shift, but it's needed.
+                    int val = node.getInputs().get(1).getBits();
+                    kvs = String.valueOf(val);
                 } else {
-                    kvs = keyVal.toString();
+                    Object keyVal = node.getElementAttributes().hgsMapGet(keyName);
+
+                    if (keyVal instanceof Boolean) {
+                        kvs = ((Boolean) keyVal) ? "1" : "0";
+                    } else {
+                        kvs = keyVal.toString();
+                    }
                 }
                 comma.check();
                 out.print(".").print(keyName).print("(").print(kvs).print(")");

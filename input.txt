@@ -1,0 +1,4 @@
+charlie: ANDI X27, X19, #128
+ADDI X3,X6 #89
+ADDS X8,X
+ADDI X3,X6,#89

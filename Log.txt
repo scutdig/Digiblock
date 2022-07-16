@@ -1,0 +1,6 @@
+Log Report (input.txt)
+	1 Errors Detected
+
+Error: Line 3
+	operands of 'ADDS' not detected
+

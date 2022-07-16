@@ -52,7 +52,7 @@
         a SVG template and then edit it.</string>
     <string name="msg_warning">Warning</string>
     <string name="cancel">Cancel</string>
-    <string name="digital">Digital</string>
+    <string name="digital">Digiblock</string>
     <string name="expression">Expression</string>
     <string name="elem_Help_inputs">Inputs</string>
     <string name="elem_Help_outputs">Outputs</string>
@@ -1299,6 +1299,12 @@
     <string name="key_iverilogPath">IVerilog</string>
     <string name="key_iverilogPath_tt">Path to the Icarus verilog installation folder. Only necessary if you want to use iverilog to simulate
         components defined with verilog.</string>
+    <string name="key_gtkwavePath">Gtkwave</string>
+    <string name="key_gtkwavePath_tt">Path to the Gtkwave installaton folder.</string>
+    <string name="key_ivlSourcePath">Source</string>
+    <string name="key_ivlSourcePath_tt">Path to the rtl folder</string>
+    <string name="key_ivlTestbenchPath">Testbench</string>
+    <string name="key_ivlTestbenchPath_tt">Path to the testbench folder</string>
     <string name="key_maxValue">Maximum Value</string>
     <string name="key_maxValue_tt">If a zero is entered, the maximum possible value is used (all bits are one).</string>
 
@@ -1493,9 +1499,13 @@
     <string name="menu_fast">Run to Break</string>
     <string name="menu_fast_tt">Runs the circuit until a break is detected by a BRK component.</string>
     <string name="menu_file">File</string>
-    <string name="menu_testBench">TestBench</string>
-    <string name="menu_testBench_create">BlockTB</string>
-    <string name="menu_testBench_create_tt">Create testbench in browser.</string>
+    <string name="menu_verification">Verification</string>
+    <string name="menu_instantiation_create">Export to Testbench</string>
+    <string name="menu_instantiation_create_tt">Auto generate the trl file as well as testbench file. If the circut is Sequential logic circut, the name of clk input should contain clk or clock.</string>
+    <string name="menu_gtkWave_create">Gtkwave</string>
+    <string name="menu_gtkWave_create_tt">open gtkwave</string>
+    <string name="menu_iverilog_create">Iverilog</string>
+    <string name="menu_iverilog_create_tt">open iverilog</string>
     <string name="menu_help">Help</string>
     <string name="menu_update">Update</string>
     <string name="menu_update_tt">Updates the components menu.</string>
